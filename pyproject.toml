@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gatecheck"
+version = "0.1.0"
+description = "Calibrated statistical gates for research adjudication: every test ships with planted-truth / planted-null certification (tests for the tests)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "OWNER" }]
+keywords = [
+    "statistics",
+    "backtesting",
+    "deflated-sharpe",
+    "cross-validation",
+    "calibration",
+    "falsification",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = ["numpy>=1.23"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.urls]
+# Placeholders — filled at publication time.
+Homepage = "https://example.invalid/gatecheck"
+Source = "https://example.invalid/gatecheck"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
