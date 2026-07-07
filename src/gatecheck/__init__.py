@@ -19,7 +19,8 @@ calibration itself).
 * Audit reports: <link placeholder — RESEARCH_AUDIT_REPORT / RESEARCH_AUDIT_TWO_PASS>
 * Calibration certificates: <link placeholder — CALIBRATION_CERTIFICATES>
 
-NOTE: "gatecheck" is a working title; PyPI name availability has not been checked.
+Name confirmed 2026-07-02; the PyPI name ``gatecheck`` is available. Not yet
+published (publication is an owner-gated launch step).
 
 Modules
 -------

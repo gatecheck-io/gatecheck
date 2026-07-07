@@ -10,7 +10,7 @@ gates *with* their calibration certificates: measured fire rates on planted trut
 and planted nulls, with binomial confidence intervals, reproducible from a seed.
 Tests for the tests.
 
-> Working title. PyPI name availability has not been checked; not published anywhere.
+> The PyPI name `gatecheck` is available; not yet published (owner-gated launch step).
 
 ## Track record
 
@@ -195,4 +195,5 @@ its docstring; no upstream code is imported.
 
 ## License
 
-MIT. Author placeholder: OWNER.
+MIT, © 2026 gatecheck. (The legal copyright holder becomes the operating entity's
+name at incorporation; see the launch playbook.)

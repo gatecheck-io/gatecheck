@@ -46,6 +46,6 @@ No upstream code is imported; lineage is recorded per-module in docstrings.
 
 - Worlds are stylized daily-bar synthetics; certification on them is necessary,
   not sufficient.
-- "gatecheck" is a working title — PyPI name availability unchecked; not
-  published.
-- Author/homepage/provenance links are placeholders pending publication.
+- Name confirmed `gatecheck` (2026-07-02); PyPI name available; not yet published
+  (owner-gated launch step).
+- Provenance links resolve once the GitHub org is created at launch.
