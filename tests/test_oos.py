@@ -1,6 +1,6 @@
 """Tests for the shared OOS primitives (gatecheck.oos).
 
-Ported 2026-07-02 from market_state ``tests/test_evaluation_oos.py``.
+Ported 2026-07-02 from the source program ``tests/test_evaluation_oos.py``.
 
 The load-bearing properties: train-only normalization (no test stats leak in), an honest
 train-mean-referenced OOS R² (can go negative), a fold-size-independent ridge strength (so

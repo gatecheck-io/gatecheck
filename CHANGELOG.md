@@ -6,7 +6,7 @@ All notable changes to `gatecheck` are documented here. The format follows
 
 ## [0.1.0] — 2026-07-02
 
-Initial extraction. The statistical spine of the `market_state` research program
+Initial extraction. The statistical spine of the source research program
 (post-audit), repackaged as a standalone, numpy-only, pip-installable library.
 No upstream code is imported; lineage is recorded per-module in docstrings.
 

@@ -7,7 +7,7 @@ they claim to adjudicate. This harness plants truth and plants null, runs your g
 many seeded draws of each world, and records fire rates with binomial CIs — a
 PASS/FAIL/CHARACTERIZED certificate per gate.
 
-Lineage: extracted 2026-07-02 from the market_state research program
+Lineage: extracted 2026-07-02 from the source research program
 (``market_os/evaluation/calibration.py``, post-audit — upstream repair R5). Upstream, this
 harness certified four production gates; the certification honestly FAILED one of them
 (a content gate with zero power in its live regime, quarantined as a result) and

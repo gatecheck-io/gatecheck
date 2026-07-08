@@ -1,6 +1,6 @@
 """Tests for overfitting defenses: DSR and PBO (gatecheck.deflation).
 
-Ported 2026-07-02 from market_state ``tests/test_strategy_deflation.py``.
+Ported 2026-07-02 from the source program ``tests/test_strategy_deflation.py``.
 """
 
 from __future__ import annotations

@@ -1,6 +1,6 @@
 """Pure OOS fit-on-train / score-on-test primitives.
 
-Lineage: extracted 2026-07-02 from the market_state research program
+Lineage: extracted 2026-07-02 from the source research program
 (``market_os/evaluation/oos.py``, post-audit), where these were the shared leaf
 math for the incremental-OOS-R² and regime-transition-Brier falsification gates.
 

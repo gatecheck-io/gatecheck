@@ -1,6 +1,6 @@
 """Tests for the gate-calibration harness (gatecheck.calibration).
 
-Ported 2026-07-02 from market_state ``tests/test_calibration_harness.py`` (the fast,
+Ported 2026-07-02 from the source program ``tests/test_calibration_harness.py`` (the fast,
 package-portable arm: world generators, the certify runner, and the built-in
 spearman_partial certificate — the PASS exhibit). Offline + deterministic (seeded numpy
 worlds, no network). Assertions are deliberately loose bands around the deterministic

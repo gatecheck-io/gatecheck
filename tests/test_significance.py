@@ -1,6 +1,6 @@
 """Tests for gatecheck.significance (IC, permutation nulls, multi-seed Sharpe CIs).
 
-Ported 2026-07-02 from market_state ``tests/test_evaluation_significance.py``, plus
+Ported 2026-07-02 from the source program ``tests/test_evaluation_significance.py``, plus
 tests for the small-n Student-t CI (upstream repair R4) and the circular-shift null.
 """
 

@@ -16,7 +16,7 @@ def test_top_level_api_imports():
 def test_provenance_docstring():
     import gatecheck
 
-    assert "market_state" in gatecheck.__doc__
+    assert "source" in gatecheck.__doc__
     assert "2026-07-02" in gatecheck.__doc__
 
 

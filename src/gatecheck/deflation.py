@@ -1,6 +1,6 @@
 """Overfitting defenses: the Deflated Sharpe Ratio and PBO.
 
-Lineage: extracted 2026-07-02 from the market_state research program
+Lineage: extracted 2026-07-02 from the source research program
 (``market_os/strategy/deflation.py``, post-audit), where it implemented the
 explicit defenses of López de Prado's Chapter 15 §15.5. Strategy discovery is
 where overfitting is most lethal: searching over archetypes × states ×

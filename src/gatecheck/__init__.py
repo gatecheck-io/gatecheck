@@ -7,7 +7,7 @@ stays silent on structured nulls — *tests for the tests*.
 
 Provenance
 ----------
-Extracted 2026-07-02 from the market_state research program (post-audit): the
+Extracted 2026-07-02 from the source research program (post-audit): the
 audit-verified statistical spine of a ~160-PR falsification-first market
 research program that ran to an honest descriptive-not-operational terminus.
 These are the instruments that survived two adversarial audits of the program's
@@ -15,9 +15,9 @@ own methodology, including the repairs those audits forced (small-n Student-t
 CIs, rank-space partials, autocorrelation-aware permutation nulls, gate
 calibration itself).
 
-* Upstream program: <link placeholder — market_state repository>
-* Audit reports: <link placeholder — RESEARCH_AUDIT_REPORT / RESEARCH_AUDIT_TWO_PASS>
-* Calibration certificates: <link placeholder — CALIBRATION_CERTIFICATES>
+* Audit summary: ``docs/AUDIT_SUMMARY.md`` in the repository.
+* Calibration certificates: ``docs/CALIBRATION_CERTIFICATES.md``.
+* Full adversarial audit reports of the source program: available on request.
 
 Name confirmed 2026-07-02; the PyPI name ``gatecheck`` is available. Not yet
 published (publication is an owner-gated launch step).

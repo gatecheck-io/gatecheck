@@ -1,6 +1,6 @@
 """Rank-space partial-correlation machinery (NaN-aware; numpy only, no scipy).
 
-Lineage: extracted 2026-07-02 from the market_state research program
+Lineage: extracted 2026-07-02 from the source research program
 (``market_os/research/forward_vol_state.py`` — ``_rank`` /
 ``_spearman_partial_pvalue``; ``market_os/flow/forced_flow_probe.py`` —
 ``residualize``), post-audit.

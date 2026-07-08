@@ -15,7 +15,7 @@ Tests for the tests.
 ## Track record
 
 This library was not designed on a whiteboard. It is the extracted statistical
-spine of a falsification-first market research program (`market_state`, ~160 PRs,
+spine of a falsification-first market research program (the source program, ~160 PRs,
 run to an honest "descriptive, not operational" terminus), and its track record is
 mostly a record of things it killed:
 
@@ -43,7 +43,7 @@ mostly a record of things it killed:
   package was run over the program's four production gates, one of them — a
   "content gate" meant to separate genuine forward information from mechanical
   persistence — had zero power in its live regime. It was quarantined, not
-  patched around. (*Audit and quarantine reports: link placeholder.*)
+  patched around. (See [`docs/CALIBRATION_CERTIFICATES.md`](docs/CALIBRATION_CERTIFICATES.md) for the measured fire-rates, and [`docs/AUDIT_SUMMARY.md`](docs/AUDIT_SUMMARY.md).)
 
 None of this proves the gates here are correct. It does mean each one has been
 fired at planted truth and planted null at least once, and the misses are
@@ -180,7 +180,7 @@ Read these before trusting a certificate.
 
 ## Provenance
 
-Extracted 2026-07-02 from the `market_state` research program, post-audit: the
+Extracted 2026-07-02 from the source research program, post-audit: the
 audit-verified statistical spine of a ~160-PR falsification-first market research
 program that ran to an honest descriptive-not-operational terminus. Upstream,
 this harness certified four production gates, honestly FAILED one of them (the
@@ -188,10 +188,10 @@ zero-power content gate, quarantined as a result), and CHARACTERIZED the
 undisclosed detection floor of another. Lineage of every module is recorded in
 its docstring; no upstream code is imported.
 
-- Upstream program: *link placeholder*
-- Audit reports: *link placeholder*
-- Content-gate quarantine report: *link placeholder*
-- Generated example certificate: [`docs/CERTIFICATE.md`](docs/CERTIFICATE.md)
+- How this library relates to the audits: [`docs/AUDIT_SUMMARY.md`](docs/AUDIT_SUMMARY.md)
+- Calibration certificates (the four production gates, including the content gate that FAILED and was quarantined): [`docs/CALIBRATION_CERTIFICATES.md`](docs/CALIBRATION_CERTIFICATES.md)
+- Generated example certificate for this library: [`docs/CERTIFICATE.md`](docs/CERTIFICATE.md)
+- Full adversarial audit reports of the source program: available on request.
 
 ## License
 

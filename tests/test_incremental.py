@@ -1,6 +1,6 @@
 """Tests for incremental OOS R² + oracle floors (gatecheck.incremental).
 
-Ported 2026-07-02 from market_state ``tests/test_evaluation_incremental.py`` (the pure
+Ported 2026-07-02 from the source program ``tests/test_evaluation_incremental.py`` (the pure
 helper-math arm; the upstream end-to-end pipeline smoke tests do not apply here), plus
 tests for the oracle power floor.
 """

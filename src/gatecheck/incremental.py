@@ -1,6 +1,6 @@
 """Incremental OOS R² of added features over a baseline, with oracle power floors.
 
-Lineage: extracted 2026-07-02 from the market_state research program
+Lineage: extracted 2026-07-02 from the source research program
 (``market_os/evaluation/incremental.py`` plus the oracle-floor convention of its
 ``real_g3`` / ``curve_residual_g3`` harnesses), post-audit.
 

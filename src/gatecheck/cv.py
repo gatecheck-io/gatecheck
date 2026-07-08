@@ -1,6 +1,6 @@
 """Purged + embargoed walk-forward cross-validation over an ordered bar index.
 
-Lineage: extracted 2026-07-02 from the market_state research program
+Lineage: extracted 2026-07-02 from the source research program
 (``market_os/evaluation/cv.py``, post-audit).
 
 This module is intentionally *data-free*: every routine takes only ``n`` (a bar

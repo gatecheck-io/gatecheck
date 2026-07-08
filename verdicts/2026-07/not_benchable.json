@@ -1,0 +1,237 @@
+[
+ {
+  "text": "QQQ 'buy the dip near all-time highs': buy a 1-day drop between -3.3% and -6.3% ONLY when QQQ is within 5% of its 52-week high; claimed +4.68% avg 3-month return, 80% win rate, p=0.006 (N=20-21 over 25y). Follow-up post 2026-06-13 tracks a live June 5 trigger at +2.3%.",
+  "source": "https://www.reddit.com/r/algotrading/comments/1tzicir/buying_the_dip_why_catching_a_falling_knife_near/",
+  "reason": "Conjunction of a 1-day-return band AND a within-5%-of-52-week-high filter; single-indicator single-threshold vocabulary cannot express it without changing the claim (poster shows the unconditioned version is negative)."
+ },
+ {
+  "text": "'Monday sets the tone': on 16 years of NQ, whichever side of Monday's open price sits on by Wednesday calls the weekly close ~76% of the time; held out of sample; data gist linked (score 67, 2026-06-28).",
+  "source": "https://www.reddit.com/r/algotrading/comments/1uhywj4/kept_hearing_monday_sets_the_tone_for_the_week_so/",
+  "reason": "Day-of-week conditional with a weekly-close horizon on futures; no calendar conditioning in the whitelist and NQ is not a Yahoo daily-bar bench asset."
+ },
+ {
+  "text": "QQQ July seasonality with trend filter (2026-06-27): buying QQQ end-of-June and holding through July, only in years where June's last close > 200-day SMA, gives mean July return significant at p=0.013 (vs p=0.068 unconditioned), 1999-2026.",
+  "source": "https://www.reddit.com/r/algotrading/comments/1uh5wy7/will_july_be_a_good_month_history_says_yes_while/",
+  "reason": "Calendar-month seasonality conditioning is not expressible in the indicator/rule vocabulary; stripping the July condition changes the claim."
+ },
+ {
+  "text": "1,327% 'Buy-The-Dip' algorithm (2026-06-12, score 30): buy elite-momentum stocks (20-day EMA / 200-day SMA ratio >= 1.14) on shallow pullbacks (z-score 0 to -1) only while SPY is >= 2% off its 252-day high; exit at +2 z or on EMA20 crossing below SMA200; claimed 30.5% CAGR vs 15.4% SPY over 2016-2026.",
+  "source": "https://www.reddit.com/r/algotrading/comments/1u437da/1327_buythedip_algorithm_something_hit_this/",
+  "reason": "Cross-sectional 100-stock screen with an EMA-based ratio, a z-score band, and a market-level trigger \u2014 multi-condition multi-asset, not a single-asset whitelist rule."
+ },
+ {
+  "text": "Weighted momentum monthly rotation (2026-05-20): top-5 stocks from S&P 100 by recency-weighted 1/3/6-month momentum, monthly rebalance, 2x leverage, 0.2% costs; claimed 28.6% gross CAGR vs 13.1% SPY, Sharpe 0.95, max DD -38.6% (2016-2026).",
+  "source": "https://www.reddit.com/r/algotrading/comments/1tiup27/a_momentum_strategy_using_leverage_and_monthly/",
+  "reason": "Cross-sectional rotation over an index universe with leverage; not expressible as a single-asset rule."
+ },
+ {
+  "text": "ES mean-reversion live track (2026-05-12): fade >1.5 sigma stretches from session VWAP on E-mini S&P 5-min bars, exit on VWAP cross-back or 60-min timeout; claimed live net Sharpe 1.14 across 614 trades over 3 months with VIX>28 regime pause.",
+  "source": "https://www.reddit.com/r/algotrading/comments/1tb89g6/month_3_running_my_es_meanreversion_strategy_on/",
+  "reason": "Intraday (5-minute bars, session VWAP) on futures; bench is daily bars only."
+ },
+ {
+  "text": "SPY 8H Bollinger + MACD breakout (2026-05-28): long on close above upper BB with MACD hist > 0, short below lower BB with hist < 0, 2x ATR stop, 2:1 TP; poster reports it consistently BLEEDS (posted negative result, asking for help).",
+  "source": "https://www.reddit.com/r/algotrading/comments/1tq8p8m/backtested_a_bollinger_macd_breakout_on_spy_8h_it/",
+  "reason": "8-hour bars and MACD/ATR components are outside the daily-bar whitelist vocabulary; also a self-reported negative, not an edge claim."
+ },
+ {
+  "text": "9/21 EMA crossover system paper-traded 59 days on single names (2026-06-10): EMA cross + ATR stops + RVOL>80%-of-10-day-avg filter + 5% breakeven lock; 33% win rate, +$1,470, poster admits two outlier trades (ARM, AMD) carry the whole system.",
+  "source": "https://www.reddit.com/r/algotrading/comments/1u2g8ye/59_days_of_paper_trading_a_921_ema_crossover/",
+  "reason": "EMA (not SMA) dual-window crossover plus ATR/RVOL overlays; multi-component and not expressible exactly; 20-trade sample, no fixed asset."
+ },
+ {
+  "text": "SPY forward returns conditioned on an 8-input cross-asset regime score (r/quant, 2026-06-28): the weakest 3-month forward band is 'Mildly-Off' (+1.7% median, 61% positive), not full Risk-Off (+6.0%, 78%), 2008-present, non-overlapping windows.",
+  "source": "https://www.reddit.com/r/quant/comments/1uiabku/backtested_18_years_of_spy_forward_returns/",
+  "reason": "Signal is a composite of 8 z-scored cross-asset inputs (credit, curve, vols, carry, copper/gold, rotation) \u2014 not reproducible from a single Yahoo series."
+ },
+ {
+  "text": "Wyckoff accumulation + mean-reversion engine, 20y validation (2026-05-05): 18,808 signals, 12.55% CAGR net of 10bps, Sharpe 0.729, Carhart alpha 0.509%/signal, delisted names included, GitHub validation repo posted.",
+  "source": "https://www.reddit.com/r/algotrading/comments/1t4f8e4/i_built_a_quant_engine_based_on_20_years_of_oos/",
+  "reason": "Proprietary multi-signal engine (volume + price-action pattern logic, source withheld); not formalizable into a whitelist rule."
+ },
+ {
+  "text": "Momentum-RSI dip-buy with VIX-rank filter (options.cafe writeup of an r/algotrading '81.6% win rate' post): RSI(14)<30 entries on momentum-screened stocks (45%/55%/75% trailing 3/6/12-month returns, $2B+ cap), exit +3% or 10 days, VIX rank < 70; claimed 81.3% win rate, 14.36% CAGR.",
+  "source": "https://options.cafe/blog/momentum-rsi-strategy-backtest-results/",
+  "reason": "Cross-sectional momentum universe plus a VIX-percentile filter (multi-condition, multi-asset); also published 2026-01-19, outside the 4-8 week window; original reddit post (1qfw5pl) unreachable (crawler-blocked)."
+ },
+ {
+  "text": "Quant SE (2026-04-08): international ETF strategy allocating to EZU/INDA/EWJ/MCHI when each outperforms SPY, relative momentum vs country-specific factor models.",
+  "source": "https://quant.stackexchange.com/questions/85575/choosing-between-two-approaches-for-an-international-etf-strategy",
+  "reason": "No parameterization posted (no window/threshold) and the signal is relative-to-SPY cross-asset momentum; also ~12 weeks old."
+ },
+ {
+  "text": "MNQ 2H mean-reversion / momentum-exhaustion system (r/quant, 2026-05-29): overextension + MA-zone interaction + momentum rotation entries, oscillator-extreme exits, walk-forward and Monte Carlo tested, 'promising' results, drawdown-regime weakness.",
+  "source": "https://www.reddit.com/r/quant/comments/1tqsxwq/strategy_help/",
+  "reason": "2-hour bars on micro futures with unnamed oscillator and unspecified parameters \u2014 intraday and under-specified."
+ },
+ {
+  "text": "Wong, 'Experimental Evaluation of an Algorithmic Trading Strategy Against the S&P 500 Benchmark' (posted 2026-05-05): Turtle/Donchian channel breakout with ATR-based volatility position sizing on the US100 CFD index, Jan 2023-Apr 2026; claims it outperforms the S&P 500 at comparable drawdown.",
+  "source": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6722841",
+  "reason": "Compound system: Donchian entry + channel/ATR exits + volatility sizing on a CFD index; not expressible as a single-indicator threshold rule with fixed horizon."
+ },
+ {
+  "text": "Nathan, Suominen & Tasa, 'The Intramonth Momentum Cycle' (posted 2026-03-16): US equity momentum returns concentrate in six trading days ending four days before month-end ($1 -> $18.78 in those days vs $2.37 otherwise, 1980-2025), driven by loser-stock selling for month-end cash needs.",
+  "source": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6426026",
+  "reason": "Cross-sectional winners-minus-losers decile portfolio timed to specific calendar days; neither cross-sectional construction nor calendar conditioning is in the whitelist vocabulary."
+ },
+ {
+  "text": "Sathish Kumar, 'Momentum in Large-Cap Equities: Does the Classic 12-1 Strategy Still Work?' (posted 2026-02-07): canonical 12-1 cross-sectional momentum on S&P 500 constituents 2006-2024 nets -2.79% ann. (Sharpe -0.23, maxDD -81%); long leg +7.9% but shorting losers is catastrophic in 2009/2020 crashes.",
+  "source": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5367656",
+  "reason": "Cross-sectional constituent-level long-short with survivorship-bias-free membership history; not a single-asset rule."
+ },
+ {
+  "text": "Moskowitz, Sabbatucci, Tamoni & Uhl, 'Nonlinear Time Series Momentum' (SSRN, posted 2025-12-10): a persistent nonlinear (S-shaped) relation between past trend and risk-adjusted return across asset classes; ML-estimated transforms yield significant OOS improvements over linear TSM.",
+  "source": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5933974",
+  "reason": "ML-estimated nonlinear transform over a multi-asset futures panel; no fixed single-asset threshold parameterization to bench."
+ },
+ {
+  "text": "'Volume-Price-Adjusted MACD Trading Strategy' (arXiv 2604.26063, posted 2026-04-28): MACD variants with volume/volatility adjustment on SPY and QQQ; claims Strategy B improves risk-adjusted performance (higher Sharpe) over baseline MACD.",
+  "source": "https://arxiv.org/abs/2604.26063",
+  "reason": "MACD is a dual-EMA crossover with a signal line \u2014 three interacting windows, not in the indicator whitelist."
+ },
+ {
+  "text": "Xie, Nie & Chang, 'Stock Investment: The p-index Approach' (arXiv 2606.08569, posted 2026-06-07): a put-option-implied 'insurance fee' risk index used to form p-index-efficient momentum portfolios on S&P 500 stocks (best variant 3.69% ann., 2018-2023).",
+  "source": "https://arxiv.org/abs/2606.08569",
+  "reason": "Requires per-stock European put option prices and cross-sectional selection; not computable from daily bars of a single Yahoo asset."
+ },
+ {
+  "text": "Quantpedia, 'Testing an AI-Assisted Research Workflow for Multi-Asset Pullback Strategy Discovery' (June 2026): across six liquid ETFs 2006-2025, buy when price > 200-day SMA AND after 2-3 consecutive negative daily returns, hold 1 day; best variant (200d MA + 2-day pullback + 1-day hold) selected by highest minimum Sharpe across assets.",
+  "source": "https://quantpedia.com/testing-an-ai-assisted-research-workflow-for-multi-asset-pullback-strategy-discovery/",
+  "reason": "Conjunction of a trend filter and a consecutive-down-days trigger \u2014 two indicators ANDed \u2014 not expressible as one whitelist rule (also a blog source, adjacent to this miner's SSRN/arXiv angle; flag for dedup with the blog miner). Parameter-swept, so if ever benched piecewise use n_trials 20-40."
+ },
+ {
+  "text": "Fan & He, 'Expected Return in Night and Day: The Role of Trading Volume' (SSRN 6371518, posted March 2026): high-volume stocks earn a strong overnight premium and intraday discount, persistent globally; attributed to late-informed investor overconfidence with dispersion peaking at the open.",
+  "source": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6371518",
+  "reason": "Close-to-open/open-to-close legs on volume-sorted cross-sectional portfolios; overnight decomposition not expressible on daily-close bars."
+ },
+ {
+  "text": "'A novel approach to trading strategy parameter optimization' (arXiv 2602.10785, posted 2026-02-11): EMA-based strategies over an 11-window grid (5-200); claims Sharpe similar to buy-and-hold with lower drawdown after optimization.",
+  "source": "https://arxiv.org/abs/2602.10785",
+  "reason": "Exponential moving averages (whitelist has only SMA-ratio) and the claim attaches to a grid-search procedure, not one fixed parameterization."
+ },
+ {
+  "text": "'Algorithmic Trading Strategy Development and Optimisation' (arXiv 2603.15848, March 2026): ensemble of moving averages, momentum, volatility and FinBERT sentiment; claims Sharpe improved from 1.19 to 1.69 (development) and 0.41 to 2.04 (validation).",
+  "source": "https://arxiv.org/abs/2603.15848",
+  "reason": "ML/sentiment ensemble \u2014 no single-indicator threshold rule; FinBERT features not reproducible from daily bars."
+ },
+ {
+  "text": "Ryan Detrick via Benzinga 2026-05-18: '7-week win streak for the S&P 500 that was up more than 10%' - 7 prior instances, 'never lower a year later,' avg +15.7% at 52 weeks.",
+  "source": "https://www.benzinga.com/etfs/broad-u-s-equity-etfs/26/05/52626828/sp-500-flashes-a-rare-signal-that-leads-to-over-20-gains-historically-ryan-detrick-calls-it-good-news",
+  "reason": "Consecutive-up-weeks streak condition is not expressible in the indicator whitelist; dropping it to a plain 35-day momentum threshold would contort the posted claim."
+ },
+ {
+  "text": "Quantified Strategies substack 'New Low Trading Strategy' (2026-06-19): QQQ mean reversion, claimed 10.9% CAGR, 70% win rate, PF 2, 384 trades.",
+  "source": "https://quantifiedstrategies.substack.com/p/new-low-trading-strategy",
+  "reason": "Exact entry/exit rules paywalled - only performance claims are public."
+ },
+ {
+  "text": "Quantified Strategies substack 'New High Strategy for The Stock Market' (2026-06-25): SPY/QQQ pullback strategy, claimed 3.6% CAGR on 8% exposure, 74% win rate, PF 4, 188 trades.",
+  "source": "https://quantifiedstrategies.substack.com/p/new-high-strategy-for-the-stock-market",
+  "reason": "Trading rules paywalled."
+ },
+ {
+  "text": "Quantified Strategies substack 'Breakout VIX Strategy' (2026-06-17): trade SPY off a VIX range breakout; claimed 0.75%/trade, 77% win rate, 5.5% CAGR on 10% exposure.",
+  "source": "https://quantifiedstrategies.substack.com/p/breakout-vix-strategy",
+  "reason": "Rules paywalled AND cross-asset (VIX signal to trade SPY) - signal-on-a-different-series is outside the single-asset whitelist."
+ },
+ {
+  "text": "Trading & Investing Strategies substack IBS mean reversion (2026-06-10): 'Entry fires when IBS drops below the threshold at daily bar close'; claimed +40% on SPY with <3% max DD, 61-70% win rates across SPY/QQQ/Gold/BTC.",
+  "source": "https://tradinginvestingstrategies.substack.com/p/ibs-mean-reversion-strategy-backtest",
+  "reason": "IBS (close-low)/(high-low) is not in the indicator whitelist, and the numerical thresholds are paywalled anyway."
+ },
+ {
+  "text": "Quantified Strategies substack 'Five Algorithmic Trading Strategies' (2026-02-19): five S&P 500 systems with free rules, e.g. 'Enter when SPY closes below the 10-day high minus a 25-day average daily range band and IBS < 0.3. Exit when today's close exceeds yesterday's high.'",
+  "source": "https://quantifiedstrategies.substack.com/p/five-algorithmic-trading-strategies",
+  "reason": "All five use IBS compounds, DeMarker, consecutive-down-day/day-of-week conditions, or rule-based exits - none expressible without contortion in the whitelist vocabulary."
+ },
+ {
+  "text": "Rogue Quant substack 'The Too Simple to Work QQQ Strategy' (2026-02-16): dual trend filter + non-trend exit on QQQ daily; claimed 68.6% win rate, PF 2.53, 191 trades 2007-2026, -4.36% in 2008.",
+  "source": "https://roguequant.substack.com/p/the-too-simple-to-work-qqq-strategy",
+  "reason": "The two trend filters and the exit are deliberately withheld behind the paywall - no parameterization to bench."
+ },
+ {
+  "text": "Quantified Strategies substack 'RSI-Based Range Momentum System' (2026-04-02): low-activity SPY system (12 trades since 1993, 83% win rate, 5.93% CAGR, 12.9% max DD) using RSI bull-range logic (40-80 zone).",
+  "source": "https://quantifiedstrategies.substack.com/p/rsi-based-range-momentum-system",
+  "reason": "Exact entry/exit thresholds paywalled; the range-regime logic (RSI staying within a zone over a 100-day lookback) is also not a single-threshold rule."
+ },
+ {
+  "text": "Quantified Strategies substack 'RSI 2 Strategy Explained: Larry Connors' 2-Period RSI Trading Rules' (2026-03-30): SPY, claimed 9% CAGR, 0.9%/trade, 34% max DD, 28% exposure.",
+  "source": "https://quantifiedstrategies.substack.com/p/rsi-2-strategy-explained-larry-connors",
+  "reason": "Substack version paywalled; the same parameterization was captured as a benchable claim from the free quantifiedstrategies.com article instead (tw_spy_rsi2_below10)."
+ },
+ {
+  "text": "Algomatic Trading substack 'Strategy #6: My take on Larry Connors 2RSI System' (2025-07-13): Nasdaq 100 long-only, claimed 4.88% CAGR, 73.9% win rate, 13.6% max DD over 2000-2025.",
+  "source": "https://algomatictrading.substack.com/p/strategy-6-my-take-on-larry-connors",
+  "reason": "Author explicitly withholds 'the exact parameters and implementation details' behind the premium tier; also outside the recency window."
+ },
+ {
+  "text": "Quantified Strategies substack 'Gold Moving Average Strategy' (2025-10-05): 12-month SMA trend rule on gold.",
+  "source": "https://quantifiedstrategies.substack.com/p/gold-moving-average-strategy-best",
+  "reason": "Buy/sell conditions and performance paywalled; also outside the recency window."
+ },
+ {
+  "text": "Alvarez Quant Trading 'SPY, SSO and TLT Strategy' (2024-11-13, signals still updated monthly - last change 2026-06-01): final variant is 'Is SPY greater than the 200-day moving average' -> hold SPY; else if TLT > its 200-day MA -> hold TLT; else cash.",
+  "source": "https://alvarezquanttrading.com/blog/spy-sso-and-tlt-strategy/",
+  "reason": "Conditional multi-asset rotation (SPY-else-TLT-else-cash) is not expressible as a single-asset whitelist rule; original post also predates the recency window."
+ },
+ {
+  "text": "Medium (Liran Nachman, 2026-01-11): 'Forget 50 Indicators: This 3-Line QQQ Strategy' - buy pullbacks below a short-term average in confirmed uptrends, with Pine Script.",
+  "source": "https://lirannh.medium.com/forget-50-indicators-this-3-line-qqq-strategy-beats-90-of-traders-85eb3edbddc2",
+  "reason": "Member-only Medium paywall - windows, thresholds, and exit truncated in the public excerpt."
+ },
+ {
+  "text": "QuantifiedStrategies Substack 'New High Strategy for The Stock Market' (2026-06-25): SPY pullback strategy, claimed 188 trades, 74% win, 0.6%/trade, PF 4, max DD 8%, 8% exposure.",
+  "source": "https://quantifiedstrategies.substack.com/p/new-high-strategy-for-the-stock-market",
+  "reason": "Exact trading rules are behind the paid-subscriber paywall; only performance stats visible."
+ },
+ {
+  "text": "QuantifiedStrategies Substack 'New Low Trading Strategy' (2026-06-19): QQQ mean-reversion off new lows, claimed 384 trades, 70% win, 0.8%/trade, CAGR 10.9%, max DD 23%.",
+  "source": "https://quantifiedstrategies.substack.com/p/new-low-trading-strategy",
+  "reason": "Exact rules paywalled (also mirrored as YouTube video Tp2u_T-JynQ, 2026-06-19, rules in-video only)."
+ },
+ {
+  "text": "QuantifiedStrategies Substack 'Momentum Strategy for Stocks, Bonds, and Gold' (2026-06-05): ranks SPY/TLT/GLD by recent performance and allocates to the strongest; claimed CAGR 11.3%, 60% win, max DD 25%, 98 trades.",
+  "source": "https://quantifiedstrategies.substack.com/p/momentum-strategy-for-stocks-bonds",
+  "reason": "Rules paywalled AND cross-sectional multi-asset rotation \u2014 not expressible in the single-asset vocabulary."
+ },
+ {
+  "text": "Quantifiable Edges 'A TICK TomOscillator Study Suggesting a Monday Bounce' (2026-06-07): TomOscillator %-rank of NYSE closing TICK below 1% of past year -> 23 of 25 instances closed up the next day.",
+  "source": "https://quantifiableedges.com/a-tick-tomoscillator-study-suggesting-a-monday-bounce/",
+  "reason": "Signal built on NYSE closing TICK + proprietary oscillator \u2014 data not Yahoo-reachable, indicator not in whitelist."
+ },
+ {
+  "text": "Options Cafe 'Momentum RSI Strategy Backtest: 81% Win Rate with VIX Filter' (2026-01-19): RSI(14)<30 dip-buys within a 150-stock high-momentum universe (45/55/75% 3/6/12-mo return floors), 3% profit target or 10-day max hold, VIX 1-yr percentile-rank < 70 filter; 81.3% win, PF 2.52.",
+  "source": "https://options.cafe/blog/momentum-rsi-strategy-backtest-results/",
+  "reason": "Cross-sectional stock-universe strategy with a cross-asset VIX filter \u2014 not expressible single-asset; also openly grid-searched 9 VIX-rank variants."
+ },
+ {
+  "text": "Financial Wisdom 'The Pullback Strategy That Helped Martin Luk Win the U.S. Investing Championship' (YouTube, 2026-05-29, 67k views) + companion post: 3-scanner stock selection, breakout entries, tight stops, 23% win rate at ~5:1 reward:risk, 1358% in USIC 2025.",
+  "source": "https://www.financialwisdomtv.com/post/martin-luk-s-1358-swing-trading-strategy-from-gamestop-blow-up-to-us-investing-champion",
+  "reason": "Discretionary scanner-based single-stock swing framework (chart patterns, dynamic sizing/exits) \u2014 no fixed indicator/threshold rule to formalize."
+ },
+ {
+  "text": "Quantified Strategies YouTube 'Should you use the VIX to time the SP500? (Backtest)' (2026-06-16, video Bw2pI61eiNo).",
+  "source": "https://youtube.com/watch?v=Bw2pI61eiNo",
+  "reason": "Cross-asset signal (indicator computed on VIX, traded asset SPX) \u2014 vocabulary computes the indicator on the traded asset only; exact rules also in-video only."
+ },
+ {
+  "text": "Quantified Strategies YouTube 'A 2-Rule Trading Strategy With Impressive Results' (2026-06-15, video Ui2KB9r2GhQ).",
+  "source": "https://youtube.com/watch?v=Ui2KB9r2GhQ",
+  "reason": "Rules stated only inside the video; YouTube watch pages return truncated content to WebFetch and the companion site (quantifiedstrategies.com) is bot-verification-blocked \u2014 exact parameterization unrecoverable."
+ },
+ {
+  "text": "Financial Wisdom (same Aug 2025 post as the 225-SMA claim): monthly TQQQ/TLT rotation by 3-month relative strength; claimed 7,471% vs 1,142% QQQ B&H over 15 years, CAGR 33.1%.",
+  "source": "https://www.financialwisdomtv.com/post/qqq-trading-strategy-that-beats-the-market-proven-backtest-results",
+  "reason": "Cross-sectional two-asset relative-strength rotation \u2014 not expressible as a single-asset threshold rule."
+ },
+ {
+  "text": "Financial Wisdom (same post): seasonal system \u2014 hold Nov-June, cash July-Oct, entries/exits refined with unspecified MACD crossovers; claimed 13.1% annual, 84.9% win rate since 1971.",
+  "source": "https://www.financialwisdomtv.com/post/qqq-trading-strategy-that-beats-the-market-proven-backtest-results",
+  "reason": "Calendar-seasonality rule (plus unparameterized MACD) \u2014 seasonality not in the indicator whitelist."
+ },
+ {
+  "text": "Quantifiable Edges 'Memorial Week History And The One Day That's Been Consistent' (2026-05-25): Thursday of Memorial Day week ~70% historical win rate.",
+  "source": "https://quantifiableedges.com/blog/",
+  "reason": "Calendar/day-of-week seasonality \u2014 not expressible in the indicator vocabulary (read via blog index; full post not fetched)."
+ }
+]

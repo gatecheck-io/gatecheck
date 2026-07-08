@@ -1,6 +1,6 @@
 """Statistical-significance primitives: IC, permutation nulls, multi-seed Sharpe CIs.
 
-Lineage: extracted 2026-07-02 from the market_state research program
+Lineage: extracted 2026-07-02 from the source research program
 (``market_os/evaluation/significance.py``, post-audit), including the
 2026-07-02 small-n Student-t CI repair (see change log at the bottom of this
 docstring). These are the small, dependency-light statistics that turn a

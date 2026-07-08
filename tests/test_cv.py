@@ -1,6 +1,6 @@
 """Tests for purged + embargoed walk-forward CV (gatecheck.cv).
 
-Ported 2026-07-02 from market_state ``tests/test_evaluation_cv.py``.
+Ported 2026-07-02 from the source program ``tests/test_evaluation_cv.py``.
 """
 
 import numpy as np
