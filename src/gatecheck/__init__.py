@@ -19,8 +19,7 @@ calibration itself).
 * Calibration certificates: ``docs/CALIBRATION_CERTIFICATES.md``.
 * Full adversarial audit reports of the source program: available on request.
 
-Name confirmed 2026-07-02; the PyPI name ``gatecheck`` is available. Not yet
-published (publication is an owner-gated launch step).
+Not yet on PyPI; install from source (``pip install -e .``). A release is planned.
 
 Modules
 -------

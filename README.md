@@ -10,7 +10,7 @@ gates *with* their calibration certificates: measured fire rates on planted trut
 and planted nulls, with binomial confidence intervals, reproducible from a seed.
 Tests for the tests.
 
-> The PyPI name `gatecheck` is available; not yet published (owner-gated launch step).
+> Not yet on PyPI — install from source (`pip install -e .`). A PyPI release is planned.
 
 ## Track record
 

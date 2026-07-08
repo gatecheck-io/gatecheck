@@ -46,6 +46,5 @@ No upstream code is imported; lineage is recorded per-module in docstrings.
 
 - Worlds are stylized daily-bar synthetics; certification on them is necessary,
   not sufficient.
-- Name confirmed `gatecheck` (2026-07-02); PyPI name available; not yet published
-  (owner-gated launch step).
+- Not yet released to PyPI; install from source (`pip install -e .`).
 - Provenance links resolve once the GitHub org is created at launch.
