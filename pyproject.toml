@@ -34,10 +34,10 @@ dependencies = ["numpy>=1.23"]
 test = ["pytest>=7"]
 
 [project.urls]
-# Canonical URLs — the GitHub org + Substack are created at launch (see the
-# gatecheck launch playbook); the PyPI name `gatecheck` is confirmed available.
-Homepage = "https://github.com/gatecheck/gatecheck"
-Source = "https://github.com/gatecheck/gatecheck"
+# GitHub org slug is `gatecheck-io` (the `gatecheck` org handle was taken); the
+# public brand + the PyPI name are still `gatecheck`.
+Homepage = "https://github.com/gatecheck-io/gatecheck"
+Source = "https://github.com/gatecheck-io/gatecheck"
 Newsletter = "https://gatecheck.substack.com"
 
 [tool.setuptools.packages.find]
