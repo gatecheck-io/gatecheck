@@ -6,5 +6,5 @@ dist/
 .pytest_cache/
 .venv/
 
-# internal launch playbook — not for the public repo (kept in OneDrive)
+# internal notes, not part of the library
 LAUNCH.md
