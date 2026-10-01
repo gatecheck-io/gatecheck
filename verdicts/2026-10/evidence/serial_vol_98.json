@@ -1,0 +1,36 @@
+{
+  "world": {
+    "id": "serial_vol_98",
+    "kind": "null",
+    "model": "log_vol",
+    "mu": 0.0,
+    "sigma": 0.045,
+    "phi": 0.98,
+    "log_vol_sd": 0.5
+  },
+  "attempted": 1000,
+  "available": 598,
+  "unavailable_reasons": {
+    "too_few_events": 380,
+    "event_outcome_boundary": 12,
+    "too_many_empty_bootstrap_draws": 10
+  },
+  "rejections_all_attempts": {
+    "count": 49,
+    "denominator": 1000,
+    "rate": 0.049,
+    "ci_low": 0.03646705917195328,
+    "ci_high": 0.06426605314016967
+  },
+  "rejections_available": {
+    "count": 49,
+    "denominator": 598,
+    "rate": 0.08193979933110368,
+    "ci_low": 0.061232304364421314,
+    "ci_high": 0.10688315780700026
+  },
+  "null_gate_pass": false,
+  "oracle_population_approximation": null,
+  "median_events": 12.0,
+  "median_baseline_rate": 0.502435064935065
+}

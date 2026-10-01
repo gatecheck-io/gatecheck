@@ -100,3 +100,10 @@ def test_world_seeds_are_schedule_independent_and_plant_is_forward_only():
 def test_invalid_series_is_not_silently_cleaned():
     with pytest.raises(ValueError):
         outcome_rows([0]*15+[float('nan')])
+
+
+def test_independent_long_world_check_uses_finite_forward_products():
+    from verify_calibration import direct_rows
+    with np.errstate(over='raise',invalid='raise'):
+        e,y,total = direct_rows(np.full(250000,.11),plan())
+    assert total==250000 and e.all() and y.all() and len(y)==249988

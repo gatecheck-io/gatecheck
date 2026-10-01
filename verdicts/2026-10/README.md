@@ -5,8 +5,11 @@ The [study protocol](PROTOCOL.md) fixes the question separately from the
 [METHOD.md](METHOD.md) and [calibration_plan.json](calibration_plan.json) fix the
 first candidate's assumptions, seeds, counts and rejection rule.
 
-The next operation is an offline synthetic calibration, not a new market verdict.
-Its frozen commit and exact file hashes will be retained with the results.
+The first candidate [failed calibration](CALIBRATION.md). Four of six declared
+zero-effect worlds failed the false-alarm gate, and no tested alternative
+demonstrated 80% detection. No market p-value was evaluated. The frozen commit,
+raw draws, independently checked results and exact file hashes are retained in
+[evidence](evidence/).
 
 ## Reproduce the calibration
 
@@ -29,3 +32,18 @@ each available test. Null false-alarm rates are reported using all attempts and
 available-test denominators. Alternative rates include unavailable attempts,
 with availability and intervention strengths reported separately. Results do
 not certify assumptions outside the declared worlds.
+
+## Verify the published results
+
+On the current checkout:
+
+```text
+python verdicts/2026-10/verify_calibration.py --evidence verdicts/2026-10/evidence --output verification-replication.json
+python -m pytest -q
+```
+
+The verifier recomputes all draw definitions and count arithmetic, confidence
+intervals and decisions, all four long-world contrasts, and one selected scalar
+bootstrap p-value per world. It reuses the frozen generator as its input source;
+its scope does not include an independent rewrite of every simulation generator
+or every p-value. The final suite has 122 passing tests.

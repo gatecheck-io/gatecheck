@@ -1,0 +1,402 @@
+{
+  "schema_version": 1,
+  "method_id": "monthly-rate-stationary-pairs-v1",
+  "frozen_commit": "aa9aa9e6c2e5658e12015fa609a8783984423d8d",
+  "completed_utc": "2026-10-01T12:30:37.012287+00:00",
+  "python": "3.12.6",
+  "numpy": "1.26.4",
+  "scipy": "1.14.1",
+  "frozen_manifest_sha256": "ca20afb58dc1b70856fee53b09707a5d337ce5e5a7949df80bfb584fc3e5928d",
+  "verdict": "FAIL_ALPHA_GATE",
+  "market_inference_permitted": false,
+  "demonstrated_80pct_power_worlds": [],
+  "worlds": [
+    {
+      "world": {
+        "id": "iid_zero",
+        "kind": "null",
+        "model": "normal",
+        "mu": 0.0,
+        "sigma": 0.045
+      },
+      "attempted": 1000,
+      "available": 604,
+      "unavailable_reasons": {
+        "too_few_events": 386,
+        "event_outcome_boundary": 10
+      },
+      "rejections_all_attempts": {
+        "count": 37,
+        "denominator": 1000,
+        "rate": 0.037,
+        "ci_low": 0.02618270884399008,
+        "ci_high": 0.05064112305996097
+      },
+      "rejections_available": {
+        "count": 37,
+        "denominator": 604,
+        "rate": 0.061258278145695365,
+        "ci_low": 0.04349454172189262,
+        "ci_high": 0.08345093620159677
+      },
+      "null_gate_pass": false,
+      "oracle_population_approximation": null,
+      "median_events": 10.0,
+      "median_baseline_rate": 0.4967532467532468
+    },
+    {
+      "world": {
+        "id": "iid_drift",
+        "kind": "null",
+        "model": "normal",
+        "mu": 0.006,
+        "sigma": 0.045
+      },
+      "attempted": 1000,
+      "available": 882,
+      "unavailable_reasons": {
+        "event_outcome_boundary": 28,
+        "too_few_events": 90
+      },
+      "rejections_all_attempts": {
+        "count": 50,
+        "denominator": 1000,
+        "rate": 0.05,
+        "ci_low": 0.03733539760466065,
+        "ci_high": 0.06539048791549366
+      },
+      "rejections_available": {
+        "count": 50,
+        "denominator": 882,
+        "rate": 0.05668934240362812,
+        "ci_low": 0.04236510435523073,
+        "ci_high": 0.07405810115223514
+      },
+      "null_gate_pass": true,
+      "oracle_population_approximation": null,
+      "median_events": 14.0,
+      "median_baseline_rate": 0.6801948051948052
+    },
+    {
+      "world": {
+        "id": "iid_high_drift",
+        "kind": "null",
+        "model": "normal",
+        "mu": 0.01,
+        "sigma": 0.045
+      },
+      "attempted": 1000,
+      "available": 902,
+      "unavailable_reasons": {
+        "event_outcome_boundary": 77,
+        "too_few_events": 21
+      },
+      "rejections_all_attempts": {
+        "count": 29,
+        "denominator": 1000,
+        "rate": 0.029,
+        "ci_low": 0.019505937324384635,
+        "ci_high": 0.041384719116444806
+      },
+      "rejections_available": {
+        "count": 29,
+        "denominator": 902,
+        "rate": 0.03215077605321508,
+        "ci_low": 0.02163546707158333,
+        "ci_high": 0.04584915222292427
+      },
+      "null_gate_pass": true,
+      "oracle_population_approximation": null,
+      "median_events": 18.0,
+      "median_baseline_rate": 0.7808441558441559
+    },
+    {
+      "world": {
+        "id": "iid_heavy_tail",
+        "kind": "null",
+        "model": "student",
+        "mu": 0.006,
+        "sigma": 0.045,
+        "df": 5
+      },
+      "attempted": 1000,
+      "available": 911,
+      "unavailable_reasons": {
+        "too_few_events": 61,
+        "event_outcome_boundary": 28
+      },
+      "rejections_all_attempts": {
+        "count": 65,
+        "denominator": 1000,
+        "rate": 0.065,
+        "ci_low": 0.050520309689785874,
+        "ci_high": 0.08210106992138483
+      },
+      "rejections_available": {
+        "count": 65,
+        "denominator": 911,
+        "rate": 0.07135016465422613,
+        "ci_low": 0.05549485757878472,
+        "ci_high": 0.09004092592780114
+      },
+      "null_gate_pass": false,
+      "oracle_population_approximation": null,
+      "median_events": 15.0,
+      "median_baseline_rate": 0.6834415584415584
+    },
+    {
+      "world": {
+        "id": "serial_vol_90",
+        "kind": "null",
+        "model": "log_vol",
+        "mu": 0.0,
+        "sigma": 0.045,
+        "phi": 0.9,
+        "log_vol_sd": 0.5
+      },
+      "attempted": 1000,
+      "available": 804,
+      "unavailable_reasons": {
+        "too_few_events": 192,
+        "too_many_empty_bootstrap_draws": 1,
+        "event_outcome_boundary": 3
+      },
+      "rejections_all_attempts": {
+        "count": 70,
+        "denominator": 1000,
+        "rate": 0.07,
+        "ci_low": 0.054971524919169935,
+        "ci_high": 0.0876162334892851
+      },
+      "rejections_available": {
+        "count": 70,
+        "denominator": 804,
+        "rate": 0.08706467661691543,
+        "ci_low": 0.06849845299162631,
+        "ci_high": 0.10872179461840396
+      },
+      "null_gate_pass": false,
+      "oracle_population_approximation": null,
+      "median_events": 14.0,
+      "median_baseline_rate": 0.5032467532467533
+    },
+    {
+      "world": {
+        "id": "serial_vol_98",
+        "kind": "null",
+        "model": "log_vol",
+        "mu": 0.0,
+        "sigma": 0.045,
+        "phi": 0.98,
+        "log_vol_sd": 0.5
+      },
+      "attempted": 1000,
+      "available": 598,
+      "unavailable_reasons": {
+        "too_few_events": 380,
+        "event_outcome_boundary": 12,
+        "too_many_empty_bootstrap_draws": 10
+      },
+      "rejections_all_attempts": {
+        "count": 49,
+        "denominator": 1000,
+        "rate": 0.049,
+        "ci_low": 0.03646705917195328,
+        "ci_high": 0.06426605314016967
+      },
+      "rejections_available": {
+        "count": 49,
+        "denominator": 598,
+        "rate": 0.08193979933110368,
+        "ci_low": 0.061232304364421314,
+        "ci_high": 0.10688315780700026
+      },
+      "null_gate_pass": false,
+      "oracle_population_approximation": null,
+      "median_events": 12.0,
+      "median_baseline_rate": 0.502435064935065
+    },
+    {
+      "world": {
+        "id": "plant_002",
+        "kind": "alternative",
+        "model": "plant",
+        "mu": 0.006,
+        "sigma": 0.045,
+        "monthly_added_log_drift": 0.002
+      },
+      "attempted": 1000,
+      "available": 865,
+      "unavailable_reasons": {
+        "too_few_events": 70,
+        "event_outcome_boundary": 65
+      },
+      "rejections_all_attempts": {
+        "count": 79,
+        "denominator": 1000,
+        "rate": 0.079,
+        "ci_low": 0.06304120280946005,
+        "ci_high": 0.09748709490740014
+      },
+      "rejections_available": {
+        "count": 79,
+        "denominator": 865,
+        "rate": 0.09132947976878612,
+        "ci_low": 0.07297233633126754,
+        "ci_high": 0.1125239748021542
+      },
+      "null_gate_pass": null,
+      "oracle_population_approximation": {
+        "complete_rows": 249988,
+        "completed_events": 6165,
+        "event_wins": 4477,
+        "total_events": 6165,
+        "censored_events": 0,
+        "event_rate": 0.7261962692619627,
+        "baseline_wins": 171707,
+        "baseline_rate": 0.6868609693265276,
+        "contrast": 0.03933529993543505,
+        "mean_return_contrast": 0.017152196082380278
+      },
+      "median_events": 15.0,
+      "median_baseline_rate": 0.6875
+    },
+    {
+      "world": {
+        "id": "plant_005",
+        "kind": "alternative",
+        "model": "plant",
+        "mu": 0.006,
+        "sigma": 0.045,
+        "monthly_added_log_drift": 0.005
+      },
+      "attempted": 1000,
+      "available": 795,
+      "unavailable_reasons": {
+        "event_outcome_boundary": 152,
+        "too_few_events": 53
+      },
+      "rejections_all_attempts": {
+        "count": 163,
+        "denominator": 1000,
+        "rate": 0.163,
+        "ci_low": 0.14062554035964026,
+        "ci_high": 0.18737814378449608
+      },
+      "rejections_available": {
+        "count": 163,
+        "denominator": 795,
+        "rate": 0.2050314465408805,
+        "ci_low": 0.17747467123927144,
+        "ci_high": 0.23479499150977462
+      },
+      "null_gate_pass": null,
+      "oracle_population_approximation": {
+        "complete_rows": 249988,
+        "completed_events": 6305,
+        "event_wins": 5072,
+        "total_events": 6305,
+        "censored_events": 0,
+        "event_rate": 0.8044409199048375,
+        "baseline_wins": 176254,
+        "baseline_rate": 0.7050498423924348,
+        "contrast": 0.09939107751240261,
+        "mean_return_contrast": 0.04852602762798759
+      },
+      "median_events": 15.0,
+      "median_baseline_rate": 0.7094155844155844
+    },
+    {
+      "world": {
+        "id": "plant_010",
+        "kind": "alternative",
+        "model": "plant",
+        "mu": 0.006,
+        "sigma": 0.045,
+        "monthly_added_log_drift": 0.01
+      },
+      "attempted": 1000,
+      "available": 562,
+      "unavailable_reasons": {
+        "too_few_events": 41,
+        "event_outcome_boundary": 397
+      },
+      "rejections_all_attempts": {
+        "count": 224,
+        "denominator": 1000,
+        "rate": 0.224,
+        "ci_low": 0.19850267579372766,
+        "ci_high": 0.25113318583854016
+      },
+      "rejections_available": {
+        "count": 224,
+        "denominator": 562,
+        "rate": 0.398576512455516,
+        "ci_low": 0.3578338093764884,
+        "ci_high": 0.4403912032823692
+      },
+      "null_gate_pass": null,
+      "oracle_population_approximation": {
+        "complete_rows": 249988,
+        "completed_events": 6828,
+        "event_wins": 6125,
+        "total_events": 6828,
+        "censored_events": 0,
+        "event_rate": 0.8970415934387815,
+        "baseline_wins": 181305,
+        "baseline_rate": 0.7252548122309871,
+        "contrast": 0.17178678120779445,
+        "mean_return_contrast": 0.10405288023492618
+      },
+      "median_events": 17.0,
+      "median_baseline_rate": 0.7288961038961039
+    },
+    {
+      "world": {
+        "id": "changing_drift",
+        "kind": "sensitivity",
+        "model": "regime",
+        "mu": 0.006,
+        "sigma": 0.045,
+        "drift_amplitude": 0.006,
+        "regime_months": 120
+      },
+      "attempted": 1000,
+      "available": 903,
+      "unavailable_reasons": {
+        "event_outcome_boundary": 50,
+        "too_few_events": 47
+      },
+      "rejections_all_attempts": {
+        "count": 94,
+        "denominator": 1000,
+        "rate": 0.094,
+        "ci_low": 0.07662899292737448,
+        "ci_high": 0.11380243871878806
+      },
+      "rejections_available": {
+        "count": 94,
+        "denominator": 903,
+        "rate": 0.10409745293466224,
+        "ci_low": 0.08494267971243598,
+        "ci_high": 0.12587797116192906
+      },
+      "null_gate_pass": null,
+      "oracle_population_approximation": {
+        "complete_rows": 249988,
+        "completed_events": 6187,
+        "event_wins": 4426,
+        "total_events": 6187,
+        "censored_events": 0,
+        "event_rate": 0.7153709390657831,
+        "baseline_wins": 164398,
+        "baseline_rate": 0.6576235659311647,
+        "contrast": 0.05774737313461842,
+        "mean_return_contrast": 0.02681455815762418
+      },
+      "median_events": 16.0,
+      "median_baseline_rate": 0.6834415584415584
+    }
+  ],
+  "draws_sha256": "8fd7e3b4f93923f507660c33f473e5c4fa8008f5d0c7d0ad8d90b8daae09c8ab"
+}

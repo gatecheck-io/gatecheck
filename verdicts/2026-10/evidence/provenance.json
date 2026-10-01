@@ -1,0 +1,23 @@
+{
+  "frozen_commit": "aa9aa9e6c2e5658e12015fa609a8783984423d8d",
+  "completed_utc": "2026-10-01T12:30:37.012287+00:00",
+  "verification_utc": "2026-10-01T12:32:02.098544+00:00",
+  "tests_passed": 122,
+  "files": {
+    "calibration.json": "ca71226b345d880134feb68fab0a4351cd7e9ae3a1ebe743a91e0b698f80e746",
+    "changing_drift.json": "956a875df2cb6806cc4c6a09c18fe805b02ddef7339e6fee28f6447e00f99458",
+    "iid_drift.json": "c307b0fa33d9363c70217b7eaa9108c75b835851ff1b1bbd408be10af1fbd853",
+    "iid_heavy_tail.json": "71ca878e9766ec4c4b19cc52af61f0a27addb301d26475a14d88f58eb7c68a0c",
+    "iid_high_drift.json": "744ce166bae56ae898db2ac5069cc217ca069e5f9703b18a15c3900ba228c5ef",
+    "iid_zero.json": "354ad259a207c6fe438b8c2629718470ea3f7c9825c338f00f49eb2b3b2536f0",
+    "plant_002.json": "ad436df245f07f58873014ec4a0b3d53fe3a34035ee9fbf60da06f71cf90859d",
+    "plant_005.json": "c4a47aaa909e124fe78429052fb7da5908a89764cdb6ad383b51a9c79dd7f5be",
+    "plant_010.json": "685a1b0c014e9d532d509637d09247e759de150bcaa9eeeef09447c690203169",
+    "serial_vol_90.json": "5e9de929a4a345549d7348c3418d49d813565a883c1c657eb4d7df5686df1a49",
+    "serial_vol_98.json": "a1fefbdc3d785f482c85307de76f1a6a8928965dd4c27a0fd02fe9c374846766",
+    "verification.json": "9a4302a062e9ad68988ddc117b6f7678927d738c91b48902847aa21043e9a2ee",
+    "draws.csv": "8fd7e3b4f93923f507660c33f473e5c4fa8008f5d0c7d0ad8d90b8daae09c8ab"
+  },
+  "scope": "Synthetic calibration only; no new market inference or social publication.",
+  "verification_code_sha256": "0b9cacb771bf13195cc77c18c3cebf68694f839f21b82138a34aa4a9ca6b7754"
+}

@@ -12,6 +12,18 @@ Tests for the tests.
 
 > Not yet on PyPI — install from source (`pip install -e .`). A PyPI release is planned.
 
+## Current research record
+
+The July benchmark's blanket "13 of 14 fail" conclusion was withdrawn after
+coding and source-mapping errors were found. The [source audit and corrected
+receipts](verdicts/2026-07/reproduction/CLAIM_AUDIT.md) distinguish reproduced
+source statistics from diagnostic trading proxies.
+
+The next calendar-month study's [first inferential candidate failed
+calibration](verdicts/2026-10/CALIBRATION.md) against known synthetic answers.
+Its frozen method, all simulation draws and independent result checks are
+published. No new significance verdict was issued for the market claim.
+
 ## Track record
 
 This library was not designed on a whiteboard. It is the extracted statistical

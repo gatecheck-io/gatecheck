@@ -1,0 +1,46 @@
+{
+  "world": {
+    "id": "changing_drift",
+    "kind": "sensitivity",
+    "model": "regime",
+    "mu": 0.006,
+    "sigma": 0.045,
+    "drift_amplitude": 0.006,
+    "regime_months": 120
+  },
+  "attempted": 1000,
+  "available": 903,
+  "unavailable_reasons": {
+    "event_outcome_boundary": 50,
+    "too_few_events": 47
+  },
+  "rejections_all_attempts": {
+    "count": 94,
+    "denominator": 1000,
+    "rate": 0.094,
+    "ci_low": 0.07662899292737448,
+    "ci_high": 0.11380243871878806
+  },
+  "rejections_available": {
+    "count": 94,
+    "denominator": 903,
+    "rate": 0.10409745293466224,
+    "ci_low": 0.08494267971243598,
+    "ci_high": 0.12587797116192906
+  },
+  "null_gate_pass": null,
+  "oracle_population_approximation": {
+    "complete_rows": 249988,
+    "completed_events": 6187,
+    "event_wins": 4426,
+    "total_events": 6187,
+    "censored_events": 0,
+    "event_rate": 0.7153709390657831,
+    "baseline_wins": 164398,
+    "baseline_rate": 0.6576235659311647,
+    "contrast": 0.05774737313461842,
+    "mean_return_contrast": 0.02681455815762418
+  },
+  "median_events": 16.0,
+  "median_baseline_rate": 0.6834415584415584
+}

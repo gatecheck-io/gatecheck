@@ -1,0 +1,142 @@
+{
+  "verified_utc": "2026-10-01T12:32:02.098544+00:00",
+  "verdict": "CHECKS_PASSED",
+  "frozen_commit": "aa9aa9e6c2e5658e12015fa609a8783984423d8d",
+  "draws_sha256": "8fd7e3b4f93923f507660c33f473e5c4fa8008f5d0c7d0ad8d90b8daae09c8ab",
+  "calibration_sha256": "ca71226b345d880134feb68fab0a4351cd7e9ae3a1ebe743a91e0b698f80e746",
+  "scope": "All 10000 draw definitions and count arithmetic; all world intervals and gate decisions; all four long-world rate contrasts; one independent scalar bootstrap per world. The frozen generator is reused as the input source; not every bootstrap p-value is independently recomputed.",
+  "worlds": [
+    {
+      "world": "iid_zero",
+      "draws_checked": 1000,
+      "available": 604,
+      "rejections": 37,
+      "null_gate_pass": false
+    },
+    {
+      "world": "iid_drift",
+      "draws_checked": 1000,
+      "available": 882,
+      "rejections": 50,
+      "null_gate_pass": true
+    },
+    {
+      "world": "iid_high_drift",
+      "draws_checked": 1000,
+      "available": 902,
+      "rejections": 29,
+      "null_gate_pass": true
+    },
+    {
+      "world": "iid_heavy_tail",
+      "draws_checked": 1000,
+      "available": 911,
+      "rejections": 65,
+      "null_gate_pass": false
+    },
+    {
+      "world": "serial_vol_90",
+      "draws_checked": 1000,
+      "available": 804,
+      "rejections": 70,
+      "null_gate_pass": false
+    },
+    {
+      "world": "serial_vol_98",
+      "draws_checked": 1000,
+      "available": 598,
+      "rejections": 49,
+      "null_gate_pass": false
+    },
+    {
+      "world": "plant_002",
+      "draws_checked": 1000,
+      "available": 865,
+      "rejections": 79,
+      "null_gate_pass": null
+    },
+    {
+      "world": "plant_005",
+      "draws_checked": 1000,
+      "available": 795,
+      "rejections": 163,
+      "null_gate_pass": null
+    },
+    {
+      "world": "plant_010",
+      "draws_checked": 1000,
+      "available": 562,
+      "rejections": 224,
+      "null_gate_pass": null
+    },
+    {
+      "world": "changing_drift",
+      "draws_checked": 1000,
+      "available": 903,
+      "rejections": 94,
+      "null_gate_pass": null
+    }
+  ],
+  "scalar_bootstrap_spot_checks": [
+    {
+      "world": "iid_zero",
+      "replicate": 0,
+      "p_value": 0.256,
+      "empty_bootstrap_draws": 0
+    },
+    {
+      "world": "iid_drift",
+      "replicate": 0,
+      "p_value": 0.423,
+      "empty_bootstrap_draws": 0
+    },
+    {
+      "world": "iid_high_drift",
+      "replicate": 0,
+      "p_value": 0.547,
+      "empty_bootstrap_draws": 0
+    },
+    {
+      "world": "iid_heavy_tail",
+      "replicate": 0,
+      "p_value": 0.027,
+      "empty_bootstrap_draws": 0
+    },
+    {
+      "world": "serial_vol_90",
+      "replicate": 0,
+      "p_value": 0.091,
+      "empty_bootstrap_draws": 0
+    },
+    {
+      "world": "serial_vol_98",
+      "replicate": 0,
+      "p_value": 0.8465396188565697,
+      "empty_bootstrap_draws": 3
+    },
+    {
+      "world": "plant_002",
+      "replicate": 0,
+      "p_value": 0.84,
+      "empty_bootstrap_draws": 0
+    },
+    {
+      "world": "plant_005",
+      "replicate": 0,
+      "p_value": 0.329,
+      "empty_bootstrap_draws": 0
+    },
+    {
+      "world": "plant_010",
+      "replicate": 2,
+      "p_value": 0.054,
+      "empty_bootstrap_draws": 0
+    },
+    {
+      "world": "changing_drift",
+      "replicate": 0,
+      "p_value": 0.141,
+      "empty_bootstrap_draws": 0
+    }
+  ]
+}
