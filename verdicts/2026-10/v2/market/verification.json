@@ -1,0 +1,35 @@
+{
+  "verified_utc": "2026-10-01T12:53:45.498037+00:00",
+  "verdict": "CHECKS_PASSED",
+  "scope": "All raw calendar predicates, 628 derived ledger rows, 13 source event identities, 12 completed outcomes, matched baseline and mean-return contrast, center interval and full independent scalar drift supremum.",
+  "daily_snapshot_sha256": "cd18f96fbac06771c70bc2c614667116aea5f0de4e63fe4dfb454b03a58a2a02",
+  "market_json_sha256": "161fadb4a164f74f9ba4ca6b93ec6903107214b5aba9760ce1613755c405e07f",
+  "events": 13,
+  "completed_events": 12,
+  "event_wins": 10,
+  "baseline_complete": 616,
+  "baseline_wins": 479,
+  "event_mean_return": 0.16351871798048534,
+  "baseline_mean_return": 0.10166054019219194,
+  "p_value": 0.219,
+  "tail_count": 213,
+  "overlapping_event_pairs": [
+    {
+      "first_trigger": "1974-10",
+      "second_trigger": "1975-01",
+      "shared_monthly_returns": 9
+    },
+    {
+      "first_trigger": "1982-08",
+      "second_trigger": "1982-10",
+      "shared_monthly_returns": 10
+    },
+    {
+      "first_trigger": "2020-04",
+      "second_trigger": "2020-11",
+      "shared_monthly_returns": 5
+    }
+  ],
+  "caveat": "The p-value is conditional on the stated symmetry model and includes drift uncertainty; verification does not establish those assumptions for actual market data or remove historical vendor-revision risk.",
+  "independent_log_returns_float64le_sha256": "76a17c495b5a50bf71c9555f270a2e63b78e0b5ec941f9eca5bcddc2aabc1abb"
+}

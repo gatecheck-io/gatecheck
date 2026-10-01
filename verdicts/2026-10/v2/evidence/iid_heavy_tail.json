@@ -1,0 +1,37 @@
+{
+  "world": {
+    "id": "iid_heavy_tail",
+    "kind": "null",
+    "model": "student",
+    "mu": 0.006,
+    "sigma": 0.045,
+    "df": 5
+  },
+  "attempted": 1000,
+  "available": 1000,
+  "unavailable_reasons": {},
+  "rejections_all_attempts": {
+    "count": 19,
+    "denominator": 1000,
+    "rate": 0.019,
+    "ci_low": 0.011477036993100943,
+    "ci_high": 0.02951240162511291
+  },
+  "rejections_available": {
+    "count": 19,
+    "denominator": 1000,
+    "rate": 0.019,
+    "ci_low": 0.011477036993100943,
+    "ci_high": 0.02951240162511291
+  },
+  "null_gate_pass": true,
+  "oracle_population_approximation": null,
+  "location_coverage": {
+    "count": 997,
+    "denominator": 1000,
+    "rate": 0.997,
+    "ci_low": 0.9912579767613423,
+    "ci_high": 0.9993809000683501
+  },
+  "median_events": 15.0
+}

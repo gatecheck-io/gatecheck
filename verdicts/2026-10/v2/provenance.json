@@ -1,0 +1,31 @@
+{
+  "frozen_commit": "12e7a80afabb514bec85aa33302ed6d85535b40d",
+  "calibration_completed_utc": "2026-10-01T12:53:16.746635+00:00",
+  "market_evaluated_utc": "2026-10-01T12:53:43.238814+00:00",
+  "tests_passed": 132,
+  "files": {
+    "evidence/calibration.json": "027f0a4cda9315eccd896aefd1aa366525b5deb946ae52d1b770d1a51d73e82c",
+    "evidence/changing_drift.json": "f05476d73fa6636b1d61c690c39e3165ee83f8675c34c716705b8cc246d3f920",
+    "evidence/iid_drift.json": "af673c3266569512eaf1bc42fad37d875095397f8c1cbe983e712f10e65319d1",
+    "evidence/iid_heavy_tail.json": "6a5cb33c87cf840010f286ffab8d8dcd476c7d75c6a86e20ffc5f511a5935835",
+    "evidence/iid_high_drift.json": "15a83a7ee212c7caf76cc296f9b16e91bf38403473d50e95b7a3dac527839e8c",
+    "evidence/iid_zero.json": "2632ecffcacb0e7dd24558703a0544ff27a9dbe97c3fb2efb4d52a05416a15bb",
+    "evidence/plant_002.json": "0810d953bdfa8b10c5101698ff8829576d5197f279fd8e5b8bc1c7a0dc0f1a74",
+    "evidence/plant_005.json": "50e57adc4cad99c65d3c11ae94a7a9bbed9ee3f7d6975478f61a109062ca278f",
+    "evidence/plant_010.json": "10c69487974a907bd0b01685a5a3c68ea7b2d1868b2e1d1437ad224c0a5114bc",
+    "evidence/plant_020.json": "cb014797d5cdeb89635e1ee0bf160cfc99fb5b3fa9b5adf9be533850c17bd09a",
+    "evidence/serial_vol_90.json": "96d233156200edfaa73db3d6fc0a62477c5faa7e4d157d0d81c24f69e11450d7",
+    "evidence/serial_vol_98.json": "7b376757f0e85593bde2bb201efdd188e6c281f939ad1ee62e960ba58a609c08",
+    "evidence/verification.json": "4781d6274aebf41c52ffb9bb1d76e51313ce16f6cbb8c8c5d251048b4c9df2c3",
+    "evidence/draws.csv": "7b65f259c6198c4095e467ff4ee2f9b6e0a95f68ca7e05da3181d889b3c48b02",
+    "market/market.json": "161fadb4a164f74f9ba4ca6b93ec6903107214b5aba9760ce1613755c405e07f",
+    "market/verification.json": "b9b31445a9f82f91882c0c3e3f5db82acd6feeaa4de820f82f22db4cd9e4f9a4",
+    "market/events.csv": "de6769843884921ecdfacca4378c24c41531c847db6a2e2869ff1ebc3b04d487",
+    "market/monthly_window_ledger.csv": "8f70b01a324406fa9190b8a2639bdee901e925131be56f914485f9a03d56ce9f"
+  },
+  "verification_code": {
+    "verify_results.py": "71752105c57e8499551781359c669e6a5b829a137a416bc31944c1494f9abb43",
+    "verify_market.py": "45049bdc12f49fbc76cc49b1f8da40b10adc61ac9ae13857aa1426288470f116"
+  },
+  "scope": "Fresh synthetic calibration and one fixed historical market evaluation; no new social publication."
+}

@@ -101,3 +101,36 @@ def test_nuisance_adjustment_is_applied_and_seeds_are_deterministic():
     assert a==b
     if a['randomization_p_supremum'] is not None:
         assert a['p_value']==min(1,a['randomization_p_supremum']+.005)
+
+
+def test_independent_scalar_verifier_matches_exhaustive_rational_sweep():
+    from verify_results import scalar_supremum
+    rng=np.random.default_rng(17)
+    r=rng.normal(.01,.15,20)
+    signs=rng.integers(0,2,(7,20),dtype=np.int8)*2-1
+    expected=rational_supremum(r,signs,3,.1,-.05,.07,(3,2,9))
+    assert scalar_supremum(r,signs,3,.1,-.05,.07,(3,2,9))==expected
+
+
+def test_monthly_snapshot_checks_hash_and_censors_last_twelve_months(tmp_path):
+    import calendar
+    import csv
+    import hashlib
+    from market_evaluation import monthly_snapshot
+    path=tmp_path/'index.csv'
+    rows=[]
+    price=100.
+    for key in range(1973*12+11,2026*12+4):
+        year,month0=divmod(key,12)
+        month=month0+1
+        price*=1.01
+        rows.append({'date':f'{year:04d}-{month:02d}-{calendar.monthrange(year,month)[1]:02d}','close':price})
+    with path.open('w',newline='') as f:
+        writer=csv.DictWriter(f,fieldnames=['date','close']);writer.writeheader();writer.writerows(rows)
+    cfg={'market_daily_csv_sha256':hashlib.sha256(path.read_bytes()).hexdigest()}
+    logs,ledger=monthly_snapshot(path,cfg)
+    assert len(logs)==628 and sum(r['complete'] for r in ledger)==616
+    assert ledger[-12]['month']=='2025-05' and ledger[-12]['positive_outcome'] is None
+    assert ledger[0]['forward_end_month']=='1975-01'
+    with pytest.raises(ValueError,match='hash'):
+        monthly_snapshot(path,{'market_daily_csv_sha256':'wrong'})

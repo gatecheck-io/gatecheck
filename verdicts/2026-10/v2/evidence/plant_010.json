@@ -1,0 +1,42 @@
+{
+  "world": {
+    "id": "plant_010",
+    "kind": "alternative",
+    "model": "plant",
+    "mu": 0.006,
+    "sigma": 0.045,
+    "monthly_added_log_drift": 0.01
+  },
+  "attempted": 1000,
+  "available": 1000,
+  "unavailable_reasons": {},
+  "rejections_all_attempts": {
+    "count": 201,
+    "denominator": 1000,
+    "rate": 0.201,
+    "ci_low": 0.17657133522888876,
+    "ci_high": 0.22720259510118568
+  },
+  "rejections_available": {
+    "count": 201,
+    "denominator": 1000,
+    "rate": 0.201,
+    "ci_low": 0.17657133522888876,
+    "ci_high": 0.22720259510118568
+  },
+  "null_gate_pass": null,
+  "oracle_population_approximation": {
+    "complete_rows": 249988,
+    "completed_events": 6919,
+    "event_wins": 6118,
+    "total_events": 6919,
+    "censored_events": 0,
+    "event_rate": 0.884231825408296,
+    "baseline_wins": 181482,
+    "baseline_rate": 0.7259628462166184,
+    "contrast": 0.1582689791916776,
+    "mean_return_contrast": 0.09690350343781484
+  },
+  "location_coverage": null,
+  "median_events": 17.0
+}

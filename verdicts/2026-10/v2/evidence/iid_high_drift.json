@@ -1,0 +1,36 @@
+{
+  "world": {
+    "id": "iid_high_drift",
+    "kind": "null",
+    "model": "normal",
+    "mu": 0.01,
+    "sigma": 0.045
+  },
+  "attempted": 1000,
+  "available": 1000,
+  "unavailable_reasons": {},
+  "rejections_all_attempts": {
+    "count": 7,
+    "denominator": 1000,
+    "rate": 0.007,
+    "ci_low": 0.0028188587596180152,
+    "ci_high": 0.014369194979269544
+  },
+  "rejections_available": {
+    "count": 7,
+    "denominator": 1000,
+    "rate": 0.007,
+    "ci_low": 0.0028188587596180152,
+    "ci_high": 0.014369194979269544
+  },
+  "null_gate_pass": true,
+  "oracle_population_approximation": null,
+  "location_coverage": {
+    "count": 994,
+    "denominator": 1000,
+    "rate": 0.994,
+    "ci_low": 0.9869865767290255,
+    "ci_high": 0.9977950175148487
+  },
+  "median_events": 18.0
+}

@@ -24,6 +24,12 @@ calibration](verdicts/2026-10/CALIBRATION.md) against known synthetic answers.
 Its frozen method, all simulation draws and independent result checks are
 published. No new significance verdict was issued for the market claim.
 
+The [replacement candidate](verdicts/2026-10/v2/CALIBRATION.md) passed the
+declared false-alarm gate with fresh seeds, while showing limited detection.
+Its [fixed market evaluation](verdicts/2026-10/v2/MARKET_RESULT.md) reproduced
+the historical count and did not reject its stated model (p=.219). Predictive
+advantage remains unresolved; this is not proof that an advantage is absent.
+
 ## Track record
 
 This library was not designed on a whiteboard. It is the extracted statistical

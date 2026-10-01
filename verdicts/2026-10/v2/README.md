@@ -11,6 +11,12 @@ counts, null gate, and the subsequent market-data hash and evaluation seed.
 The implementation is committed before any certification run. Failed versions
 and weak detection limits are retained without changing their thresholds.
 
+The [completed calibration](CALIBRATION.md) passed all six declared false-alarm
+gates. Detection remains limited; no tested alternative demonstrated 80% power.
+The [market evaluation](MARKET_RESULT.md) reproduced the source statistic and
+gave p=.219 under the stated model. Predictive advantage and absence of advantage
+remain unestablished. All 132 project tests pass.
+
 ## Reproduce
 
 From the repository root, on the frozen commit named by the calibration result:
@@ -39,3 +45,25 @@ instructions are in the prior reproduction package. Evaluation publishes
 derived event and eligibility/outcome ledgers, with the original calendar
 definitions, censoring, source-count checks and model limits. No new inference
 should be described as proof of absence, causality or a trading edge.
+
+An exact market p-value rerun requires the owner-held daily snapshot with the
+recorded hash. A new vendor download may differ because historical data can be
+revised; the public derived ledger does not contain the full return magnitudes
+needed for sign randomization. The synthetic calibration is fully reproducible
+from the public code. This market-data availability limit is distinct from its
+inferential assumptions and detection limits.
+
+## Independent checks on the current checkout
+
+```text
+python verdicts/2026-10/v2/verify_results.py --evidence verdicts/2026-10/v2/evidence --output calibration-verification-replication.json
+python verdicts/2026-10/v2/verify_market.py --snapshot verdicts/2026-07/reproduction/data/audit_index_2026-10-01/^GSPC.csv --market verdicts/2026-10/v2/market --output market-verification-replication.json
+python -m pytest -q
+```
+
+The simulation verifier checks every draw definition/count and decision,
+world intervals and five long-world contrasts, and one whole scalar drift
+supremum per world. It reuses the frozen generators as selected input sources;
+not every simulated p-value is independently recomputed. The market verifier
+checks every calendar predicate, all derived ledger rows, source event counts,
+matched baseline, mean-return arithmetic and the whole scalar market p-value.
