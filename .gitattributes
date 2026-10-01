@@ -1,0 +1,2 @@
+# Recovery hashes identify exact bytes, including original line endings.
+verdicts/2026-07/reproduction/** -text whitespace=cr-at-eol

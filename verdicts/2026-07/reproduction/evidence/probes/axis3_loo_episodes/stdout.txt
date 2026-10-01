@@ -1,0 +1,23 @@
+episodes:
+  ep0: 2015-10-28 -> 2017-03-14  len  345  SPY over hold +13.4%
+  ep1: 2019-01-25 -> 2020-02-04  len  258  SPY over hold +23.8%
+  ep2: 2020-04-13 -> 2021-12-02  len  415  SPY over hold +65.9%
+  ep3: 2022-08-10 -> 2023-11-15  len  319  SPY over hold +7.1%
+  ep4: 2023-11-27 -> 2024-11-27  len  253  SPY over hold +31.8%
+  ep5: 2025-05-06 -> 2026-07-02  len  290  SPY over hold +33.3%
+
+leave-one-episode-out (strategy minus block k vs exposure-matched null of remaining blocks):
+  drop ep0 (2015-10-28): net Sharpe +1.169 | null mean +0.583 sd 0.176 | P(null >= strat) = 0.001
+  drop ep1 (2019-01-25): net Sharpe +1.070 | null mean +0.586 sd 0.165 | P(null >= strat) = 0.005
+  drop ep2 (2020-04-13): net Sharpe +0.926 | null mean +0.566 sd 0.189 | P(null >= strat) = 0.052
+  drop ep3 (2022-08-10): net Sharpe +1.298 | null mean +0.578 sd 0.183 | P(null >= strat) = 0.001
+  drop ep4 (2023-11-27): net Sharpe +1.020 | null mean +0.579 sd 0.164 | P(null >= strat) = 0.014
+  drop ep5 (2025-05-06): net Sharpe +1.023 | null mean +0.581 sd 0.170 | P(null >= strat) = 0.014
+
+leave-one-episode-out in-hold mean vs exposure-matched null in-hold mean:
+  drop ep0: in-hold mean +9.24 bp | P(null >= actual) = 0.005
+  drop ep1: in-hold mean +8.22 bp | P(null >= actual) = 0.010
+  drop ep2: in-hold mean +7.00 bp | P(null >= actual) = 0.126
+  drop ep3: in-hold mean +9.40 bp | P(null >= actual) = 0.003
+  drop ep4: in-hold mean +7.81 bp | P(null >= actual) = 0.034
+  drop ep5: in-hold mean +7.91 bp | P(null >= actual) = 0.022

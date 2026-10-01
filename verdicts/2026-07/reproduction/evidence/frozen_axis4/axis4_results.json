@@ -1,0 +1,632 @@
+{
+ "baseline": {
+  "net": 1.186354419255915,
+  "bh": 0.7301809746779374,
+  "dsr": 0.977329270619735,
+  "oos": 1.321055689342427,
+  "verdict": "TRADABLE"
+ },
+ "grid": [
+  {
+   "window": 19,
+   "threshold": 0.08,
+   "horizon": 189,
+   "net_sharpe": 0.8197274676638474,
+   "bh": 0.7301809746779374,
+   "dsr": 0.7929245714262458,
+   "discounted": 0.649982050983678,
+   "oos": 0.9296549284226701,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 19,
+   "threshold": 0.08,
+   "horizon": 252,
+   "net_sharpe": 0.9452717641144512,
+   "bh": 0.7301809746779374,
+   "dsr": 0.8906637842789846,
+   "discounted": 0.8419193265982489,
+   "oos": 1.0493657043468272,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 19,
+   "threshold": 0.08,
+   "horizon": 315,
+   "net_sharpe": 0.7635328252822682,
+   "bh": 0.7301809746779374,
+   "dsr": 0.733770114114654,
+   "discounted": 0.560257568337654,
+   "oos": 0.8885445127149985,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 19,
+   "threshold": 0.09,
+   "horizon": 189,
+   "net_sharpe": 0.8872589411271619,
+   "bh": 0.7301809746779374,
+   "dsr": 0.8480426450336764,
+   "discounted": 0.7524334192632574,
+   "oos": 1.123366546441717,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 19,
+   "threshold": 0.09,
+   "horizon": 252,
+   "net_sharpe": 1.053021107726957,
+   "bh": 0.7301809746779374,
+   "dsr": 0.9413834836687793,
+   "discounted": 0.9912966787687596,
+   "oos": 1.2414603295056144,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 19,
+   "threshold": 0.09,
+   "horizon": 315,
+   "net_sharpe": 0.7593928622020609,
+   "bh": 0.7301809746779374,
+   "dsr": 0.7279177560503599,
+   "discounted": 0.5527755482147844,
+   "oos": 0.9265401448961517,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 19,
+   "threshold": 0.1,
+   "horizon": 189,
+   "net_sharpe": 1.0381238427959887,
+   "bh": 0.7301809746779374,
+   "dsr": 0.9356801189009079,
+   "discounted": 0.971351840661218,
+   "oos": 1.2221731851061852,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 19,
+   "threshold": 0.1,
+   "horizon": 252,
+   "net_sharpe": 1.1005082089983373,
+   "bh": 0.7301809746779374,
+   "dsr": 0.9576037767150362,
+   "discounted": 1.0538508172427081,
+   "oos": 1.3017600210252742,
+   "passed": true,
+   "verdict": "TRADABLE"
+  },
+  {
+   "window": 19,
+   "threshold": 0.1,
+   "horizon": 315,
+   "net_sharpe": 0.8039537544973984,
+   "bh": 0.7301809746779374,
+   "dsr": 0.7731458483820399,
+   "discounted": 0.6215735075808173,
+   "oos": 0.9998538670942547,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 19,
+   "threshold": 0.11,
+   "horizon": 189,
+   "net_sharpe": 0.843012413071433,
+   "bh": 0.7301809746779374,
+   "dsr": 0.81168518529736,
+   "discounted": 0.6842606867118607,
+   "oos": 0.9643656578559225,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 19,
+   "threshold": 0.11,
+   "horizon": 252,
+   "net_sharpe": 1.0211624018956837,
+   "bh": 0.7301809746779374,
+   "dsr": 0.9284523132042275,
+   "discounted": 0.9481005941972326,
+   "oos": 1.1476592312628746,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 19,
+   "threshold": 0.11,
+   "horizon": 315,
+   "net_sharpe": 0.6029596843762293,
+   "bh": 0.7301809746779374,
+   "dsr": 0.5389968685712392,
+   "discounted": 0.3249933817534903,
+   "oos": 0.8242360141903334,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 19,
+   "threshold": 0.12,
+   "horizon": 189,
+   "net_sharpe": 0.8994994626816458,
+   "bh": 0.7301809746779374,
+   "dsr": 0.8524258228950886,
+   "discounted": 0.766756569670092,
+   "oos": 0.8703468867236033,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 19,
+   "threshold": 0.12,
+   "horizon": 252,
+   "net_sharpe": 1.0944821889271854,
+   "bh": 0.7301809746779374,
+   "dsr": 0.9526700347725128,
+   "discounted": 1.0426803849831576,
+   "oos": 1.0378326230858845,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 19,
+   "threshold": 0.12,
+   "horizon": 315,
+   "net_sharpe": 0.6751962702027857,
+   "bh": 0.7301809746779374,
+   "dsr": 0.6283735016798496,
+   "discounted": 0.42427544462849837,
+   "oos": 0.8042615922452918,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 21,
+   "threshold": 0.08,
+   "horizon": 189,
+   "net_sharpe": 1.0005496797603266,
+   "bh": 0.7301809746779374,
+   "dsr": 0.9188363093895983,
+   "discounted": 0.9193413751119229,
+   "oos": 1.103436246839079,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 21,
+   "threshold": 0.08,
+   "horizon": 252,
+   "net_sharpe": 1.1367594669739383,
+   "bh": 0.7301809746779374,
+   "dsr": 0.9674392433275825,
+   "discounted": 1.0997457185747328,
+   "oos": 1.2253020106664103,
+   "passed": true,
+   "verdict": "TRADABLE"
+  },
+  {
+   "window": 21,
+   "threshold": 0.08,
+   "horizon": 315,
+   "net_sharpe": 0.785803645501776,
+   "bh": 0.7301809746779374,
+   "dsr": 0.7558155772498532,
+   "discounted": 0.5939226359299637,
+   "oos": 0.8580841594367333,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 21,
+   "threshold": 0.09,
+   "horizon": 189,
+   "net_sharpe": 1.0183177655263653,
+   "bh": 0.7301809746779374,
+   "dsr": 0.9272854923297741,
+   "discounted": 0.9442712905542712,
+   "oos": 1.1780217575653456,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 21,
+   "threshold": 0.09,
+   "horizon": 252,
+   "net_sharpe": 1.208604499219274,
+   "bh": 0.7301809746779374,
+   "dsr": 0.9809187167571203,
+   "discounted": 1.1855427744410523,
+   "oos": 1.3428233700301127,
+   "passed": true,
+   "verdict": "TRADABLE"
+  },
+  {
+   "window": 21,
+   "threshold": 0.09,
+   "horizon": 315,
+   "net_sharpe": 0.8112128824338093,
+   "bh": 0.7301809746779374,
+   "dsr": 0.7801466799235445,
+   "discounted": 0.632865036941945,
+   "oos": 0.9538788580349431,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 21,
+   "threshold": 0.1,
+   "horizon": 189,
+   "net_sharpe": 1.0389621229963513,
+   "bh": 0.7301809746779374,
+   "dsr": 0.9360527784673395,
+   "discounted": 0.9725233819530603,
+   "oos": 1.2003185917568842,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 21,
+   "threshold": 0.1,
+   "horizon": 252,
+   "net_sharpe": 1.186354419255915,
+   "bh": 0.7301809746779374,
+   "dsr": 0.977329270619735,
+   "discounted": 1.1594588992678827,
+   "oos": 1.321055689342427,
+   "passed": true,
+   "verdict": "TRADABLE"
+  },
+  {
+   "window": 21,
+   "threshold": 0.1,
+   "horizon": 315,
+   "net_sharpe": 0.8236035114073799,
+   "bh": 0.7301809746779374,
+   "dsr": 0.7917566248414338,
+   "discounted": 0.6520935363994604,
+   "oos": 0.9741850325194019,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 21,
+   "threshold": 0.11,
+   "horizon": 189,
+   "net_sharpe": 0.8409307950704342,
+   "bh": 0.7301809746779374,
+   "dsr": 0.80996999669893,
+   "discounted": 0.6811287133072281,
+   "oos": 1.0068232218174142,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 21,
+   "threshold": 0.11,
+   "horizon": 252,
+   "net_sharpe": 0.9152449905457821,
+   "bh": 0.7301809746779374,
+   "dsr": 0.8688438258611046,
+   "discounted": 0.7952049591860079,
+   "oos": 1.0920292953545387,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 21,
+   "threshold": 0.11,
+   "horizon": 315,
+   "net_sharpe": 0.6400243575564803,
+   "bh": 0.7301809746779374,
+   "dsr": 0.5865642285756947,
+   "discounted": 0.3754153935597715,
+   "oos": 0.8326695167681784,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 21,
+   "threshold": 0.12,
+   "horizon": 189,
+   "net_sharpe": 0.8384179856068955,
+   "bh": 0.7301809746779374,
+   "dsr": 0.8073973234678998,
+   "discounted": 0.6769364375263556,
+   "oos": 0.967285535786162,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 21,
+   "threshold": 0.12,
+   "horizon": 252,
+   "net_sharpe": 0.9327100544193366,
+   "bh": 0.7301809746779374,
+   "dsr": 0.8802876491903613,
+   "discounted": 0.8210531411810118,
+   "oos": 1.062168737757417,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 21,
+   "threshold": 0.12,
+   "horizon": 315,
+   "net_sharpe": 0.6105408381932391,
+   "bh": 0.7301809746779374,
+   "dsr": 0.5487698884759357,
+   "discounted": 0.3350464276853081,
+   "oos": 0.830927187079354,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 23,
+   "threshold": 0.08,
+   "horizon": 189,
+   "net_sharpe": 0.6392514842148582,
+   "bh": 0.7301809746779374,
+   "dsr": 0.5854499956626641,
+   "discounted": 0.37424977866094034,
+   "oos": 0.8752438550554791,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 23,
+   "threshold": 0.08,
+   "horizon": 252,
+   "net_sharpe": 0.807728292768502,
+   "bh": 0.7301809746779374,
+   "dsr": 0.7771588173314832,
+   "discounted": 0.627733164733147,
+   "oos": 1.0139346191377796,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 23,
+   "threshold": 0.08,
+   "horizon": 315,
+   "net_sharpe": 0.787231052309437,
+   "bh": 0.7301809746779374,
+   "dsr": 0.7570453621925191,
+   "discounted": 0.5959696171247957,
+   "oos": 0.9684216450515375,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 23,
+   "threshold": 0.09,
+   "horizon": 189,
+   "net_sharpe": 1.0024271044025688,
+   "bh": 0.7301809746779374,
+   "dsr": 0.9198086437663275,
+   "discounted": 0.9220411153751336,
+   "oos": 1.1776020658519282,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 23,
+   "threshold": 0.09,
+   "horizon": 252,
+   "net_sharpe": 1.2382293514041685,
+   "bh": 0.7301809746779374,
+   "dsr": 0.9849385357284921,
+   "discounted": 1.2195798042680621,
+   "oos": 1.382391555818099,
+   "passed": true,
+   "verdict": "TRADABLE"
+  },
+  {
+   "window": 23,
+   "threshold": 0.09,
+   "horizon": 315,
+   "net_sharpe": 0.7971447651182411,
+   "bh": 0.7301809746779374,
+   "dsr": 0.7665997033389479,
+   "discounted": 0.6110909404578388,
+   "oos": 0.9435366957755917,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 23,
+   "threshold": 0.1,
+   "horizon": 189,
+   "net_sharpe": 1.0316361788367265,
+   "bh": 0.7301809746779374,
+   "dsr": 0.9328518851224878,
+   "discounted": 0.9623637541884004,
+   "oos": 1.1909157222665498,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 23,
+   "threshold": 0.1,
+   "horizon": 252,
+   "net_sharpe": 1.1977652801160625,
+   "bh": 0.7301809746779374,
+   "dsr": 0.9791711704892703,
+   "discounted": 1.1728172313026537,
+   "oos": 1.3339138513637945,
+   "passed": true,
+   "verdict": "TRADABLE"
+  },
+  {
+   "window": 23,
+   "threshold": 0.1,
+   "horizon": 315,
+   "net_sharpe": 0.7858293741293734,
+   "bh": 0.7301809746779374,
+   "dsr": 0.755223813372305,
+   "discounted": 0.5934770565899572,
+   "oos": 0.9327267340653382,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 23,
+   "threshold": 0.11,
+   "horizon": 189,
+   "net_sharpe": 1.0211779842374629,
+   "bh": 0.7301809746779374,
+   "dsr": 0.9283374538459958,
+   "discounted": 0.9479977698105927,
+   "oos": 1.1775116882857306,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 23,
+   "threshold": 0.11,
+   "horizon": 252,
+   "net_sharpe": 1.1909161904260936,
+   "bh": 0.7301809746779374,
+   "dsr": 0.9780446126541784,
+   "discounted": 1.1647691641688784,
+   "oos": 1.3266453922888508,
+   "passed": true,
+   "verdict": "TRADABLE"
+  },
+  {
+   "window": 23,
+   "threshold": 0.11,
+   "horizon": 315,
+   "net_sharpe": 0.7825107190091254,
+   "bh": 0.7301809746779374,
+   "dsr": 0.7518554251287599,
+   "discounted": 0.5883349293084176,
+   "oos": 0.9277415601204452,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 23,
+   "threshold": 0.12,
+   "horizon": 189,
+   "net_sharpe": 0.7967757195310438,
+   "bh": 0.7301809746779374,
+   "dsr": 0.7676441516675978,
+   "discounted": 0.611640221288748,
+   "oos": 0.9267514296636925,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 23,
+   "threshold": 0.12,
+   "horizon": 252,
+   "net_sharpe": 0.9203759018732133,
+   "bh": 0.7301809746779374,
+   "dsr": 0.8716183024316331,
+   "discounted": 0.8022164811897134,
+   "oos": 1.0506069036277381,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  },
+  {
+   "window": 23,
+   "threshold": 0.12,
+   "horizon": 315,
+   "net_sharpe": 0.5674297990605974,
+   "bh": 0.7301809746779374,
+   "dsr": 0.4929183353506366,
+   "discounted": 0.2796965519812959,
+   "oos": 0.7808322968624221,
+   "passed": false,
+   "verdict": "NOT_TRADABLE"
+  }
+ ],
+ "n_pass": 7,
+ "rank_net": 5,
+ "rank_disc": 5,
+ "ntrials_sweep": [
+  {
+   "n_trials": 1,
+   "dsr": 0.9999456927804713,
+   "passed": true
+  },
+  {
+   "n_trials": 5,
+   "dsr": 0.9965098461557609,
+   "passed": true
+  },
+  {
+   "n_trials": 10,
+   "dsr": 0.9898874655190748,
+   "passed": true
+  },
+  {
+   "n_trials": 20,
+   "dsr": 0.977329270619735,
+   "passed": true
+  },
+  {
+   "n_trials": 30,
+   "dsr": 0.9664994895677392,
+   "passed": true
+  },
+  {
+   "n_trials": 50,
+   "dsr": 0.9486748951113895,
+   "passed": false
+  },
+  {
+   "n_trials": 75,
+   "dsr": 0.9310013971257829,
+   "passed": false
+  },
+  {
+   "n_trials": 100,
+   "dsr": 0.916526193483923,
+   "passed": false
+  },
+  {
+   "n_trials": 150,
+   "dsr": 0.8934158564368522,
+   "passed": false
+  },
+  {
+   "n_trials": 200,
+   "dsr": 0.8751490329130907,
+   "passed": false
+  },
+  {
+   "n_trials": 300,
+   "dsr": 0.8469082028848612,
+   "passed": false
+  },
+  {
+   "n_trials": 500,
+   "dsr": 0.8075366233831285,
+   "passed": false
+  },
+  {
+   "n_trials": 1000,
+   "dsr": 0.7484556472184807,
+   "passed": false
+  },
+  {
+   "n_trials": 2000,
+   "dsr": 0.68462491415165,
+   "passed": false
+  },
+  {
+   "n_trials": 5000,
+   "dsr": 0.5964881812379033,
+   "passed": false
+  }
+ ],
+ "dsr_crossing": 49
+}

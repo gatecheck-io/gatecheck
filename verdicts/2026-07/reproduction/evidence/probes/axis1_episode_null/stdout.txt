@@ -1,0 +1,31 @@
+bars=2775  window 2015-06-19 .. 2026-07-02
+
+[A] FULL EDGE VERDICT
+    net Sharpe +1.186   timing (de-tilted) +0.683
+    b&h +0.730   IC +0.039   circ-shift p 0.045   significant=True
+    OOS mean +1.321  CI [+0.302,+2.341]
+
+    6 in-market blocks (lens [345, 258, 415, 319, 253, 290]), 6 flat blocks
+
+[B] FLAT-BLOCK (avoided-return) INFERENCE — the actual source of the edge vs B&H
+    flat 2015-06-22 .. 2015-10-28  len=  91  avoided (rel PnL) = +0.0021
+    flat 2017-03-15 .. 2019-01-25  len= 470  avoided (rel PnL) = -0.1328
+    flat 2020-02-05 .. 2020-04-13  len=  47  avoided (rel PnL) = +0.1360
+    flat 2021-12-03 .. 2022-08-10  len= 172  avoided (rel PnL) = +0.0665
+    flat 2023-11-16 .. 2023-11-27  len=   7  avoided (rel PnL) = -0.0107
+    flat 2024-11-29 .. 2025-05-06  len= 107  avoided (rel PnL) = +0.0542
+    mean avoided = +0.0192  sd 0.0910  t(5) = 0.52  p = 0.627
+    95% CI [-0.0763, +0.1147]
+    total rel PnL vs B&H = +0.1154; largest single flat block share = 118%
+
+[C] BLOCK-PLACEMENT BOOTSTRAP (same 6 block lengths, random non-overlapping placement)
+    actual net Sharpe +1.186  vs null mean +0.622 (sd 0.148)  -> p(null >= actual) = 0.002
+    actual mean episode pnl +0.2587 vs null mean +0.1677 (sd 0.0313) -> p = 0.005
+    actual total pnl +1.5494 vs null mean +0.9997 (sd 0.1847) -> p = 0.003
+    null Sharpe quantiles: 50% +0.61  90% +0.82  95% +0.89  99% +1.05
+    b&h Sharpe +0.730; fraction of random placements with Sharpe > b&h: 0.210
+
+[SUMMARY]
+    distinct trigger episodes (gap>21d): 10; contiguous holding blocks: 6
+    in-market 67.8% of bars; edge vs B&H earned on 6 flat stretches
+    flat-block t(5) = 0.52 p = 0.627; placement-null p(Sharpe) = 0.002

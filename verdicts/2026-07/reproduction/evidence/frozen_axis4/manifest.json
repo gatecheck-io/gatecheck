@@ -1,0 +1,19 @@
+{
+  "input_mode": "frozen_undated_SPY_only",
+  "clock": "2026-07-02T23:59:59Z",
+  "probes": [
+    {
+      "probe": "axis4_fragility_multiplicity.py",
+      "sha256": "f4b9648628620af36a6be600d9ad3c0ba81210e63444d8aed4abe86464baa168",
+      "returncode": 0
+    }
+  ],
+  "input_sha256": "1c71900164f71b64b289d9240aa098af3c1197ef0eafa62bba613c62fd9c21f8",
+  "archive_comparison": {
+    "matched": true,
+    "tolerance": 1e-09,
+    "numeric_values_compared": 398,
+    "maximum_absolute_difference": 0.0,
+    "differences": []
+  }
+}

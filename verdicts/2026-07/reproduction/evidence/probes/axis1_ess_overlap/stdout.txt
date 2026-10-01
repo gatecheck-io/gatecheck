@@ -1,0 +1,95 @@
+bars=2775  window 2015-06-19 .. 2026-07-02  (11.04 calendar years)
+
+[0] BENCH REPRODUCTION
+    net Sharpe +1.186  b&h +0.730  DSR 0.977  OOS +1.321  verdict TRADABLE
+
+[a] TRIGGER DAYS: 47 of 2775 bars (1.7%)
+    gap<=  1 bars -> 20 trigger episodes:
+       2015-10-28 .. 2015-10-28  (1 bars of triggers, first mom=+0.111 max mom=+0.111)
+       2016-03-14 .. 2016-03-14  (1 bars of triggers, first mom=+0.107 max mom=+0.107)
+       2019-01-25 .. 2019-01-25  (1 bars of triggers, first mom=+0.134 max mom=+0.134)
+       2019-02-04 .. 2019-02-04  (1 bars of triggers, first mom=+0.114 max mom=+0.114)
+       2020-04-13 .. 2020-04-13  (1 bars of triggers, first mom=+0.111 max mom=+0.111)
+       2020-04-15 .. 2020-04-24  (8 bars of triggers, first mom=+0.158 max mom=+0.252)
+       2020-04-28 .. 2020-05-05  (6 bars of triggers, first mom=+0.127 max mom=+0.153)
+       2020-06-03 .. 2020-06-03  (1 bars of triggers, first mom=+0.101 max mom=+0.101)
+       2020-06-05 .. 2020-06-08  (2 bars of triggers, first mom=+0.123 max mom=+0.123)
+       2020-11-27 .. 2020-11-27  (1 bars of triggers, first mom=+0.113 max mom=+0.113)
+       2020-12-01 .. 2020-12-02  (2 bars of triggers, first mom=+0.121 max mom=+0.121)
+       2022-08-10 .. 2022-08-16  (5 bars of triggers, first mom=+0.103 max mom=+0.130)
+       2022-11-10 .. 2022-11-10  (1 bars of triggers, first mom=+0.107 max mom=+0.107)
+       2022-11-14 .. 2022-11-14  (1 bars of triggers, first mom=+0.105 max mom=+0.105)
+       2023-11-27 .. 2023-11-28  (2 bars of triggers, first mom=+0.102 max mom=+0.108)
+       2025-05-06 .. 2025-05-08  (3 bars of triggers, first mom=+0.106 max mom=+0.138)
+       2025-05-12 .. 2025-05-12  (1 bars of triggers, first mom=+0.111 max mom=+0.111)
+       2025-05-16 .. 2025-05-21  (4 bars of triggers, first mom=+0.130 max mom=+0.154)
+       2026-04-27 .. 2026-04-30  (4 bars of triggers, first mom=+0.109 max mom=+0.126)
+       2026-05-06 .. 2026-05-06  (1 bars of triggers, first mom=+0.113 max mom=+0.113)
+    gap<=  5 bars -> 12 trigger episodes:
+       2015-10-28 .. 2015-10-28  (1 bars of triggers, first mom=+0.111 max mom=+0.111)
+       2016-03-14 .. 2016-03-14  (1 bars of triggers, first mom=+0.107 max mom=+0.107)
+       2019-01-25 .. 2019-01-25  (1 bars of triggers, first mom=+0.134 max mom=+0.134)
+       2019-02-04 .. 2019-02-04  (1 bars of triggers, first mom=+0.114 max mom=+0.114)
+       2020-04-13 .. 2020-05-05  (17 bars of triggers, first mom=+0.111 max mom=+0.252)
+       2020-06-03 .. 2020-06-08  (4 bars of triggers, first mom=+0.101 max mom=+0.123)
+       2020-11-27 .. 2020-12-02  (4 bars of triggers, first mom=+0.113 max mom=+0.121)
+       2022-08-10 .. 2022-08-16  (5 bars of triggers, first mom=+0.103 max mom=+0.130)
+       2022-11-10 .. 2022-11-14  (3 bars of triggers, first mom=+0.107 max mom=+0.107)
+       2023-11-27 .. 2023-11-28  (2 bars of triggers, first mom=+0.102 max mom=+0.108)
+       2025-05-06 .. 2025-05-21  (12 bars of triggers, first mom=+0.106 max mom=+0.154)
+       2026-04-27 .. 2026-05-06  (8 bars of triggers, first mom=+0.109 max mom=+0.126)
+    gap<= 21 bars -> 10 trigger episodes:
+       2015-10-28 .. 2015-10-28  (1 bars of triggers, first mom=+0.111 max mom=+0.111)
+       2016-03-14 .. 2016-03-14  (1 bars of triggers, first mom=+0.107 max mom=+0.107)
+       2019-01-25 .. 2019-02-04  (7 bars of triggers, first mom=+0.134 max mom=+0.134)
+       2020-04-13 .. 2020-06-08  (40 bars of triggers, first mom=+0.111 max mom=+0.252)
+       2020-11-27 .. 2020-12-02  (4 bars of triggers, first mom=+0.113 max mom=+0.121)
+       2022-08-10 .. 2022-08-16  (5 bars of triggers, first mom=+0.103 max mom=+0.130)
+       2022-11-10 .. 2022-11-14  (3 bars of triggers, first mom=+0.107 max mom=+0.107)
+       2023-11-27 .. 2023-11-28  (2 bars of triggers, first mom=+0.102 max mom=+0.108)
+       2025-05-06 .. 2025-05-21  (12 bars of triggers, first mom=+0.106 max mom=+0.154)
+       2026-04-27 .. 2026-05-06  (8 bars of triggers, first mom=+0.109 max mom=+0.126)
+
+[b] IN-MARKET: 1880 of 2774 bars = 67.8%
+    6 contiguous holding blocks (episodes):
+       2015-10-29 .. 2017-03-14  len= 345 bars  sum-pnl=+0.1362  comp=+0.1332  blockSharpe=+0.78
+       2019-01-28 .. 2020-02-04  len= 258 bars  sum-pnl=+0.2205  comp=+0.2375  blockSharpe=+1.80
+       2020-04-14 .. 2021-12-02  len= 415 bars  sum-pnl=+0.5285  comp=+0.6585  blockSharpe=+1.96
+       2022-08-11 .. 2023-11-15  len= 319 bars  sum-pnl=+0.0877  comp=+0.0702  blockSharpe=+0.39
+       2023-11-28 .. 2024-11-27  len= 253 bars  sum-pnl=+0.2829  comp=+0.3170  blockSharpe=+2.32
+       2025-05-07 .. 2026-07-02  len= 290 bars  sum-pnl=+0.2962  comp=+0.3322  blockSharpe=+2.03
+    total strategy net PnL (sum) = +1.5494
+       block 0 share of total PnL: +8.8%
+       block 1 share of total PnL: +14.2%
+       block 2 share of total PnL: +34.1%
+       block 3 share of total PnL: +5.7%
+       block 4 share of total PnL: +18.3%
+       block 5 share of total PnL: +19.1%
+
+[c] EPISODE-LEVEL INFERENCE (unit = contiguous holding block, n=6)
+scipy ok
+    mean episode net return = +0.2587   sd = 0.1552
+    t(5) = 4.08   p = 0.010
+    95% CI on mean episode return: [+0.0957, +0.4216]
+    contrast: bar-level Sharpe +1.19 -> naive bar t = 3.94 (treats 2774 overlapping bars as independent)
+    overlap arithmetic: 2775 bars / 252-bar hold = 11.0 non-overlapping hold-lengths in the whole window
+
+[d] FOLD ANATOMY (purged_walk_forward n=2774, n_splits=5, embargo=5)
+    fold 1: 2017-09-01..2019-11-14  Sharpe +0.95  in-mkt 37%  blocks [1]  block 1 contributes +0.1584 of fold PnL +0.1584 (+100%)
+    fold 2: 2019-11-15..2022-01-28  Sharpe +1.84  in-mkt 85%  blocks [1, 2]  block 2 contributes +0.5285 of fold PnL +0.5896 (+90%)
+    fold 3: 2022-01-31..2024-04-16  Sharpe +0.61  in-mkt 75%  blocks [3, 4]  block 4 contributes +0.1043 of fold PnL +0.1915 (+54%)
+    fold 4: 2024-04-17..2026-07-02  Sharpe +1.88  in-mkt 81%  blocks [4, 5]  block 5 contributes +0.2962 of fold PnL +0.4743 (+62%)
+    fold Sharpes: ['+0.95', '+1.84', '+0.61', '+1.88']
+    NOTE: fold 0 has no train (never emitted) -> the OOS mean is over the 4 emitted folds
+
+[e] ARTICLE-STYLE COUNT: distinct (gap>21d) trigger episodes with a full 252-bar forward window:
+       trigger 2015-10-28: fwd 252-bar return +2.0%
+       trigger 2016-03-14: fwd 252-bar return +17.0%
+       trigger 2019-01-25: fwd 252-bar return +21.7%
+       trigger 2020-04-13: fwd 252-bar return +49.8%
+       trigger 2020-11-27: fwd 252-bar return +27.8%
+       trigger 2022-08-10: fwd 252-bar return +6.1%
+       trigger 2022-11-10: fwd 252-bar return +11.5%
+       trigger 2023-11-27: fwd 252-bar return +32.2%
+       trigger 2025-05-06: fwd 252-bar return +30.9%
+       trigger 2026-04-27: forward window INCOMPLETE (right edge)

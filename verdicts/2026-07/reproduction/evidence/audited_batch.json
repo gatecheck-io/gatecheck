@@ -1,0 +1,2992 @@
+{
+  "reviewed_on": "2026-10-01",
+  "registry_sha256": "f3dd426bbfc0644bedb5f587313348a8d789880a5744e179154baa11c6618935",
+  "status": "Needs revision: claim fidelity and exact original replication remain limited as specified per entry",
+  "original_entries_accounted_for": 14,
+  "source_claim_failure_count": null,
+  "count_note": "No aggregate rejected-claim count: descriptions, benchmark extensions, statistical nulls and incompletely specified strategies are different questions",
+  "environment": {
+    "python": "3.12.6",
+    "numpy": "1.26.4"
+  },
+  "snapshots": {
+    "SPY": {
+      "asset": "SPY",
+      "first_date": "1993-01-29",
+      "last_date": "2026-07-02",
+      "rows": 8413,
+      "csv_sha256": "0692603401f6ae5871968abd3ba5ebcbe8e7c0d7c30193b2633a61e55f5c3538",
+      "acquired_utc": "2026-10-01T11:28:40.876716+00:00",
+      "provenance": "New acquisition of historical bars; not the original July download"
+    },
+    "QQQ": {
+      "asset": "QQQ",
+      "first_date": "1999-03-10",
+      "last_date": "2026-07-02",
+      "rows": 6871,
+      "csv_sha256": "c4a5fba4f810895691c6100d3178464a23a480b4b70fbe1450db0031b73b083e",
+      "acquired_utc": "2026-10-01T11:28:41.233668+00:00",
+      "provenance": "New acquisition of historical bars; not the original July download"
+    },
+    "NVDA": {
+      "asset": "NVDA",
+      "first_date": "1999-01-22",
+      "last_date": "2026-07-02",
+      "rows": 6903,
+      "csv_sha256": "15ee5b18c6e1ac27f570f62503e46c4993b907d154ed535f0c234ce40291ed69",
+      "acquired_utc": "2026-10-01T11:28:41.569824+00:00",
+      "provenance": "New acquisition of historical bars; not the original July download"
+    },
+    "^GSPC": {
+      "asset": "^GSPC",
+      "first_date": "1945-01-02",
+      "last_date": "2026-07-02",
+      "rows": 20493,
+      "csv_sha256": "cd18f96fbac06771c70bc2c614667116aea5f0de4e63fe4dfb454b03a58a2a02",
+      "acquired_utc": "2026-10-01T11:28:53.153273+00:00",
+      "provenance": "New acquisition of historical bars; not the original July download"
+    }
+  },
+  "protocol_notes": [
+    "No source verdict inferred from a Sharpe failure",
+    "Trade signal prehistory is used for indicator warmup; initial book starts from the pre-sample signal",
+    "Next-close lag means yesterday close signal trades at today close and first earns the following return",
+    "Unknown fills and adjustments use predeclared sensitivities; results are not selected for attractiveness",
+    "Passive and strategy both pay the adopted initial entry cost; no forced final liquidation",
+    "Open holding blocks and unfinished forward windows are censored from completed-trade/event summaries",
+    "Event studies use index quote close; retrospective ranking is not an ex-ante strategy",
+    "No inferential significance claimed for overlapping calendar event outcomes"
+  ],
+  "results": [
+    {
+      "claim_id": "rd_boring_trend_spy",
+      "source_group": "reddit",
+      "type": "drawdown_return_strategy",
+      "problems": [
+        "wrong SMA threshold",
+        "next-day-close execution omitted",
+        "3 bp cost replaced with 5 bp",
+        "2005 sample replaced",
+        "drawdown objective replaced by Sharpe gate"
+      ],
+      "diagnostic": "archival SMA200 with next-close delay and 3 bp cost, plus declared price-field sensitivity",
+      "source_verdict": "NOT_ESTABLISHED",
+      "source": {
+        "status": "original_body_removed",
+        "checked_url": "https://www.reddit.com/r/quant/comments/1ue4dic/i_backtested_the_3_most_boring_textbook_rules/",
+        "note": "Current body removed by moderators; author-linked site unavailable. Stored July paraphrases are secondary recovery evidence."
+      },
+      "diagnostics": [
+        {
+          "variant": "sma_ratio",
+          "price_field": "close",
+          "requested_sample": [
+            "2005-01-01",
+            "2026-07-02"
+          ],
+          "price_anchor_date": "2004-12-31",
+          "first_return_date": "2005-01-03",
+          "last_return_date": "2026-07-02",
+          "return_bars": 5408,
+          "cost_per_unit_turnover": 0.0003,
+          "execution_lag_closes": 1,
+          "cash_return": 0,
+          "exposure": 0.7797707100591716,
+          "strategy": {
+            "total_return": 2.6987548442902214,
+            "cagr": 0.06272335541701346,
+            "maximum_drawdown": -0.239716789124498,
+            "sharpe": 0.5931456957910749
+          },
+          "passive": {
+            "total_return": 5.159969551625154,
+            "cagr": 0.08823639356012625,
+            "maximum_drawdown": -0.5647366917817173,
+            "sharpe": 0.5412070018797748
+          },
+          "completed_holding_blocks": 72,
+          "right_censored_open_block": true,
+          "completed_block_win_rate": 0.4305555555555556,
+          "average_completed_block_return": 0.020340058583268514
+        },
+        {
+          "variant": "sma_ratio",
+          "price_field": "adjclose",
+          "requested_sample": [
+            "2005-01-01",
+            "2026-07-02"
+          ],
+          "price_anchor_date": "2004-12-31",
+          "first_return_date": "2005-01-03",
+          "last_return_date": "2026-07-02",
+          "return_bars": 5408,
+          "cost_per_unit_turnover": 0.0003,
+          "execution_lag_closes": 1,
+          "cash_return": 0,
+          "exposure": 0.8015902366863905,
+          "strategy": {
+            "total_return": 3.8588882316101474,
+            "cagr": 0.07629366811910376,
+            "maximum_drawdown": -0.2388767686188762,
+            "sharpe": 0.6923593704908462
+          },
+          "passive": {
+            "total_return": 8.129011573937596,
+            "cagr": 0.10833039653901944,
+            "maximum_drawdown": -0.551894356184494,
+            "sharpe": 0.6387069898438698
+          },
+          "completed_holding_blocks": 67,
+          "right_censored_open_block": true,
+          "completed_block_win_rate": 0.417910447761194,
+          "average_completed_block_return": 0.027052016849697654
+        }
+      ]
+    },
+    {
+      "claim_id": "rd_boring_trend_qqq",
+      "source_group": "reddit",
+      "type": "drawdown_return_strategy",
+      "problems": [
+        "wrong SMA threshold",
+        "next-day-close execution omitted",
+        "cost/sample mismatch",
+        "drawdown objective replaced by Sharpe gate"
+      ],
+      "diagnostic": "archival SMA200, same protocol as SPY",
+      "source_verdict": "NOT_ESTABLISHED",
+      "source": {
+        "status": "original_body_removed",
+        "checked_url": "https://www.reddit.com/r/quant/comments/1ue4dic/i_backtested_the_3_most_boring_textbook_rules/",
+        "note": "Current body removed by moderators; author-linked site unavailable. Stored July paraphrases are secondary recovery evidence."
+      },
+      "diagnostics": [
+        {
+          "variant": "sma_ratio",
+          "price_field": "close",
+          "requested_sample": [
+            "2005-01-01",
+            "2026-07-02"
+          ],
+          "price_anchor_date": "2004-12-31",
+          "first_return_date": "2005-01-03",
+          "last_return_date": "2026-07-02",
+          "return_bars": 5408,
+          "cost_per_unit_turnover": 0.0003,
+          "execution_lag_closes": 1,
+          "cash_return": 0,
+          "exposure": 0.7954881656804734,
+          "strategy": {
+            "total_return": 8.3338423452528,
+            "cagr": 0.10947481078484023,
+            "maximum_drawdown": -0.2304816215326827,
+            "sharpe": 0.7517053050972353
+          },
+          "passive": {
+            "total_return": 16.84528945829541,
+            "cagr": 0.14342656539308285,
+            "maximum_drawdown": -0.5355260760870957,
+            "sharpe": 0.7290974919548977
+          },
+          "completed_holding_blocks": 64,
+          "right_censored_open_block": true,
+          "completed_block_win_rate": 0.375,
+          "average_completed_block_return": 0.042665181346940736
+        },
+        {
+          "variant": "sma_ratio",
+          "price_field": "adjclose",
+          "requested_sample": [
+            "2005-01-01",
+            "2026-07-02"
+          ],
+          "price_anchor_date": "2004-12-31",
+          "first_return_date": "2005-01-03",
+          "last_return_date": "2026-07-02",
+          "return_bars": 5408,
+          "cost_per_unit_turnover": 0.0003,
+          "execution_lag_closes": 1,
+          "cash_return": 0,
+          "exposure": 0.8041789940828402,
+          "strategy": {
+            "total_return": 9.106006803298403,
+            "cagr": 0.11358386256213748,
+            "maximum_drawdown": -0.2553164829809368,
+            "sharpe": 0.7712553916294005
+          },
+          "passive": {
+            "total_return": 19.96884887288367,
+            "cagr": 0.15203678092699868,
+            "maximum_drawdown": -0.5340402218410043,
+            "sharpe": 0.764000456515853
+          },
+          "completed_holding_blocks": 71,
+          "right_censored_open_block": true,
+          "completed_block_win_rate": 0.323943661971831,
+          "average_completed_block_return": 0.040577167844991005
+        }
+      ]
+    },
+    {
+      "claim_id": "rd_boring_trend_nvda",
+      "source_group": "reddit",
+      "type": "drawdown_return_strategy",
+      "problems": [
+        "wrong SMA threshold",
+        "execution/cost/sample mismatch",
+        "selected single-name result not independently reverified"
+      ],
+      "diagnostic": "archival SMA200, same protocol as SPY; assess return and drawdown",
+      "source_verdict": "NOT_ESTABLISHED",
+      "source": {
+        "status": "original_body_removed",
+        "checked_url": "https://www.reddit.com/r/quant/comments/1ue4dic/i_backtested_the_3_most_boring_textbook_rules/",
+        "note": "Current body removed by moderators; author-linked site unavailable. Stored July paraphrases are secondary recovery evidence."
+      },
+      "diagnostics": [
+        {
+          "variant": "sma_ratio",
+          "price_field": "close",
+          "requested_sample": [
+            "2005-01-01",
+            "2026-07-02"
+          ],
+          "price_anchor_date": "2004-12-31",
+          "first_return_date": "2005-01-03",
+          "last_return_date": "2026-07-02",
+          "return_bars": 5408,
+          "cost_per_unit_turnover": 0.0003,
+          "execution_lag_closes": 1,
+          "cash_return": 0,
+          "exposure": 0.7365014792899408,
+          "strategy": {
+            "total_return": 1193.8503113686654,
+            "cagr": 0.3903548086147912,
+            "maximum_drawdown": -0.5258614455528638,
+            "sharpe": 1.0680405558110324
+          },
+          "passive": {
+            "total_return": 991.0471674525887,
+            "cagr": 0.3783785815107552,
+            "maximum_drawdown": -0.8507840226749694,
+            "sharpe": 0.9061287908000865
+          },
+          "completed_holding_blocks": 44,
+          "right_censored_open_block": true,
+          "completed_block_win_rate": 0.45454545454545453,
+          "average_completed_block_return": 0.42366091368024317
+        },
+        {
+          "variant": "sma_ratio",
+          "price_field": "adjclose",
+          "requested_sample": [
+            "2005-01-01",
+            "2026-07-02"
+          ],
+          "price_anchor_date": "2004-12-31",
+          "first_return_date": "2005-01-03",
+          "last_return_date": "2026-07-02",
+          "return_bars": 5408,
+          "cost_per_unit_turnover": 0.0003,
+          "execution_lag_closes": 1,
+          "cash_return": 0,
+          "exposure": 0.7396449704142012,
+          "strategy": {
+            "total_return": 1333.7750730414227,
+            "cagr": 0.39753444011930616,
+            "maximum_drawdown": -0.5257229865231724,
+            "sharpe": 1.0814113758110262
+          },
+          "passive": {
+            "total_return": 1082.3551513381071,
+            "cagr": 0.38403472809998207,
+            "maximum_drawdown": -0.8507839723551271,
+            "sharpe": 0.9146243203467758
+          },
+          "completed_holding_blocks": 44,
+          "right_censored_open_block": true,
+          "completed_block_win_rate": 0.4090909090909091,
+          "average_completed_block_return": 0.4547132614053914
+        }
+      ]
+    },
+    {
+      "claim_id": "rd_boring_mom6m_spy",
+      "source_group": "reddit",
+      "type": "benchmark_extension",
+      "problems": [
+        "stored record states no specific SPY performance claim",
+        "next-close/cost/sample mismatch",
+        "126-day convention not independently reverified"
+      ],
+      "diagnostic": "explicit 126-day SPY baseline, not a refutation of a SPY source claim",
+      "source_verdict": "NOT_APPLICABLE_NO_SPECIFIC_SPY_CLAIM",
+      "source": {
+        "status": "original_body_removed",
+        "checked_url": "https://www.reddit.com/r/quant/comments/1ue4dic/i_backtested_the_3_most_boring_textbook_rules/",
+        "note": "Current body removed by moderators; author-linked site unavailable. Stored July paraphrases are secondary recovery evidence."
+      },
+      "diagnostics": [
+        {
+          "variant": "momentum",
+          "price_field": "close",
+          "requested_sample": [
+            "2005-01-01",
+            "2026-07-02"
+          ],
+          "price_anchor_date": "2004-12-31",
+          "first_return_date": "2005-01-03",
+          "last_return_date": "2026-07-02",
+          "return_bars": 5408,
+          "cost_per_unit_turnover": 0.0003,
+          "execution_lag_closes": 1,
+          "cash_return": 0,
+          "exposure": 0.757396449704142,
+          "strategy": {
+            "total_return": 2.9362594886785387,
+            "cagr": 0.06580389655944852,
+            "maximum_drawdown": -0.22850701285523312,
+            "sharpe": 0.609728207384721
+          },
+          "passive": {
+            "total_return": 5.159969551625154,
+            "cagr": 0.08823639356012625,
+            "maximum_drawdown": -0.5647366917817173,
+            "sharpe": 0.5412070018797748
+          },
+          "completed_holding_blocks": 76,
+          "right_censored_open_block": true,
+          "completed_block_win_rate": 0.40789473684210525,
+          "average_completed_block_return": 0.020258371599149574
+        },
+        {
+          "variant": "momentum",
+          "price_field": "adjclose",
+          "requested_sample": [
+            "2005-01-01",
+            "2026-07-02"
+          ],
+          "price_anchor_date": "2004-12-31",
+          "first_return_date": "2005-01-03",
+          "last_return_date": "2026-07-02",
+          "return_bars": 5408,
+          "cost_per_unit_turnover": 0.0003,
+          "execution_lag_closes": 1,
+          "cash_return": 0,
+          "exposure": 0.7803254437869822,
+          "strategy": {
+            "total_return": 4.29365689965853,
+            "cagr": 0.0805922113764248,
+            "maximum_drawdown": -0.21750111518653814,
+            "sharpe": 0.7147202219770235
+          },
+          "passive": {
+            "total_return": 8.129011573937596,
+            "cagr": 0.10833039653901944,
+            "maximum_drawdown": -0.551894356184494,
+            "sharpe": 0.6387069898438698
+          },
+          "completed_holding_blocks": 75,
+          "right_censored_open_block": true,
+          "completed_block_win_rate": 0.52,
+          "average_completed_block_return": 0.026045879013310166
+        }
+      ]
+    },
+    {
+      "claim_id": "rd_boring_bband20_spy",
+      "source_group": "reddit",
+      "type": "benchmark_extension",
+      "problems": [
+        "stored record names gold/BTC results, not SPY results",
+        "Bollinger standard-deviation convention not independently reverified",
+        "next-close/cost/sample mismatch"
+      ],
+      "diagnostic": "explicit population-SD 20-day SPY baseline",
+      "source_verdict": "NOT_APPLICABLE_NO_SPECIFIC_SPY_CLAIM",
+      "source": {
+        "status": "original_body_removed",
+        "checked_url": "https://www.reddit.com/r/quant/comments/1ue4dic/i_backtested_the_3_most_boring_textbook_rules/",
+        "note": "Current body removed by moderators; author-linked site unavailable. Stored July paraphrases are secondary recovery evidence."
+      },
+      "diagnostics": [
+        {
+          "variant": "zscore",
+          "price_field": "close",
+          "requested_sample": [
+            "2005-01-01",
+            "2026-07-02"
+          ],
+          "price_anchor_date": "2004-12-31",
+          "first_return_date": "2005-01-03",
+          "last_return_date": "2026-07-02",
+          "return_bars": 5408,
+          "cost_per_unit_turnover": 0.0003,
+          "execution_lag_closes": 1,
+          "cash_return": 0,
+          "exposure": 0.05436390532544379,
+          "strategy": {
+            "total_return": -0.02938530941669293,
+            "cagr": -0.0013862298934783635,
+            "maximum_drawdown": -0.2789456819888273,
+            "sharpe": 0.022525378143707527
+          },
+          "passive": {
+            "total_return": 5.159969551625154,
+            "cagr": 0.08823639356012625,
+            "maximum_drawdown": -0.5647366917817173,
+            "sharpe": 0.5412070018797748
+          },
+          "completed_holding_blocks": 167,
+          "right_censored_open_block": false,
+          "completed_block_win_rate": 0.5568862275449101,
+          "average_completed_block_return": 4.359139594391024e-05
+        },
+        {
+          "variant": "zscore",
+          "price_field": "adjclose",
+          "requested_sample": [
+            "2005-01-01",
+            "2026-07-02"
+          ],
+          "price_anchor_date": "2004-12-31",
+          "first_return_date": "2005-01-03",
+          "last_return_date": "2026-07-02",
+          "return_bars": 5408,
+          "cost_per_unit_turnover": 0.0003,
+          "execution_lag_closes": 1,
+          "cash_return": 0,
+          "exposure": 0.05269970414201183,
+          "strategy": {
+            "total_return": -0.05504764980952925,
+            "cagr": -0.0026299640319502604,
+            "maximum_drawdown": -0.2882901090767779,
+            "sharpe": 0.0075295210459511855
+          },
+          "passive": {
+            "total_return": 8.129011573937596,
+            "cagr": 0.10833039653901944,
+            "maximum_drawdown": -0.551894356184494,
+            "sharpe": 0.6387069898438698
+          },
+          "completed_holding_blocks": 159,
+          "right_censored_open_block": false,
+          "completed_block_win_rate": 0.5660377358490566,
+          "average_completed_block_return": -9.873667414639703e-05
+        }
+      ]
+    },
+    {
+      "claim_id": "pa_spy_lag1_reversal_null_fri",
+      "source_group": "paper_sign",
+      "type": "statistical_null",
+      "problems": [
+        "Sharpe failure does not reproduce the sign test or prove a null",
+        "wrong price basis and dates",
+        "real market example is not calibration on known ground truth"
+      ],
+      "diagnostic": "source sign coding and normal approximation on adjusted log returns, source date bounds",
+      "source_verdict": "NOT_ESTABLISHED_PARTIAL_STATISTICAL_REPLICATION",
+      "source": {
+        "status": "primary_full_text_read",
+        "checked_url": "https://arxiv.org/html/2606.29591v1",
+        "note": "Source uses dividend-adjusted prices, log returns and sign-continuation inference, not a Sharpe rejection as a calibration certificate."
+      },
+      "diagnostics": [
+        {
+          "price_field": "adjclose",
+          "first_date": "1993-01-29",
+          "last_date": "2026-06-18",
+          "requested_sample": [
+            "1993-01-01",
+            "2026-06-19"
+          ],
+          "log_return_observations": 8403,
+          "lag1_autocorrelation": -0.08058797205208781,
+          "lag1_acf_z": -7.387328453185924,
+          "sign_pairs": 8402,
+          "continuation_frequency": 0.49131159247798145,
+          "sign_z": -1.5928009908426761,
+          "sign_two_sided_normal_p": 0.11120484279591589,
+          "zero_returns": 62,
+          "null": "continuation frequency .5 under the source coin-flip assumption",
+          "interpretation": "Descriptive partial replication; failure to reject does not prove no edge or calibrate a test"
+        }
+      ]
+    },
+    {
+      "claim_id": "pa_spy_sma20_fast_timing",
+      "source_group": "paper_sma",
+      "type": "strategy_comparison",
+      "problems": [
+        "wrong SMA threshold",
+        "50/200 comparison absent",
+        "source period absent",
+        "full paper unavailable"
+      ],
+      "diagnostic": "declared SMA20 versus SMA50/200 comparison using stored definitions; 2006-2025 and adopted costs/fills",
+      "source_verdict": "NOT_ESTABLISHED",
+      "source": {
+        "status": "metadata_only_full_text_unavailable",
+        "checked_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5430117",
+        "note": "Publisher full text inaccessible; paper title metadata found. Exact timing, fees and dates remain unverified."
+      },
+      "diagnostics": [
+        {
+          "variant": "SMA20",
+          "price_field": "close",
+          "requested_sample": [
+            "2006-01-01",
+            "2025-12-31"
+          ],
+          "price_anchor_date": "2005-12-30",
+          "first_return_date": "2006-01-03",
+          "last_return_date": "2025-12-31",
+          "return_bars": 5031,
+          "cost_per_unit_turnover": 0.0005,
+          "execution_lag_closes": 0,
+          "cash_return": 0,
+          "exposure": 0.655933214072749,
+          "strategy": {
+            "total_return": 0.5323585962871973,
+            "cagr": 0.021566309117762028,
+            "maximum_drawdown": -0.3899169130017217,
+            "sharpe": 0.24699770310822186
+          },
+          "passive": {
+            "total_return": 4.474137857832674,
+            "cagr": 0.08870439414107656,
+            "maximum_drawdown": -0.5647366917817164,
+            "sharpe": 0.5356283342672755
+          },
+          "completed_holding_blocks": 283,
+          "right_censored_open_block": true,
+          "completed_block_win_rate": 0.3498233215547703,
+          "average_completed_block_return": 0.001929707046663323
+        },
+        {
+          "variant": "SMA20",
+          "price_field": "close",
+          "requested_sample": [
+            "2006-01-01",
+            "2025-12-31"
+          ],
+          "price_anchor_date": "2005-12-30",
+          "first_return_date": "2006-01-03",
+          "last_return_date": "2025-12-31",
+          "return_bars": 5031,
+          "cost_per_unit_turnover": 0.0005,
+          "execution_lag_closes": 1,
+          "cash_return": 0,
+          "exposure": 0.6557344464321209,
+          "strategy": {
+            "total_return": 0.6550121474457042,
+            "cagr": 0.025506310749187522,
+            "maximum_drawdown": -0.3051953331893624,
+            "sharpe": 0.2821548081542216
+          },
+          "passive": {
+            "total_return": 4.474137857832674,
+            "cagr": 0.08870439414107656,
+            "maximum_drawdown": -0.5647366917817164,
+            "sharpe": 0.5356283342672755
+          },
+          "completed_holding_blocks": 283,
+          "right_censored_open_block": true,
+          "completed_block_win_rate": 0.44876325088339225,
+          "average_completed_block_return": 0.002194673082043309
+        },
+        {
+          "variant": "SMA50_above_SMA200",
+          "price_field": "close",
+          "requested_sample": [
+            "2006-01-01",
+            "2025-12-31"
+          ],
+          "price_anchor_date": "2005-12-30",
+          "first_return_date": "2006-01-03",
+          "last_return_date": "2025-12-31",
+          "return_bars": 5031,
+          "cost_per_unit_turnover": 0.0005,
+          "execution_lag_closes": 0,
+          "cash_return": 0,
+          "exposure": 0.7652554164182072,
+          "strategy": {
+            "total_return": 3.065117788495039,
+            "cagr": 0.07262734179064956,
+            "maximum_drawdown": -0.3410474689324394,
+            "sharpe": 0.5809852862797938
+          },
+          "passive": {
+            "total_return": 4.474137857832674,
+            "cagr": 0.08870439414107656,
+            "maximum_drawdown": -0.5647366917817164,
+            "sharpe": 0.5356283342672755
+          },
+          "completed_holding_blocks": 10,
+          "right_censored_open_block": true,
+          "completed_block_win_rate": 0.7,
+          "average_completed_block_return": 0.1537294483574807
+        },
+        {
+          "variant": "SMA50_above_SMA200",
+          "price_field": "close",
+          "requested_sample": [
+            "2006-01-01",
+            "2025-12-31"
+          ],
+          "price_anchor_date": "2005-12-30",
+          "first_return_date": "2006-01-03",
+          "last_return_date": "2025-12-31",
+          "return_bars": 5031,
+          "cost_per_unit_turnover": 0.0005,
+          "execution_lag_closes": 1,
+          "cash_return": 0,
+          "exposure": 0.7652554164182072,
+          "strategy": {
+            "total_return": 3.2571821277684636,
+            "cagr": 0.0751056894981128,
+            "maximum_drawdown": -0.3410474689324393,
+            "sharpe": 0.5970537937925967
+          },
+          "passive": {
+            "total_return": 4.474137857832674,
+            "cagr": 0.08870439414107656,
+            "maximum_drawdown": -0.5647366917817164,
+            "sharpe": 0.5356283342672755
+          },
+          "completed_holding_blocks": 10,
+          "right_censored_open_block": true,
+          "completed_block_win_rate": 0.8,
+          "average_completed_block_return": 0.158913343545524
+        },
+        {
+          "variant": "SMA20",
+          "price_field": "adjclose",
+          "requested_sample": [
+            "2006-01-01",
+            "2025-12-31"
+          ],
+          "price_anchor_date": "2005-12-30",
+          "first_return_date": "2006-01-03",
+          "last_return_date": "2025-12-31",
+          "return_bars": 5031,
+          "cost_per_unit_turnover": 0.0005,
+          "execution_lag_closes": 0,
+          "cash_return": 0,
+          "exposure": 0.6688531107135758,
+          "strategy": {
+            "total_return": 0.8952234014004927,
+            "cagr": 0.03247806837028078,
+            "maximum_drawdown": -0.38650578402571245,
+            "sharpe": 0.3406625776636781
+          },
+          "passive": {
+            "total_return": 6.929880389201516,
+            "cagr": 0.10906309592867647,
+            "maximum_drawdown": -0.5518943561844929,
+            "sharpe": 0.6321340439440822
+          },
+          "completed_holding_blocks": 279,
+          "right_censored_open_block": true,
+          "completed_block_win_rate": 0.34408602150537637,
+          "average_completed_block_return": 0.0027720334865910883
+        },
+        {
+          "variant": "SMA20",
+          "price_field": "adjclose",
+          "requested_sample": [
+            "2006-01-01",
+            "2025-12-31"
+          ],
+          "price_anchor_date": "2005-12-30",
+          "first_return_date": "2006-01-03",
+          "last_return_date": "2025-12-31",
+          "return_bars": 5031,
+          "cost_per_unit_turnover": 0.0005,
+          "execution_lag_closes": 1,
+          "cash_return": 0,
+          "exposure": 0.6686543430729477,
+          "strategy": {
+            "total_return": 1.2262891545716248,
+            "cagr": 0.040821711419297024,
+            "maximum_drawdown": -0.3012931419499332,
+            "sharpe": 0.4150108308840545
+          },
+          "passive": {
+            "total_return": 6.929880389201516,
+            "cagr": 0.10906309592867647,
+            "maximum_drawdown": -0.5518943561844929,
+            "sharpe": 0.6321340439440822
+          },
+          "completed_holding_blocks": 279,
+          "right_censored_open_block": true,
+          "completed_block_win_rate": 0.44802867383512546,
+          "average_completed_block_return": 0.0033332353379996378
+        },
+        {
+          "variant": "SMA50_above_SMA200",
+          "price_field": "adjclose",
+          "requested_sample": [
+            "2006-01-01",
+            "2025-12-31"
+          ],
+          "price_anchor_date": "2005-12-30",
+          "first_return_date": "2006-01-03",
+          "last_return_date": "2025-12-31",
+          "return_bars": 5031,
+          "cost_per_unit_turnover": 0.0005,
+          "execution_lag_closes": 0,
+          "cash_return": 0,
+          "exposure": 0.780162989465315,
+          "strategy": {
+            "total_return": 4.45959892860891,
+            "cagr": 0.08855965806174115,
+            "maximum_drawdown": -0.33717244060424556,
+            "sharpe": 0.6829414547524144
+          },
+          "passive": {
+            "total_return": 6.929880389201516,
+            "cagr": 0.10906309592867647,
+            "maximum_drawdown": -0.5518943561844929,
+            "sharpe": 0.6321340439440822
+          },
+          "completed_holding_blocks": 10,
+          "right_censored_open_block": true,
+          "completed_block_win_rate": 0.8,
+          "average_completed_block_return": 0.19027058430503255
+        },
+        {
+          "variant": "SMA50_above_SMA200",
+          "price_field": "adjclose",
+          "requested_sample": [
+            "2006-01-01",
+            "2025-12-31"
+          ],
+          "price_anchor_date": "2005-12-30",
+          "first_return_date": "2006-01-03",
+          "last_return_date": "2025-12-31",
+          "return_bars": 5031,
+          "cost_per_unit_turnover": 0.0005,
+          "execution_lag_closes": 1,
+          "cash_return": 0,
+          "exposure": 0.780162989465315,
+          "strategy": {
+            "total_return": 4.066815610016871,
+            "cagr": 0.08450412582054145,
+            "maximum_drawdown": -0.3371724406042459,
+            "sharpe": 0.6531164857589538
+          },
+          "passive": {
+            "total_return": 6.929880389201516,
+            "cagr": 0.10906309592867647,
+            "maximum_drawdown": -0.5518943561844929,
+            "sharpe": 0.6321340439440822
+          },
+          "completed_holding_blocks": 10,
+          "right_censored_open_block": true,
+          "completed_block_win_rate": 0.7,
+          "average_completed_block_return": 0.18386309456008945
+        }
+      ]
+    },
+    {
+      "claim_id": "tw_detrick_42d_surge_195",
+      "source_group": "detrick",
+      "type": "historical_event_description",
+      "problems": [
+        "index replaced by ETF",
+        "WWII history replaced by short window",
+        "event separation unknown",
+        "directional forward outcome replaced by a trading gate"
+      ],
+      "diagnostic": "index daily-threshold events and a declared cluster sensitivity; calendar forward horizons",
+      "source_verdict": "NOT_ESTABLISHED",
+      "source": {
+        "status": "secondary_report_read_primary_not_located",
+        "checked_url": "https://www.benzinga.com/analyst-stock-ratings/analyst-color/26/06/60094812/after-the-june-swoon-could-july-deliver-a-breakout-rally-carson-group-strategist-ryan-detrick-says-this-rare-sp-500-signal-has-never-failed",
+        "note": "Reported S&P 500 historical forward-direction statement; original event table/separation rule not located."
+      },
+      "diagnostics": [
+        {
+          "selection": "all daily >=19.5% rolling 42-bar gains",
+          "horizons": {
+            "3": {
+              "events": [
+                {
+                  "date": "1975-02-06",
+                  "target_calendar_date": "1975-05-06",
+                  "forward_end_date": "1975-05-06",
+                  "forward_return": 0.12830959959662103
+                },
+                {
+                  "date": "1975-02-07",
+                  "target_calendar_date": "1975-05-07",
+                  "forward_end_date": "1975-05-07",
+                  "forward_return": 0.13290099125855526
+                },
+                {
+                  "date": "1975-02-13",
+                  "target_calendar_date": "1975-05-13",
+                  "forward_end_date": "1975-05-13",
+                  "forward_return": 0.13047771159231902
+                },
+                {
+                  "date": "1975-02-14",
+                  "target_calendar_date": "1975-05-14",
+                  "forward_end_date": "1975-05-14",
+                  "forward_return": 0.13214719807443442
+                },
+                {
+                  "date": "1975-02-18",
+                  "target_calendar_date": "1975-05-18",
+                  "forward_end_date": "1975-05-16",
+                  "forward_return": 0.11738539434297324
+                },
+                {
+                  "date": "1975-02-19",
+                  "target_calendar_date": "1975-05-19",
+                  "forward_end_date": "1975-05-19",
+                  "forward_return": 0.11161586524301259
+                },
+                {
+                  "date": "1975-02-20",
+                  "target_calendar_date": "1975-05-20",
+                  "forward_end_date": "1975-05-20",
+                  "forward_return": 0.09560881520355236
+                },
+                {
+                  "date": "1975-02-21",
+                  "target_calendar_date": "1975-05-21",
+                  "forward_end_date": "1975-05-21",
+                  "forward_return": 0.07794716288941461
+                },
+                {
+                  "date": "1975-02-24",
+                  "target_calendar_date": "1975-05-24",
+                  "forward_end_date": "1975-05-23",
+                  "forward_return": 0.11222985161652477
+                },
+                {
+                  "date": "1975-02-27",
+                  "target_calendar_date": "1975-05-27",
+                  "forward_end_date": "1975-05-27",
+                  "forward_return": 0.1184845870071698
+                },
+                {
+                  "date": "1975-02-28",
+                  "target_calendar_date": "1975-05-28",
+                  "forward_end_date": "1975-05-28",
+                  "forward_return": 0.09952203837532325
+                },
+                {
+                  "date": "1975-03-03",
+                  "target_calendar_date": "1975-06-03",
+                  "forward_end_date": "1975-06-03",
+                  "forward_return": 0.11875226731678712
+                },
+                {
+                  "date": "1975-03-10",
+                  "target_calendar_date": "1975-06-10",
+                  "forward_end_date": "1975-06-10",
+                  "forward_return": 0.06462631772087035
+                },
+                {
+                  "date": "1982-10-06",
+                  "target_calendar_date": "1983-01-06",
+                  "forward_end_date": "1983-01-06",
+                  "forward_return": 0.15321110474503885
+                },
+                {
+                  "date": "1982-10-07",
+                  "target_calendar_date": "1983-01-07",
+                  "forward_end_date": "1983-01-07",
+                  "forward_return": 0.12717382947142641
+                },
+                {
+                  "date": "1982-10-08",
+                  "target_calendar_date": "1983-01-08",
+                  "forward_end_date": "1983-01-07",
+                  "forward_return": 0.10782136051109315
+                },
+                {
+                  "date": "1982-10-11",
+                  "target_calendar_date": "1983-01-11",
+                  "forward_end_date": "1983-01-11",
+                  "forward_return": 0.08410796055568448
+                },
+                {
+                  "date": "1982-10-12",
+                  "target_calendar_date": "1983-01-12",
+                  "forward_end_date": "1983-01-12",
+                  "forward_return": 0.09111871301355401
+                },
+                {
+                  "date": "1982-10-13",
+                  "target_calendar_date": "1983-01-13",
+                  "forward_end_date": "1983-01-13",
+                  "forward_return": 0.06597899620143122
+                },
+                {
+                  "date": "1982-10-14",
+                  "target_calendar_date": "1983-01-14",
+                  "forward_end_date": "1983-01-14",
+                  "forward_return": 0.08976730262904264
+                },
+                {
+                  "date": "1982-10-15",
+                  "target_calendar_date": "1983-01-15",
+                  "forward_end_date": "1983-01-14",
+                  "forward_return": 0.09792607512939755
+                },
+                {
+                  "date": "1982-10-18",
+                  "target_calendar_date": "1983-01-18",
+                  "forward_end_date": "1983-01-18",
+                  "forward_return": 0.0707233121561317
+                },
+                {
+                  "date": "1982-10-19",
+                  "target_calendar_date": "1983-01-19",
+                  "forward_end_date": "1983-01-19",
+                  "forward_return": 0.0636257308896182
+                },
+                {
+                  "date": "1982-10-20",
+                  "target_calendar_date": "1983-01-20",
+                  "forward_end_date": "1983-01-20",
+                  "forward_return": 0.05070744649313608
+                },
+                {
+                  "date": "1982-10-21",
+                  "target_calendar_date": "1983-01-21",
+                  "forward_end_date": "1983-01-21",
+                  "forward_return": 0.034445625118780576
+                },
+                {
+                  "date": "1982-10-22",
+                  "target_calendar_date": "1983-01-22",
+                  "forward_end_date": "1983-01-21",
+                  "forward_return": 0.03615936185443469
+                },
+                {
+                  "date": "1991-03-11",
+                  "target_calendar_date": "1991-06-11",
+                  "forward_end_date": "1991-06-11",
+                  "forward_return": 0.021691324869265616
+                },
+                {
+                  "date": "1991-03-14",
+                  "target_calendar_date": "1991-06-14",
+                  "forward_end_date": "1991-06-14",
+                  "forward_return": 0.023534159424154932
+                },
+                {
+                  "date": "1998-12-04",
+                  "target_calendar_date": "1999-03-04",
+                  "forward_end_date": "1999-03-04",
+                  "forward_return": 0.059401418320236044
+                },
+                {
+                  "date": "1998-12-07",
+                  "target_calendar_date": "1999-03-07",
+                  "forward_end_date": "1999-03-05",
+                  "forward_return": 0.07389915226034094
+                },
+                {
+                  "date": "1998-12-08",
+                  "target_calendar_date": "1999-03-08",
+                  "forward_end_date": "1999-03-08",
+                  "forward_return": 0.08578947939447379
+                },
+                {
+                  "date": "1998-12-09",
+                  "target_calendar_date": "1999-03-09",
+                  "forward_end_date": "1999-03-09",
+                  "forward_return": 0.08141173679623326
+                },
+                {
+                  "date": "2009-04-30",
+                  "target_calendar_date": "2009-07-30",
+                  "forward_end_date": "2009-07-30",
+                  "forward_return": 0.13054387869079975
+                },
+                {
+                  "date": "2009-05-01",
+                  "target_calendar_date": "2009-08-01",
+                  "forward_end_date": "2009-07-31",
+                  "forward_return": 0.12530763799125388
+                },
+                {
+                  "date": "2009-05-04",
+                  "target_calendar_date": "2009-08-04",
+                  "forward_end_date": "2009-08-04",
+                  "forward_return": 0.10847188752588433
+                },
+                {
+                  "date": "2009-05-05",
+                  "target_calendar_date": "2009-08-05",
+                  "forward_end_date": "2009-08-05",
+                  "forward_return": 0.10944897570945256
+                },
+                {
+                  "date": "2009-05-06",
+                  "target_calendar_date": "2009-08-06",
+                  "forward_end_date": "2009-08-06",
+                  "forward_return": 0.08433654728194995
+                },
+                {
+                  "date": "2009-05-07",
+                  "target_calendar_date": "2009-08-07",
+                  "forward_end_date": "2009-08-07",
+                  "forward_return": 0.11361152774009087
+                },
+                {
+                  "date": "2009-05-08",
+                  "target_calendar_date": "2009-08-08",
+                  "forward_end_date": "2009-08-07",
+                  "forward_return": 0.08743798812756065
+                },
+                {
+                  "date": "2009-05-11",
+                  "target_calendar_date": "2009-08-11",
+                  "forward_end_date": "2009-08-11",
+                  "forward_return": 0.09360563356834284
+                },
+                {
+                  "date": "2009-05-12",
+                  "target_calendar_date": "2009-08-12",
+                  "forward_end_date": "2009-08-12",
+                  "forward_return": 0.10729347123039101
+                },
+                {
+                  "date": "2020-05-14",
+                  "target_calendar_date": "2020-08-14",
+                  "forward_end_date": "2020-08-14",
+                  "forward_return": 0.18241896499780896
+                },
+                {
+                  "date": "2020-05-18",
+                  "target_calendar_date": "2020-08-18",
+                  "forward_end_date": "2020-08-18",
+                  "forward_return": 0.14755701093004792
+                },
+                {
+                  "date": "2020-05-19",
+                  "target_calendar_date": "2020-08-19",
+                  "forward_end_date": "2020-08-19",
+                  "forward_return": 0.15460808819512817
+                },
+                {
+                  "date": "2020-05-20",
+                  "target_calendar_date": "2020-08-20",
+                  "forward_end_date": "2020-08-20",
+                  "forward_return": 0.13928472692632066
+                },
+                {
+                  "date": "2020-05-21",
+                  "target_calendar_date": "2020-08-21",
+                  "forward_end_date": "2020-08-21",
+                  "forward_return": 0.15216156664138736
+                },
+                {
+                  "date": "2020-05-22",
+                  "target_calendar_date": "2020-08-22",
+                  "forward_end_date": "2020-08-21",
+                  "forward_return": 0.14945607884929868
+                },
+                {
+                  "date": "2020-05-26",
+                  "target_calendar_date": "2020-08-26",
+                  "forward_end_date": "2020-08-26",
+                  "forward_return": 0.16276650870837894
+                },
+                {
+                  "date": "2020-06-02",
+                  "target_calendar_date": "2020-09-02",
+                  "forward_end_date": "2020-09-02",
+                  "forward_return": 0.16230094859045918
+                },
+                {
+                  "date": "2020-06-03",
+                  "target_calendar_date": "2020-09-03",
+                  "forward_end_date": "2020-09-03",
+                  "forward_return": 0.10637328128952883
+                },
+                {
+                  "date": "2020-06-04",
+                  "target_calendar_date": "2020-09-04",
+                  "forward_end_date": "2020-09-04",
+                  "forward_return": 0.10108434250959308
+                },
+                {
+                  "date": "2020-06-05",
+                  "target_calendar_date": "2020-09-05",
+                  "forward_end_date": "2020-09-04",
+                  "forward_return": 0.07296028224926476
+                },
+                {
+                  "date": "2020-06-08",
+                  "target_calendar_date": "2020-09-08",
+                  "forward_end_date": "2020-09-08",
+                  "forward_return": 0.030766769671210392
+                },
+                {
+                  "date": "2025-06-09",
+                  "target_calendar_date": "2025-09-09",
+                  "forward_end_date": "2025-09-09",
+                  "forward_return": 0.0843723135254335
+                }
+              ],
+              "summary": {
+                "complete": 54,
+                "censored": 0,
+                "wins": 54,
+                "win_rate": 1.0,
+                "mean_return": 0.10119759853741887
+              }
+            },
+            "6": {
+              "events": [
+                {
+                  "date": "1975-02-06",
+                  "target_calendar_date": "1975-08-06",
+                  "forward_end_date": "1975-08-06",
+                  "forward_return": 0.09788699949577628
+                },
+                {
+                  "date": "1975-02-07",
+                  "target_calendar_date": "1975-08-07",
+                  "forward_end_date": "1975-08-07",
+                  "forward_return": 0.09754554325647558
+                },
+                {
+                  "date": "1975-02-13",
+                  "target_calendar_date": "1975-08-13",
+                  "forward_end_date": "1975-08-13",
+                  "forward_return": 0.06122699609526827
+                },
+                {
+                  "date": "1975-02-14",
+                  "target_calendar_date": "1975-08-14",
+                  "forward_end_date": "1975-08-14",
+                  "forward_return": 0.050306729743817113
+                },
+                {
+                  "date": "1975-02-18",
+                  "target_calendar_date": "1975-08-18",
+                  "forward_end_date": "1975-08-18",
+                  "forward_return": 0.06511796148763116
+                },
+                {
+                  "date": "1975-02-19",
+                  "target_calendar_date": "1975-08-19",
+                  "forward_end_date": "1975-08-19",
+                  "forward_return": 0.04309914540291526
+                },
+                {
+                  "date": "1975-02-20",
+                  "target_calendar_date": "1975-08-20",
+                  "forward_end_date": "1975-08-20",
+                  "forward_return": 0.01228563614497391
+                },
+                {
+                  "date": "1975-02-21",
+                  "target_calendar_date": "1975-08-21",
+                  "forward_end_date": "1975-08-21",
+                  "forward_return": 0.0054465859753412005
+                },
+                {
+                  "date": "1975-02-24",
+                  "target_calendar_date": "1975-08-24",
+                  "forward_end_date": "1975-08-22",
+                  "forward_return": 0.03487225261239302
+                },
+                {
+                  "date": "1975-02-27",
+                  "target_calendar_date": "1975-08-27",
+                  "forward_end_date": "1975-08-27",
+                  "forward_return": 0.04531390137706004
+                },
+                {
+                  "date": "1975-02-28",
+                  "target_calendar_date": "1975-08-28",
+                  "forward_end_date": "1975-08-28",
+                  "forward_return": 0.058953369333030636
+                },
+                {
+                  "date": "1975-03-03",
+                  "target_calendar_date": "1975-09-03",
+                  "forward_end_date": "1975-09-03",
+                  "forward_return": 0.03613151925937452
+                },
+                {
+                  "date": "1975-03-10",
+                  "target_calendar_date": "1975-09-10",
+                  "forward_end_date": "1975-09-10",
+                  "forward_return": -0.013655045019267065
+                },
+                {
+                  "date": "1982-10-06",
+                  "target_calendar_date": "1983-04-06",
+                  "forward_end_date": "1983-04-06",
+                  "forward_return": 0.19901557372779832
+                },
+                {
+                  "date": "1982-10-07",
+                  "target_calendar_date": "1983-04-07",
+                  "forward_end_date": "1983-04-07",
+                  "forward_return": 0.1782607989989855
+                },
+                {
+                  "date": "1982-10-08",
+                  "target_calendar_date": "1983-04-08",
+                  "forward_end_date": "1983-04-08",
+                  "forward_return": 0.16634874127509924
+                },
+                {
+                  "date": "1982-10-11",
+                  "target_calendar_date": "1983-04-11",
+                  "forward_end_date": "1983-04-11",
+                  "forward_return": 0.15371456816617424
+                },
+                {
+                  "date": "1982-10-12",
+                  "target_calendar_date": "1983-04-12",
+                  "forward_end_date": "1983-04-12",
+                  "forward_return": 0.15903008401186747
+                },
+                {
+                  "date": "1982-10-13",
+                  "target_calendar_date": "1983-04-13",
+                  "forward_end_date": "1983-04-13",
+                  "forward_return": 0.14673393733773366
+                },
+                {
+                  "date": "1982-10-14",
+                  "target_calendar_date": "1983-04-14",
+                  "forward_end_date": "1983-04-14",
+                  "forward_return": 0.17500175753301317
+                },
+                {
+                  "date": "1982-10-15",
+                  "target_calendar_date": "1983-04-15",
+                  "forward_end_date": "1983-04-15",
+                  "forward_return": 0.18851532001986837
+                },
+                {
+                  "date": "1982-10-18",
+                  "target_calendar_date": "1983-04-18",
+                  "forward_end_date": "1983-04-18",
+                  "forward_return": 0.16828794327966556
+                },
+                {
+                  "date": "1982-10-19",
+                  "target_calendar_date": "1983-04-19",
+                  "forward_end_date": "1983-04-19",
+                  "forward_return": 0.1620296133118131
+                },
+                {
+                  "date": "1982-10-20",
+                  "target_calendar_date": "1983-04-20",
+                  "forward_end_date": "1983-04-20",
+                  "forward_return": 0.15427717909553507
+                },
+                {
+                  "date": "1982-10-21",
+                  "target_calendar_date": "1983-04-21",
+                  "forward_end_date": "1983-04-21",
+                  "forward_return": 0.15094208155957856
+                },
+                {
+                  "date": "1982-10-22",
+                  "target_calendar_date": "1983-04-22",
+                  "forward_end_date": "1983-04-22",
+                  "forward_return": 0.15551390948019983
+                },
+                {
+                  "date": "1991-03-11",
+                  "target_calendar_date": "1991-09-11",
+                  "forward_end_date": "1991-09-11",
+                  "forward_return": 0.032523608860800524
+                },
+                {
+                  "date": "1991-03-14",
+                  "target_calendar_date": "1991-09-14",
+                  "forward_end_date": "1991-09-13",
+                  "forward_return": 0.027014715764098085
+                },
+                {
+                  "date": "1998-12-04",
+                  "target_calendar_date": "1999-06-04",
+                  "forward_end_date": "1999-06-04",
+                  "forward_return": 0.1283291219970759
+                },
+                {
+                  "date": "1998-12-07",
+                  "target_calendar_date": "1999-06-07",
+                  "forward_end_date": "1999-06-07",
+                  "forward_return": 0.12361713765712556
+                },
+                {
+                  "date": "1998-12-08",
+                  "target_calendar_date": "1999-06-08",
+                  "forward_end_date": "1999-06-08",
+                  "forward_return": 0.11507724069306602
+                },
+                {
+                  "date": "1998-12-09",
+                  "target_calendar_date": "1999-06-09",
+                  "forward_end_date": "1999-06-09",
+                  "forward_return": 0.11419617025007356
+                },
+                {
+                  "date": "2009-04-30",
+                  "target_calendar_date": "2009-10-30",
+                  "forward_end_date": "2009-10-30",
+                  "forward_return": 0.1871884422779979
+                },
+                {
+                  "date": "2009-05-01",
+                  "target_calendar_date": "2009-11-01",
+                  "forward_end_date": "2009-10-30",
+                  "forward_return": 0.18081629859539583
+                },
+                {
+                  "date": "2009-05-04",
+                  "target_calendar_date": "2009-11-04",
+                  "forward_end_date": "2009-11-04",
+                  "forward_return": 0.15349853540919067
+                },
+                {
+                  "date": "2009-05-05",
+                  "target_calendar_date": "2009-11-05",
+                  "forward_end_date": "2009-11-05",
+                  "forward_return": 0.18016156150595442
+                },
+                {
+                  "date": "2009-05-06",
+                  "target_calendar_date": "2009-11-06",
+                  "forward_end_date": "2009-11-06",
+                  "forward_return": 0.16287670305424684
+                },
+                {
+                  "date": "2009-05-07",
+                  "target_calendar_date": "2009-11-07",
+                  "forward_end_date": "2009-11-06",
+                  "forward_return": 0.17843488639492966
+                },
+                {
+                  "date": "2009-05-08",
+                  "target_calendar_date": "2009-11-08",
+                  "forward_end_date": "2009-11-06",
+                  "forward_return": 0.15073778429826024
+                },
+                {
+                  "date": "2009-05-11",
+                  "target_calendar_date": "2009-11-11",
+                  "forward_end_date": "2009-11-11",
+                  "forward_return": 0.20816288500735847
+                },
+                {
+                  "date": "2009-05-12",
+                  "target_calendar_date": "2009-11-12",
+                  "forward_end_date": "2009-11-12",
+                  "forward_return": 0.19693952711678464
+                },
+                {
+                  "date": "2020-05-14",
+                  "target_calendar_date": "2020-11-14",
+                  "forward_end_date": "2020-11-13",
+                  "forward_return": 0.25684483868317276
+                },
+                {
+                  "date": "2020-05-18",
+                  "target_calendar_date": "2020-11-18",
+                  "forward_end_date": "2020-11-18",
+                  "forward_return": 0.2078195155636131
+                },
+                {
+                  "date": "2020-05-19",
+                  "target_calendar_date": "2020-11-19",
+                  "forward_end_date": "2020-11-19",
+                  "forward_return": 0.22543404551248947
+                },
+                {
+                  "date": "2020-05-20",
+                  "target_calendar_date": "2020-11-20",
+                  "forward_end_date": "2020-11-20",
+                  "forward_return": 0.1971759115293119
+                },
+                {
+                  "date": "2020-05-21",
+                  "target_calendar_date": "2020-11-21",
+                  "forward_end_date": "2020-11-20",
+                  "forward_return": 0.20655518457788324
+                },
+                {
+                  "date": "2020-05-22",
+                  "target_calendar_date": "2020-11-22",
+                  "forward_end_date": "2020-11-20",
+                  "forward_return": 0.2037219705418758
+                },
+                {
+                  "date": "2020-05-26",
+                  "target_calendar_date": "2020-11-26",
+                  "forward_end_date": "2020-11-25",
+                  "forward_return": 0.21321153653128833
+                },
+                {
+                  "date": "2020-06-02",
+                  "target_calendar_date": "2020-12-02",
+                  "forward_end_date": "2020-12-02",
+                  "forward_return": 0.19091992662832724
+                },
+                {
+                  "date": "2020-06-03",
+                  "target_calendar_date": "2020-12-03",
+                  "forward_end_date": "2020-12-03",
+                  "forward_return": 0.17415064767580657
+                },
+                {
+                  "date": "2020-06-04",
+                  "target_calendar_date": "2020-12-04",
+                  "forward_end_date": "2020-12-04",
+                  "forward_return": 0.18852956804991705
+                },
+                {
+                  "date": "2020-06-05",
+                  "target_calendar_date": "2020-12-05",
+                  "forward_end_date": "2020-12-04",
+                  "forward_return": 0.15817196881566353
+                },
+                {
+                  "date": "2020-06-08",
+                  "target_calendar_date": "2020-12-08",
+                  "forward_end_date": "2020-12-08",
+                  "forward_return": 0.14535997297254233
+                },
+                {
+                  "date": "2025-06-09",
+                  "target_calendar_date": "2025-12-09",
+                  "forward_end_date": "2025-12-09",
+                  "forward_return": 0.13896879376509452
+                }
+              ],
+              "summary": {
+                "complete": 54,
+                "censored": 0,
+                "wins": 53,
+                "win_rate": 0.9814814814814815,
+                "mean_return": 0.13701188153132346
+              }
+            },
+            "12": {
+              "events": [
+                {
+                  "date": "1975-02-06",
+                  "target_calendar_date": "1976-02-06",
+                  "forward_end_date": "1976-02-06",
+                  "forward_return": 0.2660387242284561
+                },
+                {
+                  "date": "1975-02-07",
+                  "target_calendar_date": "1976-02-07",
+                  "forward_end_date": "1976-02-06",
+                  "forward_return": 0.264911643884729
+                },
+                {
+                  "date": "1975-02-13",
+                  "target_calendar_date": "1976-02-13",
+                  "forward_end_date": "1976-02-13",
+                  "forward_return": 0.23034187804779038
+                },
+                {
+                  "date": "1975-02-14",
+                  "target_calendar_date": "1976-02-14",
+                  "forward_end_date": "1976-02-13",
+                  "forward_return": 0.222944762809145
+                },
+                {
+                  "date": "1975-02-18",
+                  "target_calendar_date": "1976-02-18",
+                  "forward_end_date": "1976-02-18",
+                  "forward_return": 0.23378225747683956
+                },
+                {
+                  "date": "1975-02-19",
+                  "target_calendar_date": "1976-02-19",
+                  "forward_end_date": "1976-02-19",
+                  "forward_return": 0.24521120606634272
+                },
+                {
+                  "date": "1975-02-20",
+                  "target_calendar_date": "1976-02-20",
+                  "forward_end_date": "1976-02-20",
+                  "forward_return": 0.241941364933127
+                },
+                {
+                  "date": "1975-02-21",
+                  "target_calendar_date": "1976-02-21",
+                  "forward_end_date": "1976-02-20",
+                  "forward_return": 0.23577820237176095
+                },
+                {
+                  "date": "1975-02-24",
+                  "target_calendar_date": "1976-02-24",
+                  "forward_end_date": "1976-02-24",
+                  "forward_return": 0.2528241124833528
+                },
+                {
+                  "date": "1975-02-27",
+                  "target_calendar_date": "1976-02-27",
+                  "forward_end_date": "1976-02-27",
+                  "forward_return": 0.23449304480108735
+                },
+                {
+                  "date": "1975-02-28",
+                  "target_calendar_date": "1976-02-28",
+                  "forward_end_date": "1976-02-27",
+                  "forward_return": 0.22208608358727244
+                },
+                {
+                  "date": "1975-03-03",
+                  "target_calendar_date": "1976-03-03",
+                  "forward_end_date": "1976-03-03",
+                  "forward_return": 0.20414313894778857
+                },
+                {
+                  "date": "1975-03-10",
+                  "target_calendar_date": "1976-03-10",
+                  "forward_end_date": "1976-03-10",
+                  "forward_return": 0.1882284410546402
+                },
+                {
+                  "date": "1982-10-06",
+                  "target_calendar_date": "1983-10-06",
+                  "forward_end_date": "1983-10-06",
+                  "forward_return": 0.3517503939764304
+                },
+                {
+                  "date": "1982-10-07",
+                  "target_calendar_date": "1983-10-07",
+                  "forward_end_date": "1983-10-07",
+                  "forward_return": 0.32608694879550937
+                },
+                {
+                  "date": "1982-10-08",
+                  "target_calendar_date": "1983-10-08",
+                  "forward_end_date": "1983-10-07",
+                  "forward_return": 0.3033193366985336
+                },
+                {
+                  "date": "1982-10-11",
+                  "target_calendar_date": "1983-10-11",
+                  "forward_end_date": "1983-10-11",
+                  "forward_return": 0.26675090943380564
+                },
+                {
+                  "date": "1982-10-12",
+                  "target_calendar_date": "1983-10-12",
+                  "forward_end_date": "1983-10-12",
+                  "forward_return": 0.26167801277089353
+                },
+                {
+                  "date": "1982-10-13",
+                  "target_calendar_date": "1983-10-13",
+                  "forward_end_date": "1983-10-13",
+                  "forward_return": 0.2425571412100349
+                },
+                {
+                  "date": "1982-10-14",
+                  "target_calendar_date": "1983-10-14",
+                  "forward_end_date": "1983-10-14",
+                  "forward_return": 0.2622426348027822
+                },
+                {
+                  "date": "1982-10-15",
+                  "target_calendar_date": "1983-10-15",
+                  "forward_end_date": "1983-10-14",
+                  "forward_return": 0.2716926802140913
+                },
+                {
+                  "date": "1982-10-18",
+                  "target_calendar_date": "1983-10-18",
+                  "forward_end_date": "1983-10-18",
+                  "forward_return": 0.22730931618682715
+                },
+                {
+                  "date": "1982-10-19",
+                  "target_calendar_date": "1983-10-19",
+                  "forward_end_date": "1983-10-19",
+                  "forward_return": 0.2207496960922508
+                },
+                {
+                  "date": "1982-10-20",
+                  "target_calendar_date": "1983-10-20",
+                  "forward_end_date": "1983-10-20",
+                  "forward_return": 0.19931049954425295
+                },
+                {
+                  "date": "1982-10-21",
+                  "target_calendar_date": "1983-10-21",
+                  "forward_end_date": "1983-10-21",
+                  "forward_return": 0.19336976745104706
+                },
+                {
+                  "date": "1982-10-22",
+                  "target_calendar_date": "1983-10-22",
+                  "forward_end_date": "1983-10-21",
+                  "forward_return": 0.19534678930704352
+                },
+                {
+                  "date": "1991-03-11",
+                  "target_calendar_date": "1992-03-11",
+                  "forward_end_date": "1992-03-11",
+                  "forward_return": 0.08330654235324597
+                },
+                {
+                  "date": "1991-03-14",
+                  "target_calendar_date": "1992-03-14",
+                  "forward_end_date": "1992-03-13",
+                  "forward_return": 0.08658633557668183
+                },
+                {
+                  "date": "1998-12-04",
+                  "target_calendar_date": "1999-12-04",
+                  "forward_end_date": "1999-12-03",
+                  "forward_return": 0.218026123632163
+                },
+                {
+                  "date": "1998-12-07",
+                  "target_calendar_date": "1999-12-07",
+                  "forward_end_date": "1999-12-07",
+                  "forward_return": 0.18646973299520497
+                },
+                {
+                  "date": "1998-12-08",
+                  "target_calendar_date": "1999-12-08",
+                  "forward_end_date": "1999-12-08",
+                  "forward_return": 0.18833906031960557
+                },
+                {
+                  "date": "1998-12-09",
+                  "target_calendar_date": "1999-12-09",
+                  "forward_end_date": "1999-12-09",
+                  "forward_return": 0.1897945880156573
+                },
+                {
+                  "date": "2009-04-30",
+                  "target_calendar_date": "2010-04-30",
+                  "forward_end_date": "2010-04-30",
+                  "forward_return": 0.3596200143509296
+                },
+                {
+                  "date": "2009-05-01",
+                  "target_calendar_date": "2010-05-01",
+                  "forward_end_date": "2010-04-30",
+                  "forward_return": 0.3523223573180143
+                },
+                {
+                  "date": "2009-05-04",
+                  "target_calendar_date": "2010-05-04",
+                  "forward_end_date": "2010-05-04",
+                  "forward_return": 0.29359374390314463
+                },
+                {
+                  "date": "2009-05-05",
+                  "target_calendar_date": "2010-05-05",
+                  "forward_end_date": "2010-05-05",
+                  "forward_return": 0.28996460595687745
+                },
+                {
+                  "date": "2009-05-06",
+                  "target_calendar_date": "2010-05-06",
+                  "forward_end_date": "2010-05-06",
+                  "forward_return": 0.22687676146553937
+                },
+                {
+                  "date": "2009-05-07",
+                  "target_calendar_date": "2010-05-07",
+                  "forward_end_date": "2010-05-07",
+                  "forward_return": 0.2242585734351683
+                },
+                {
+                  "date": "2009-05-08",
+                  "target_calendar_date": "2010-05-08",
+                  "forward_end_date": "2010-05-07",
+                  "forward_return": 0.19548446373031259
+                },
+                {
+                  "date": "2009-05-11",
+                  "target_calendar_date": "2010-05-11",
+                  "forward_end_date": "2010-05-11",
+                  "forward_return": 0.2711605862876443
+                },
+                {
+                  "date": "2009-05-12",
+                  "target_calendar_date": "2010-05-12",
+                  "forward_end_date": "2010-05-12",
+                  "forward_return": 0.28988834197911273
+                },
+                {
+                  "date": "2020-05-14",
+                  "target_calendar_date": "2021-05-14",
+                  "forward_end_date": "2021-05-14",
+                  "forward_return": 0.4632252752519719
+                },
+                {
+                  "date": "2020-05-18",
+                  "target_calendar_date": "2021-05-18",
+                  "forward_end_date": "2021-05-18",
+                  "forward_return": 0.39741231145987577
+                },
+                {
+                  "date": "2020-05-19",
+                  "target_calendar_date": "2021-05-19",
+                  "forward_end_date": "2021-05-19",
+                  "forward_return": 0.40806183441496335
+                },
+                {
+                  "date": "2020-05-20",
+                  "target_calendar_date": "2021-05-20",
+                  "forward_end_date": "2021-05-20",
+                  "forward_return": 0.39961837752527063
+                },
+                {
+                  "date": "2020-05-21",
+                  "target_calendar_date": "2021-05-21",
+                  "forward_end_date": "2021-05-21",
+                  "forward_return": 0.4094779564989832
+                },
+                {
+                  "date": "2020-05-22",
+                  "target_calendar_date": "2021-05-22",
+                  "forward_end_date": "2021-05-21",
+                  "forward_return": 0.4061682423799451
+                },
+                {
+                  "date": "2020-05-26",
+                  "target_calendar_date": "2021-05-26",
+                  "forward_end_date": "2021-05-26",
+                  "forward_return": 0.40251095738716813
+                },
+                {
+                  "date": "2020-06-02",
+                  "target_calendar_date": "2021-06-02",
+                  "forward_end_date": "2021-06-02",
+                  "forward_return": 0.3659090838850725
+                },
+                {
+                  "date": "2020-06-03",
+                  "target_calendar_date": "2021-06-03",
+                  "forward_end_date": "2021-06-03",
+                  "forward_return": 0.3426271155434375
+                },
+                {
+                  "date": "2020-06-04",
+                  "target_calendar_date": "2021-06-04",
+                  "forward_end_date": "2021-06-04",
+                  "forward_return": 0.35906630166833153
+                },
+                {
+                  "date": "2020-06-05",
+                  "target_calendar_date": "2021-06-05",
+                  "forward_end_date": "2021-06-04",
+                  "forward_return": 0.3243528277860446
+                },
+                {
+                  "date": "2020-06-08",
+                  "target_calendar_date": "2021-06-08",
+                  "forward_end_date": "2021-06-08",
+                  "forward_return": 0.307781519590564
+                },
+                {
+                  "date": "2025-06-09",
+                  "target_calendar_date": "2026-06-09",
+                  "forward_end_date": "2026-06-09",
+                  "forward_return": 0.22990303610345397
+                }
+              ],
+              "summary": {
+                "complete": 54,
+                "censored": 0,
+                "wins": 54,
+                "win_rate": 1.0,
+                "mean_return": 0.27104991959241154
+              }
+            }
+          }
+        },
+        {
+          "selection": "declared sensitivity: first trigger after a gap >42 trading bars",
+          "horizons": {
+            "3": {
+              "events": [
+                {
+                  "date": "1975-02-06",
+                  "target_calendar_date": "1975-05-06",
+                  "forward_end_date": "1975-05-06",
+                  "forward_return": 0.12830959959662103
+                },
+                {
+                  "date": "1982-10-06",
+                  "target_calendar_date": "1983-01-06",
+                  "forward_end_date": "1983-01-06",
+                  "forward_return": 0.15321110474503885
+                },
+                {
+                  "date": "1991-03-11",
+                  "target_calendar_date": "1991-06-11",
+                  "forward_end_date": "1991-06-11",
+                  "forward_return": 0.021691324869265616
+                },
+                {
+                  "date": "1998-12-04",
+                  "target_calendar_date": "1999-03-04",
+                  "forward_end_date": "1999-03-04",
+                  "forward_return": 0.059401418320236044
+                },
+                {
+                  "date": "2009-04-30",
+                  "target_calendar_date": "2009-07-30",
+                  "forward_end_date": "2009-07-30",
+                  "forward_return": 0.13054387869079975
+                },
+                {
+                  "date": "2020-05-14",
+                  "target_calendar_date": "2020-08-14",
+                  "forward_end_date": "2020-08-14",
+                  "forward_return": 0.18241896499780896
+                },
+                {
+                  "date": "2025-06-09",
+                  "target_calendar_date": "2025-09-09",
+                  "forward_end_date": "2025-09-09",
+                  "forward_return": 0.0843723135254335
+                }
+              ],
+              "summary": {
+                "complete": 7,
+                "censored": 0,
+                "wins": 7,
+                "win_rate": 1.0,
+                "mean_return": 0.10856408639217197
+              }
+            },
+            "6": {
+              "events": [
+                {
+                  "date": "1975-02-06",
+                  "target_calendar_date": "1975-08-06",
+                  "forward_end_date": "1975-08-06",
+                  "forward_return": 0.09788699949577628
+                },
+                {
+                  "date": "1982-10-06",
+                  "target_calendar_date": "1983-04-06",
+                  "forward_end_date": "1983-04-06",
+                  "forward_return": 0.19901557372779832
+                },
+                {
+                  "date": "1991-03-11",
+                  "target_calendar_date": "1991-09-11",
+                  "forward_end_date": "1991-09-11",
+                  "forward_return": 0.032523608860800524
+                },
+                {
+                  "date": "1998-12-04",
+                  "target_calendar_date": "1999-06-04",
+                  "forward_end_date": "1999-06-04",
+                  "forward_return": 0.1283291219970759
+                },
+                {
+                  "date": "2009-04-30",
+                  "target_calendar_date": "2009-10-30",
+                  "forward_end_date": "2009-10-30",
+                  "forward_return": 0.1871884422779979
+                },
+                {
+                  "date": "2020-05-14",
+                  "target_calendar_date": "2020-11-14",
+                  "forward_end_date": "2020-11-13",
+                  "forward_return": 0.25684483868317276
+                },
+                {
+                  "date": "2025-06-09",
+                  "target_calendar_date": "2025-12-09",
+                  "forward_end_date": "2025-12-09",
+                  "forward_return": 0.13896879376509452
+                }
+              ],
+              "summary": {
+                "complete": 7,
+                "censored": 0,
+                "wins": 7,
+                "win_rate": 1.0,
+                "mean_return": 0.14867962554395947
+              }
+            },
+            "12": {
+              "events": [
+                {
+                  "date": "1975-02-06",
+                  "target_calendar_date": "1976-02-06",
+                  "forward_end_date": "1976-02-06",
+                  "forward_return": 0.2660387242284561
+                },
+                {
+                  "date": "1982-10-06",
+                  "target_calendar_date": "1983-10-06",
+                  "forward_end_date": "1983-10-06",
+                  "forward_return": 0.3517503939764304
+                },
+                {
+                  "date": "1991-03-11",
+                  "target_calendar_date": "1992-03-11",
+                  "forward_end_date": "1992-03-11",
+                  "forward_return": 0.08330654235324597
+                },
+                {
+                  "date": "1998-12-04",
+                  "target_calendar_date": "1999-12-04",
+                  "forward_end_date": "1999-12-03",
+                  "forward_return": 0.218026123632163
+                },
+                {
+                  "date": "2009-04-30",
+                  "target_calendar_date": "2010-04-30",
+                  "forward_end_date": "2010-04-30",
+                  "forward_return": 0.3596200143509296
+                },
+                {
+                  "date": "2020-05-14",
+                  "target_calendar_date": "2021-05-14",
+                  "forward_end_date": "2021-05-14",
+                  "forward_return": 0.4632252752519719
+                },
+                {
+                  "date": "2025-06-09",
+                  "target_calendar_date": "2026-06-09",
+                  "forward_end_date": "2026-06-09",
+                  "forward_return": 0.22990303610345397
+                }
+              ],
+              "summary": {
+                "complete": 7,
+                "censored": 0,
+                "wins": 7,
+                "win_rate": 1.0,
+                "mean_return": 0.28169572998523584
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "claim_id": "tw_fool_quarter_10pct",
+      "source_group": "quarter",
+      "type": "historical_event_description",
+      "problems": [
+        "calendar quarter replaced by rolling 63 days",
+        "two positive quarters replaced by cumulative 126-day gain",
+        "index replaced by ETF",
+        "incomplete later outcomes and sample boundary"
+      ],
+      "diagnostic": "index calendar quarters; each of the next two quarters positive; explicit censoring",
+      "source_verdict": "NOT_ESTABLISHED_PARTIAL_DESCRIPTIVE_CHECK",
+      "source": {
+        "status": "primary_article_read_upstream_table_unavailable",
+        "checked_url": "https://www.fool.com/investing/2026/07/01/the-sp-500-posted-its-best-quarterly-performance-s/",
+        "note": "Two successive calendar quarters must each gain; cumulative six-month gain is a different outcome. Underlying NYT event table is not supplied."
+      },
+      "diagnostics": [
+        {
+          "definition": "calendar_quarter",
+          "event_window": [
+            "2016-07-01",
+            "2026-06-30"
+          ],
+          "threshold": 0.1,
+          "events": [
+            {
+              "date": "2019-03-29",
+              "calendar_end": "2019-03-31",
+              "gain": 0.13066190315637094,
+              "forward_returns": {
+                "1": 0.037877544143682496,
+                "2": 0.05021877391857266
+              },
+              "next_two_quarters_both_positive": true
+            },
+            {
+              "date": "2020-06-30",
+              "calendar_end": "2020-06-30",
+              "gain": 0.19952871969448593,
+              "forward_returns": {
+                "1": 0.0847372205914454,
+                "2": 0.21152215471271751
+              },
+              "next_two_quarters_both_positive": true
+            },
+            {
+              "date": "2020-12-31",
+              "calendar_end": "2020-12-31",
+              "gain": 0.11688078155199966,
+              "forward_returns": {
+                "1": 0.0577251809132131,
+                "2": 0.14414798493818237
+              },
+              "next_two_quarters_both_positive": true
+            },
+            {
+              "date": "2021-12-31",
+              "calendar_end": "2021-12-31",
+              "gain": 0.10647379538196211,
+              "forward_returns": {
+                "1": -0.049467290542075215,
+                "2": -0.20578330167889258
+              },
+              "next_two_quarters_both_positive": false
+            },
+            {
+              "date": "2023-12-29",
+              "calendar_end": "2023-12-31",
+              "gain": 0.11235416923349151,
+              "forward_returns": {
+                "1": 0.10158014260367798,
+                "2": 0.1447954939760121
+              },
+              "next_two_quarters_both_positive": true
+            },
+            {
+              "date": "2024-03-28",
+              "calendar_end": "2024-03-31",
+              "gain": 0.10158014260367798,
+              "forward_returns": {
+                "1": 0.039230328961986416,
+                "2": 0.09670651429168298
+              },
+              "next_two_quarters_both_positive": true
+            },
+            {
+              "date": "2025-06-30",
+              "calendar_end": "2025-06-30",
+              "gain": 0.10568708845304942,
+              "forward_returns": {
+                "1": 0.07792323071187024,
+                "2": 0.10323206222854142
+              },
+              "next_two_quarters_both_positive": true
+            },
+            {
+              "date": "2026-06-30",
+              "calendar_end": "2026-06-30",
+              "gain": 0.1487074927924792,
+              "forward_returns": {
+                "1": null,
+                "2": null
+              },
+              "next_two_quarters_both_positive": null
+            }
+          ],
+          "event_count": 8,
+          "baseline_periods": 40,
+          "conditional": {
+            "1": {
+              "complete": 7,
+              "censored": 1,
+              "wins": 6,
+              "win_rate": 0.8571428571428571,
+              "mean_return": 0.049943765340542914
+            },
+            "2": {
+              "complete": 7,
+              "censored": 1,
+              "wins": 6,
+              "win_rate": 0.8571428571428571,
+              "mean_return": 0.07783424034097378
+            },
+            "next_two_quarters_both_positive": {
+              "complete": 7,
+              "censored": 1,
+              "wins": 6,
+              "win_rate": 0.8571428571428571
+            }
+          },
+          "baseline": {
+            "1": {
+              "complete": 39,
+              "censored": 1,
+              "wins": 30,
+              "win_rate": 0.7692307692307693,
+              "mean_return": 0.03570668116346113
+            },
+            "2": {
+              "complete": 38,
+              "censored": 2,
+              "wins": 30,
+              "win_rate": 0.7894736842105263,
+              "mean_return": 0.06836525302228963
+            },
+            "next_two_quarters_both_positive": {
+              "complete": 38,
+              "censored": 2,
+              "wins": 22,
+              "win_rate": 0.5789473684210527
+            }
+          }
+        }
+      ]
+    },
+    {
+      "claim_id": "tw_fool_month_10pct",
+      "source_group": "month",
+      "type": "historical_event_description",
+      "problems": [
+        "calendar month replaced by rolling 21 days",
+        "index/history replaced by ETF/short window",
+        "hold timer merges events",
+        "unmatched unconditional comparison",
+        "source prose and table date window disagree"
+      ],
+      "diagnostic": "index calendar-month event study over the displayed table era with matched monthly baseline",
+      "source_verdict": "NOT_ESTABLISHED_PARTIAL_DESCRIPTIVE_CHECK",
+      "source": {
+        "status": "primary_article_and_table_read",
+        "checked_url": "https://www.fool.com/investing/2026/05/05/sp-500-did-this-13-time-50-years-what-happens-next/",
+        "note": "Calendar-month S&P 500 event study. Displayed table starts October 1974 although prose says past 50 years."
+      },
+      "diagnostics": [
+        {
+          "observation_cutoff": "2026-05-05",
+          "definition": "calendar_month",
+          "event_window": [
+            "1974-01-01",
+            "2026-04-30"
+          ],
+          "threshold": 0.1,
+          "events": [
+            {
+              "date": "1974-10-31",
+              "calendar_end": "1974-10-31",
+              "gain": 0.1630469068473035,
+              "forward_returns": {
+                "3": 0.04167796708334448,
+                "6": 0.1813261332773637,
+                "12": 0.20487143541325348
+              }
+            },
+            {
+              "date": "1975-01-31",
+              "calendar_end": "1975-01-31",
+              "gain": 0.12281222430242678,
+              "forward_returns": {
+                "3": 0.134060785201235,
+                "6": 0.15289680605094813,
+                "12": 0.3102103950644619
+              }
+            },
+            {
+              "date": "1976-01-30",
+              "calendar_end": "1976-01-31",
+              "gain": 0.11830577536437348,
+              "forward_returns": {
+                "3": 0.007733479819321154,
+                "6": 0.025580029897301904,
+                "12": 0.011600219728981731
+              }
+            },
+            {
+              "date": "1980-11-28",
+              "calendar_end": "1980-11-30",
+              "gain": 0.10237705284997123,
+              "forward_returns": {
+                "3": -0.0658269265496515,
+                "6": -0.056433302686174414,
+                "12": -0.10083977631302188
+              }
+            },
+            {
+              "date": "1982-08-31",
+              "calendar_end": "1982-08-31",
+              "gain": 0.11597727353685028,
+              "forward_returns": {
+                "3": 0.15914983100230673,
+                "6": 0.23889210034335795,
+                "12": 0.3756170275110817
+              }
+            },
+            {
+              "date": "1982-10-29",
+              "calendar_end": "1982-10-31",
+              "gain": 0.11044679666161716,
+              "forward_returns": {
+                "3": 0.08659887619909634,
+                "6": 0.22965892293398715,
+                "12": 0.2230780852433636
+              }
+            },
+            {
+              "date": "1984-08-31",
+              "calendar_end": "1984-08-31",
+              "gain": 0.10633206308424414,
+              "forward_returns": {
+                "3": -0.018598458009033703,
+                "6": 0.08699304437938626,
+                "12": 0.13168954386581633
+              }
+            },
+            {
+              "date": "1987-01-30",
+              "calendar_end": "1987-01-31",
+              "gain": 0.13176689368870087,
+              "forward_returns": {
+                "3": 0.052101574280877694,
+                "6": 0.16265331025214969,
+                "12": -0.0620620989543208
+              }
+            },
+            {
+              "date": "1991-12-31",
+              "calendar_end": "1991-12-31",
+              "gain": 0.11158785507428148,
+              "forward_returns": {
+                "3": -0.032127344252171564,
+                "6": -0.021458154758050352,
+                "12": 0.04464263175974903
+              }
+            },
+            {
+              "date": "2011-10-31",
+              "calendar_end": "2011-10-31",
+              "gain": 0.10772303843744147,
+              "forward_returns": {
+                "3": 0.047163474865282495,
+                "6": 0.11538337167287072,
+                "12": 0.12675335447413527
+              }
+            },
+            {
+              "date": "2020-04-30",
+              "calendar_end": "2020-04-30",
+              "gain": 0.1268440381652789,
+              "forward_returns": {
+                "3": 0.12315839143461149,
+                "6": 0.1227600449413977,
+                "12": 0.43562936105373384
+              }
+            },
+            {
+              "date": "2020-11-30",
+              "calendar_end": "2020-11-30",
+              "gain": 0.10754563544385909,
+              "forward_returns": {
+                "3": 0.05233003527794833,
+                "6": 0.1608336575841387,
+                "12": 0.26103443691858996
+              }
+            },
+            {
+              "date": "2026-04-30",
+              "calendar_end": "2026-04-30",
+              "gain": 0.10423338582985764,
+              "forward_returns": {
+                "3": null,
+                "6": null,
+                "12": null
+              }
+            }
+          ],
+          "event_count": 13,
+          "baseline_periods": 628,
+          "conditional": {
+            "3": {
+              "complete": 12,
+              "censored": 1,
+              "wins": 9,
+              "win_rate": 0.75,
+              "mean_return": 0.04895180719609724
+            },
+            "6": {
+              "complete": 12,
+              "censored": 1,
+              "wins": 10,
+              "win_rate": 0.8333333333333334,
+              "mean_return": 0.11659049699072309
+            },
+            "12": {
+              "complete": 12,
+              "censored": 1,
+              "wins": 10,
+              "win_rate": 0.8333333333333334,
+              "mean_return": 0.16351871798048534
+            }
+          },
+          "baseline": {
+            "3": {
+              "complete": 625,
+              "censored": 3,
+              "wins": 420,
+              "win_rate": 0.672,
+              "mean_return": 0.023631896147665997
+            },
+            "6": {
+              "complete": 622,
+              "censored": 6,
+              "wins": 446,
+              "win_rate": 0.7170418006430869,
+              "mean_return": 0.04861457616142757
+            },
+            "12": {
+              "complete": 616,
+              "censored": 12,
+              "wins": 479,
+              "win_rate": 0.7775974025974026,
+              "mean_return": 0.10166054019219194
+            }
+          }
+        }
+      ]
+    },
+    {
+      "claim_id": "tw_qqq_ma225_cross",
+      "source_group": "qqq225",
+      "type": "drawdown_return_strategy",
+      "problems": [
+        "wrong SMA threshold",
+        "source January 2000-February 2025 sample not used",
+        "Sharpe failure does not evaluate the two stated objectives",
+        "fills/fees/adjustment unspecified"
+      ],
+      "diagnostic": "QQQ SMA225 on stated month bounds; explicit fills and price-field sensitivities; return/drawdown",
+      "source_verdict": "NOT_ESTABLISHED_PARTIAL_RULE_REPLICATION",
+      "source": {
+        "status": "primary_article_read",
+        "checked_url": "https://www.financialwisdomtv.com/post/qqq-trading-strategy-that-beats-the-market-proven-backtest-results",
+        "note": "Return and drawdown claims over January 2000-February 2025; precise trade fills, fees, price adjustment and start/end sessions are unstated."
+      },
+      "diagnostics": [
+        {
+          "variant": "SMA225",
+          "price_field": "close",
+          "requested_sample": [
+            "2000-01-01",
+            "2025-02-28"
+          ],
+          "price_anchor_date": "1999-12-31",
+          "first_return_date": "2000-01-03",
+          "last_return_date": "2025-02-28",
+          "return_bars": 6328,
+          "cost_per_unit_turnover": 0.0005,
+          "execution_lag_closes": 0,
+          "cash_return": 0,
+          "exposure": 0.7239254108723135,
+          "strategy": {
+            "total_return": 5.581829263364243,
+            "cagr": 0.07775586850029437,
+            "maximum_drawdown": -0.46435220880358685,
+            "sharpe": 0.5352646561852332
+          },
+          "passive": {
+            "total_return": 4.5586865000533034,
+            "cagr": 0.07054409183811594,
+            "maximum_drawdown": -0.8296390703529309,
+            "sharpe": 0.38793573227768907
+          },
+          "completed_holding_blocks": 81,
+          "right_censored_open_block": true,
+          "completed_block_win_rate": 0.2222222222222222,
+          "average_completed_block_return": 0.023755153187242018
+        },
+        {
+          "variant": "SMA225",
+          "price_field": "close",
+          "requested_sample": [
+            "2000-01-01",
+            "2025-02-28"
+          ],
+          "price_anchor_date": "1999-12-31",
+          "first_return_date": "2000-01-03",
+          "last_return_date": "2025-02-28",
+          "return_bars": 6328,
+          "cost_per_unit_turnover": 0.0005,
+          "execution_lag_closes": 1,
+          "cash_return": 0,
+          "exposure": 0.7237673830594185,
+          "strategy": {
+            "total_return": 7.570821344698636,
+            "cagr": 0.08912447072083673,
+            "maximum_drawdown": -0.3646496815286625,
+            "sharpe": 0.5931379503409931
+          },
+          "passive": {
+            "total_return": 4.5586865000533034,
+            "cagr": 0.07054409183811594,
+            "maximum_drawdown": -0.8296390703529309,
+            "sharpe": 0.38793573227768907
+          },
+          "completed_holding_blocks": 81,
+          "right_censored_open_block": true,
+          "completed_block_win_rate": 0.345679012345679,
+          "average_completed_block_return": 0.026875738939128816
+        },
+        {
+          "variant": "SMA225",
+          "price_field": "adjclose",
+          "requested_sample": [
+            "2000-01-01",
+            "2025-02-28"
+          ],
+          "price_anchor_date": "1999-12-31",
+          "first_return_date": "2000-01-03",
+          "last_return_date": "2025-02-28",
+          "return_bars": 6328,
+          "cost_per_unit_turnover": 0.0005,
+          "execution_lag_closes": 0,
+          "cash_return": 0,
+          "exposure": 0.7319848293299621,
+          "strategy": {
+            "total_return": 7.165088016991199,
+            "cagr": 0.08702753987535172,
+            "maximum_drawdown": -0.46435202441230894,
+            "sharpe": 0.585365361730299
+          },
+          "passive": {
+            "total_return": 5.548039218530093,
+            "cagr": 0.0775354470431675,
+            "maximum_drawdown": -0.8296389713768189,
+            "sharpe": 0.41215089230949387
+          },
+          "completed_holding_blocks": 78,
+          "right_censored_open_block": true,
+          "completed_block_win_rate": 0.23076923076923078,
+          "average_completed_block_return": 0.027733733340973316
+        },
+        {
+          "variant": "SMA225",
+          "price_field": "adjclose",
+          "requested_sample": [
+            "2000-01-01",
+            "2025-02-28"
+          ],
+          "price_anchor_date": "1999-12-31",
+          "first_return_date": "2000-01-03",
+          "last_return_date": "2025-02-28",
+          "return_bars": 6328,
+          "cost_per_unit_turnover": 0.0005,
+          "execution_lag_closes": 1,
+          "cash_return": 0,
+          "exposure": 0.731826801517067,
+          "strategy": {
+            "total_return": 8.931667511526554,
+            "cagr": 0.09552126157548835,
+            "maximum_drawdown": -0.3646498088783382,
+            "sharpe": 0.6254224608388451
+          },
+          "passive": {
+            "total_return": 5.548039218530093,
+            "cagr": 0.0775354470431675,
+            "maximum_drawdown": -0.8296389713768189,
+            "sharpe": 0.41215089230949387
+          },
+          "completed_holding_blocks": 78,
+          "right_censored_open_block": true,
+          "completed_block_win_rate": 0.358974358974359,
+          "average_completed_block_return": 0.03010744072284263
+        }
+      ]
+    },
+    {
+      "claim_id": "tw_spy_rsi2_below10",
+      "source_group": "rsi2",
+      "type": "drawdown_return_strategy",
+      "problems": [
+        "RSI seed last change counted twice",
+        "published RSI80 exit replaced by resettable five-day hold",
+        "level entry differs from crossing entry",
+        "source dates/price basis/fills incomplete"
+      ],
+      "diagnostic": "correct Wilder seed and stateful crossing entry/exit; declared fills and adjustment sensitivity",
+      "source_verdict": "NOT_ESTABLISHED_PARTIAL_RULE_REPLICATION",
+      "source": {
+        "status": "original_bot_gated_owner_alternate_read",
+        "checked_url": "https://www.quantifiedstrategies.com/rsi-2-strategy/",
+        "alternate_primary_url": "https://www.linkedin.com/posts/quantifiedstrategies_tradingstrategy-activity-7444337121932267521-sCf6",
+        "note": "Owner's public alternate specifies RSI2 crossings below 10 and above 80. Exact price treatment, fill timing and sample endpoint remain unspecified."
+      },
+      "diagnostics": [
+        {
+          "variant": "RSI2_cross_below10_exit_above80",
+          "price_field": "close",
+          "requested_sample": [
+            "1993-01-01",
+            "2026-07-02"
+          ],
+          "price_anchor_date": "1993-01-29",
+          "first_return_date": "1993-02-01",
+          "last_return_date": "2026-07-02",
+          "return_bars": 8412,
+          "cost_per_unit_turnover": 0.0005,
+          "execution_lag_closes": 0,
+          "cash_return": 0,
+          "exposure": 0.286376604850214,
+          "strategy": {
+            "total_return": 12.056362517352646,
+            "cagr": 0.07990668193700867,
+            "maximum_drawdown": -0.34960556742512605,
+            "sharpe": 0.6467029255324845
+          },
+          "passive": {
+            "total_return": 15.942481232550751,
+            "cagr": 0.08835832698240353,
+            "maximum_drawdown": -0.5647366917817164,
+            "sharpe": 0.5487316532876981
+          },
+          "completed_holding_blocks": 350,
+          "right_censored_open_block": false,
+          "completed_block_win_rate": 0.7742857142857142,
+          "average_completed_block_return": 0.007795605605447614
+        },
+        {
+          "variant": "RSI2_cross_below10_exit_above80",
+          "price_field": "close",
+          "requested_sample": [
+            "1993-01-01",
+            "2026-07-02"
+          ],
+          "price_anchor_date": "1993-01-29",
+          "first_return_date": "1993-02-01",
+          "last_return_date": "2026-07-02",
+          "return_bars": 8412,
+          "cost_per_unit_turnover": 0.0005,
+          "execution_lag_closes": 1,
+          "cash_return": 0,
+          "exposure": 0.286376604850214,
+          "strategy": {
+            "total_return": 4.403240329194517,
+            "cagr": 0.051771891065621745,
+            "maximum_drawdown": -0.4204854189674033,
+            "sharpe": 0.45245588828066013
+          },
+          "passive": {
+            "total_return": 15.942481232550751,
+            "cagr": 0.08835832698240353,
+            "maximum_drawdown": -0.5647366917817164,
+            "sharpe": 0.5487316532876981
+          },
+          "completed_holding_blocks": 350,
+          "right_censored_open_block": false,
+          "completed_block_win_rate": 0.7171428571428572,
+          "average_completed_block_return": 0.005255042643354364
+        },
+        {
+          "variant": "RSI2_cross_below10_exit_above80",
+          "price_field": "adjclose",
+          "requested_sample": [
+            "1993-01-01",
+            "2026-07-02"
+          ],
+          "price_anchor_date": "1993-01-29",
+          "first_return_date": "1993-02-01",
+          "last_return_date": "2026-07-02",
+          "return_bars": 8412,
+          "cost_per_unit_turnover": 0.0005,
+          "execution_lag_closes": 0,
+          "cash_return": 0,
+          "exposure": 0.2786495482643842,
+          "strategy": {
+            "total_return": 11.414218484477328,
+            "cagr": 0.0782783363130728,
+            "maximum_drawdown": -0.3418096297307964,
+            "sharpe": 0.6397399593580468
+          },
+          "passive": {
+            "total_return": 29.871410700168724,
+            "cagr": 0.10807366994448175,
+            "maximum_drawdown": -0.5518943561844938,
+            "sharpe": 0.6462678353565453
+          },
+          "completed_holding_blocks": 340,
+          "right_censored_open_block": false,
+          "completed_block_win_rate": 0.7764705882352941,
+          "average_completed_block_return": 0.00789742313480056
+        },
+        {
+          "variant": "RSI2_cross_below10_exit_above80",
+          "price_field": "adjclose",
+          "requested_sample": [
+            "1993-01-01",
+            "2026-07-02"
+          ],
+          "price_anchor_date": "1993-01-29",
+          "first_return_date": "1993-02-01",
+          "last_return_date": "2026-07-02",
+          "return_bars": 8412,
+          "cost_per_unit_turnover": 0.0005,
+          "execution_lag_closes": 1,
+          "cash_return": 0,
+          "exposure": 0.2786495482643842,
+          "strategy": {
+            "total_return": 5.096024345278358,
+            "cagr": 0.0555752036049495,
+            "maximum_drawdown": -0.41421661523783815,
+            "sharpe": 0.48247654292464626
+          },
+          "passive": {
+            "total_return": 29.871410700168724,
+            "cagr": 0.10807366994448175,
+            "maximum_drawdown": -0.5518943561844938,
+            "sharpe": 0.6462678353565453
+          },
+          "completed_holding_blocks": 340,
+          "right_censored_open_block": false,
+          "completed_block_win_rate": 0.7294117647058823,
+          "average_completed_block_return": 0.005732042253799264
+        }
+      ]
+    },
+    {
+      "claim_id": "yt_qe_6wk_rally_252d",
+      "source_group": "ranked_rally",
+      "type": "retrospective_ranked_event_description",
+      "problems": [
+        "ranked non-overlapping sample replaced by every threshold day",
+        "SPX since 1950 replaced by short SPY history",
+        "event statistic replaced by deployable trading claim",
+        "non-overlap tie/selection convention not supplied"
+      ],
+      "diagnostic": "declared retrospective greedy rank selection and explicit forward censoring, not an ex-ante strategy",
+      "source_verdict": "NOT_ESTABLISHED_PARTIAL_SELECTION_SENSITIVITY",
+      "source": {
+        "status": "primary_article_read",
+        "checked_url": "https://quantifiableedges.com/a-historical-look-at-the-top-20-6-week-spx-rallies-since-1950/",
+        "note": "Retrospectively ranked top 20 non-overlapping SPX rallies; every day above a fixed threshold is not that selection."
+      },
+      "diagnostics": [
+        {
+          "selection": "retrospective top-20 greedy descending return, non-overlapping 30-return intervals",
+          "selection_tie_break": "earlier date first",
+          "events": [
+            {
+              "date": "1955-07-06",
+              "target_calendar_date": "1956-07-06",
+              "forward_end_date": "1956-07-06",
+              "forward_return": 0.11255212079674348,
+              "rally_start": "1955-05-23",
+              "rally_gain": 0.15208113213865193
+            },
+            {
+              "date": "1962-12-06",
+              "target_calendar_date": "1963-12-06",
+              "forward_end_date": "1963-12-06",
+              "forward_return": 0.17590973527953002,
+              "rally_start": "1962-10-23",
+              "rally_gain": 0.17648155413143685
+            },
+            {
+              "date": "1972-01-06",
+              "target_calendar_date": "1973-01-06",
+              "forward_end_date": "1973-01-05",
+              "forward_return": 0.15805236472529494,
+              "rally_start": "1971-11-23",
+              "rally_gain": 0.14807007466584166
+            },
+            {
+              "date": "1974-11-11",
+              "target_calendar_date": "1975-11-11",
+              "forward_end_date": "1975-11-11",
+              "forward_return": 0.19587492909942394,
+              "rally_start": "1974-09-30",
+              "rally_gain": 0.18271955371524728
+            },
+            {
+              "date": "1975-02-05",
+              "target_calendar_date": "1976-02-05",
+              "forward_end_date": "1976-02-05",
+              "forward_return": 0.271564322611207,
+              "rally_start": "1974-12-23",
+              "rally_gain": 0.1969375082485021
+            },
+            {
+              "date": "1976-02-04",
+              "target_calendar_date": "1977-02-04",
+              "forward_end_date": "1977-02-04",
+              "forward_return": -0.00029444026703107085,
+              "rally_start": "1975-12-22",
+              "rally_gain": 0.15622877658061518
+            },
+            {
+              "date": "1982-09-21",
+              "target_calendar_date": "1983-09-21",
+              "forward_end_date": "1983-09-21",
+              "forward_return": 0.3485746906316496,
+              "rally_start": "1982-08-09",
+              "rally_gain": 0.21148617612650877
+            },
+            {
+              "date": "1982-11-11",
+              "target_calendar_date": "1983-11-11",
+              "forward_end_date": "1983-11-11",
+              "forward_return": 0.17312164575755062,
+              "rally_start": "1982-09-30",
+              "rally_gain": 0.17713006274198229
+            },
+            {
+              "date": "1991-02-27",
+              "target_calendar_date": "1992-02-27",
+              "forward_end_date": "1992-02-27",
+              "forward_return": 0.12541468521765453,
+              "rally_start": "1991-01-15",
+              "rally_gain": 0.17215432810602405
+            },
+            {
+              "date": "1997-05-23",
+              "target_calendar_date": "1998-05-23",
+              "forward_end_date": "1998-05-22",
+              "forward_return": 0.31101605881072847,
+              "rally_start": "1997-04-11",
+              "rally_gain": 0.14828170712757216
+            },
+            {
+              "date": "1998-11-19",
+              "target_calendar_date": "1999-11-19",
+              "forward_end_date": "1999-11-19",
+              "forward_return": 0.23372174288969894,
+              "rally_start": "1998-10-08",
+              "rally_gain": 0.20133617778976576
+            },
+            {
+              "date": "2001-05-17",
+              "target_calendar_date": "2002-05-17",
+              "forward_end_date": "2002-05-17",
+              "forward_return": -0.1411730209723826,
+              "rally_start": "2001-04-04",
+              "rally_gain": 0.1679039113839791
+            },
+            {
+              "date": "2002-11-20",
+              "target_calendar_date": "2003-11-20",
+              "forward_end_date": "2003-11-20",
+              "forward_return": 0.1307225256342308,
+              "rally_start": "2002-10-09",
+              "rally_gain": 0.17687575688904578
+            },
+            {
+              "date": "2009-01-06",
+              "target_calendar_date": "2010-01-06",
+              "forward_end_date": "2010-01-06",
+              "forward_return": 0.2165828605943858,
+              "rally_start": "2008-11-20",
+              "rally_gain": 0.2422253059037991
+            },
+            {
+              "date": "2009-04-17",
+              "target_calendar_date": "2010-04-17",
+              "forward_end_date": "2010-04-16",
+              "forward_return": 0.37089470831637716,
+              "rally_start": "2009-03-05",
+              "rally_gain": 0.27404584446305025
+            },
+            {
+              "date": "2009-08-21",
+              "target_calendar_date": "2010-08-21",
+              "forward_end_date": "2010-08-20",
+              "forward_return": 0.04439977030848108,
+              "rally_start": "2009-07-10",
+              "rally_gain": 0.16721076425959902
+            },
+            {
+              "date": "2019-02-07",
+              "target_calendar_date": "2020-02-07",
+              "forward_end_date": "2020-02-07",
+              "forward_return": 0.22972964316701727,
+              "rally_start": "2018-12-24",
+              "rally_gain": 0.15097185846137107
+            },
+            {
+              "date": "2020-05-05",
+              "target_calendar_date": "2021-05-05",
+              "forward_end_date": "2021-05-05",
+              "forward_return": 0.45291166239542835,
+              "rally_start": "2020-03-23",
+              "rally_gain": 0.2820416852621943
+            },
+            {
+              "date": "2025-05-19",
+              "target_calendar_date": "2026-05-19",
+              "forward_end_date": "2026-05-19",
+              "forward_return": 0.2330823232381538,
+              "rally_start": "2025-04-04",
+              "rally_gain": 0.1753066577262119
+            },
+            {
+              "date": "2026-05-12",
+              "target_calendar_date": "2027-05-12",
+              "forward_end_date": null,
+              "forward_return": null,
+              "rally_start": "2026-03-30",
+              "rally_gain": 0.16665926464094394
+            }
+          ],
+          "summary": {
+            "complete": 19,
+            "censored": 1,
+            "wins": 17,
+            "win_rate": 0.8947368421052632,
+            "mean_return": 0.19171885938074432
+          }
+        }
+      ]
+    },
+    {
+      "claim_id": "yt_qs_rsi5_lt30_spy",
+      "source_group": "rsi5",
+      "type": "incompletely_specified_strategy",
+      "problems": [
+        "RSI seed last change counted twice",
+        "trend and confirmation omitted",
+        "RSI50 exit replaced by resettable five-day hold",
+        "sample dates and trend slope undefined"
+      ],
+      "diagnostic": "explicit RSI5/RSI50 variant with one-day SMA200 slope, without unspecified confirmation",
+      "source_verdict": "NOT_ESTABLISHED_VARIANT_ONLY",
+      "source": {
+        "status": "primary_article_read",
+        "checked_url": "https://quantifiedstrategies.substack.com/p/rsi-30-50-strategy-for-beginners",
+        "note": "RSI5 below 30, trend and confirmation, RSI50 exit. Trend slope duration, confirmation, execution, price basis and sample dates are incompletely specified."
+      },
+      "diagnostics": [
+        {
+          "variant": "RSI5_below30_exit50_one_day_SMA200_rise_no_confirmation",
+          "price_field": "close",
+          "requested_sample": [
+            "1993-01-01",
+            "2026-07-02"
+          ],
+          "price_anchor_date": "1993-01-29",
+          "first_return_date": "1993-02-01",
+          "last_return_date": "2026-07-02",
+          "return_bars": 8412,
+          "cost_per_unit_turnover": 0.0005,
+          "execution_lag_closes": 0,
+          "cash_return": 0,
+          "exposure": 0.1144793152639087,
+          "strategy": {
+            "total_return": 3.5310702055960093,
+            "cagr": 0.046246491674838186,
+            "maximum_drawdown": -0.16156652742026079,
+            "sharpe": 0.6998645141307158
+          },
+          "passive": {
+            "total_return": 15.942481232550751,
+            "cagr": 0.08835832698240353,
+            "maximum_drawdown": -0.5647366917817164,
+            "sharpe": 0.5487316532876981
+          },
+          "completed_holding_blocks": 192,
+          "right_censored_open_block": false,
+          "completed_block_win_rate": 0.8020833333333334,
+          "average_completed_block_return": 0.008053359663668718
+        },
+        {
+          "variant": "RSI5_below30_exit50_one_day_SMA200_rise_no_confirmation",
+          "price_field": "close",
+          "requested_sample": [
+            "1993-01-01",
+            "2026-07-02"
+          ],
+          "price_anchor_date": "1993-01-29",
+          "first_return_date": "1993-02-01",
+          "last_return_date": "2026-07-02",
+          "return_bars": 8412,
+          "cost_per_unit_turnover": 0.0005,
+          "execution_lag_closes": 1,
+          "cash_return": 0,
+          "exposure": 0.1144793152639087,
+          "strategy": {
+            "total_return": 2.3782608700716925,
+            "cagr": 0.037095840483148734,
+            "maximum_drawdown": -0.14397449773152293,
+            "sharpe": 0.586729072581861
+          },
+          "passive": {
+            "total_return": 15.942481232550751,
+            "cagr": 0.08835832698240353,
+            "maximum_drawdown": -0.5647366917817164,
+            "sharpe": 0.5487316532876981
+          },
+          "completed_holding_blocks": 192,
+          "right_censored_open_block": false,
+          "completed_block_win_rate": 0.7552083333333334,
+          "average_completed_block_return": 0.006525436600864051
+        },
+        {
+          "variant": "RSI5_below30_exit50_one_day_SMA200_rise_no_confirmation",
+          "price_field": "adjclose",
+          "requested_sample": [
+            "1993-01-01",
+            "2026-07-02"
+          ],
+          "price_anchor_date": "1993-01-29",
+          "first_return_date": "1993-02-01",
+          "last_return_date": "2026-07-02",
+          "return_bars": 8412,
+          "cost_per_unit_turnover": 0.0005,
+          "execution_lag_closes": 0,
+          "cash_return": 0,
+          "exposure": 0.11697574893009986,
+          "strategy": {
+            "total_return": 4.346212166025447,
+            "cagr": 0.05143803282983184,
+            "maximum_drawdown": -0.14431145201249218,
+            "sharpe": 0.7610653448487091
+          },
+          "passive": {
+            "total_return": 29.871410700168724,
+            "cagr": 0.10807366994448175,
+            "maximum_drawdown": -0.5518943561844938,
+            "sharpe": 0.6462678353565453
+          },
+          "completed_holding_blocks": 199,
+          "right_censored_open_block": false,
+          "completed_block_win_rate": 0.8090452261306532,
+          "average_completed_block_return": 0.008607440987328937
+        },
+        {
+          "variant": "RSI5_below30_exit50_one_day_SMA200_rise_no_confirmation",
+          "price_field": "adjclose",
+          "requested_sample": [
+            "1993-01-01",
+            "2026-07-02"
+          ],
+          "price_anchor_date": "1993-01-29",
+          "first_return_date": "1993-02-01",
+          "last_return_date": "2026-07-02",
+          "return_bars": 8412,
+          "cost_per_unit_turnover": 0.0005,
+          "execution_lag_closes": 1,
+          "cash_return": 0,
+          "exposure": 0.11697574893009986,
+          "strategy": {
+            "total_return": 3.8067023246105043,
+            "cagr": 0.04809675195441665,
+            "maximum_drawdown": -0.14397460491112013,
+            "sharpe": 0.7377004665429392
+          },
+          "passive": {
+            "total_return": 29.871410700168724,
+            "cagr": 0.10807366994448175,
+            "maximum_drawdown": -0.5518943561844938,
+            "sharpe": 0.6462678353565453
+          },
+          "completed_holding_blocks": 199,
+          "right_censored_open_block": false,
+          "completed_block_win_rate": 0.7788944723618091,
+          "average_completed_block_return": 0.00808038897034241
+        }
+      ]
+    }
+  ]
+}

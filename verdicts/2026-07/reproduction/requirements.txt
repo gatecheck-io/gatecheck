@@ -1,0 +1,3 @@
+# Recorded October replay environment; use a dedicated Python 3.12 environment.
+numpy==1.26.4
+scipy==1.14.1

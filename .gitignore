@@ -8,3 +8,10 @@ dist/
 
 # internal notes, not part of the library
 LAUNCH.md
+
+# local publication planning
+/docs/revival/
+
+# locally held vendor snapshots and generated replay output
+/verdicts/2026-07/reproduction/data/
+/verdicts/2026-07/reproduction/runs/

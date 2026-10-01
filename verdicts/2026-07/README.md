@@ -1,80 +1,63 @@
-# Verdict Series #1 — receipts (July 2026)
+# Verdict Series #1 — July 2026 receipts
 
-The full record behind the July 2026 issue. Everything here is regenerable: the
-gate is the open-source `gatecheck` library plus the formalized claims in
-[`claims.json`](claims.json); prices are daily bars from a public vendor.
+**Recovery review, October 1, 2026:** five moving-average definitions used an
+incorrect threshold. The July “13 of 14 fail” headline cannot stand as a result
+for the rules described in its table. The unmatched base-rate comparison and
+the attribution of the 118% figure also need correction. See the complete
+[review record](reproduction/REVIEW.md) before citing those conclusions.
+The completed [source audit](reproduction/CLAIM_AUDIT.md) accounts for all
+fourteen entries. It supports no aggregate rejected-source-claim count;
+historical descriptions, drawdown strategies and statistical tests ask
+different questions. The monthly statistic largely reproduces on its own
+calendar/index definition, with a matched baseline of 77.8% rather than 85.8%.
 
-- **61 claims mined** from what was posted on fintwit, Reddit, SSRN/arXiv, and
-  YouTube in the weeks before publication.
-- **14 were formalizable** and benched ([`claims.json`](claims.json)).
-- **47 were not formalizable** in the gate's vocabulary and are recorded as
-  NOT_BENCHABLE with reasons ([`not_benchable.json`](not_benchable.json)) — the
-  denominator is the full mined set, never just the benched subset.
+The [original receipts](reproduction/archive/original_receipts.md) and
+[original numeric results](reproduction/archive/axis4_results.json) are retained
+as historical evidence. Their preservation does not endorse their conclusions.
+The [dated correction text](reproduction/REVIEW.md) explains these errors and
+links this research record. The historical publication date should be preserved.
 
-## The bench (14 formalized claims)
+## The recorded claim set
 
-Net Sharpe is after transaction costs; "b&h" is buy-and-hold on the same asset
-over the same window; DSR is the deflated Sharpe with a per-claim multiplicity
-haircut. Window ≈ 11.0 years of daily bars.
+- 61 mined claims were recorded in July.
+- [14 definitions](claims.json) were mapped to the benchmark vocabulary.
+- [47 other claims](not_benchable.json) were recorded with reasons they could
+  not be mapped. They remain part of the denominator.
 
-| claim | source | rule | net Sh | b&h | DSR | verdict |
-|---|---|---|---|---|---|---|
-| rd_boring_trend_spy | r/quant | SPY > 200d SMA | +0.00 | +0.73 | 0.06 | NOT_TRADABLE |
-| rd_boring_trend_qqq | r/quant | QQQ > 200d SMA | +0.00 | +0.88 | 0.06 | NOT_TRADABLE |
-| rd_boring_trend_nvda | r/quant | NVDA > 200d SMA | −0.26 | +1.34 | 0.00 | NOT_TRADABLE |
-| rd_boring_mom6m_spy | r/quant | 6-mo momentum > 0 | +0.63 | +0.73 | 0.70 | NOT_TRADABLE |
-| rd_boring_bband20_spy | r/quant | 20d z-score < −2 | +0.59 | +0.73 | 0.67 | NOT_TRADABLE |
-| pa_spy_lag1_reversal | arXiv | lag-1 reversal (author predicts NULL) | −0.39 | +0.73 | 0.01 | NOT_TRADABLE ✓ |
-| pa_spy_sma20_fast | SSRN | SPY > 20d SMA | +0.00 | +0.73 | 0.06 | NOT_TRADABLE |
-| tw_detrick_42d_surge | media | 42d momentum > 19.5%, hold 12m | +0.83 | +0.73 | 0.71 | NOT_TRADABLE |
-| tw_fool_quarter_10pct | media | 63d momentum > 10%, hold 2q | +0.47 | +0.73 | 0.37 | NOT_TRADABLE |
-| **tw_fool_month_10pct** | media | 21d momentum > 10%, hold 12m | **+1.19** | +0.73 | **0.98** | **TRADABLE → killed by panel** |
-| tw_qqq_ma225_cross | blog | QQQ > 225d SMA | +0.00 | +0.88 | 0.03 | NOT_TRADABLE |
-| tw_spy_rsi2_below10 | blog | RSI(2) < 10 | +0.51 | +0.73 | 0.41 | NOT_TRADABLE |
-| yt_qe_6wk_rally | YouTube | 30d momentum > 16%, hold 12m | +0.82 | +0.73 | 0.93 | NOT_TRADABLE |
-| yt_qs_rsi5_lt30 | YouTube | RSI(5) < 30 | +0.26 | +0.73 | 0.15 | NOT_TRADABLE |
+The original JSON definitions remain unchanged. Some definitions are proxies
+for fuller trading rules or calendar conventions; the runner does not establish
+that every original publisher's claim was faithfully replicated.
 
-13 of 14 fail the gate outright. The arXiv entry (✓) is a claim whose own author
-predicted it would not trade — and it benched negative, as predicted.
+## Newly acquired data and corrected reruns
 
-## The survivor's autopsy — tw_fool_month_10pct
+All these runs use quote-close data acquired October 1, with a July 2, 2026
+cutoff. They are distinct from the original July downloads.
 
-*Long SPY for 12 months whenever the trailing 21 trading days gained >10%.* Bench:
-net Sharpe +1.19 vs buy-hold +0.73, DSR 0.977, out-of-sample positive → TRADABLE.
-A survivor is a candidate, not a conclusion; four independent kill-panel probes
-then attacked it.
+| Run | Date window | Initial gate passes |
+| --- | --- | ---: |
+| [Legacy definitions](reproduction/evidence/legacy_close.json) | 2015-06-19–2026-07-02 | 1/14 |
+| [Five SMA thresholds corrected](reproduction/evidence/corrected_close.json) | 2015-06-19–2026-07-02 | 3/14 |
+| [SMA correction plus 16 calendar years](reproduction/evidence/corrected_16_calendar_years.json) | 2010-07-02–2026-07-02 | 2/14 |
+| [SMA and RSI seed corrections](reproduction/evidence/technical_corrections_common_window.json) | 2015-06-19–2026-07-02 | 3/14 |
 
-1. **Effective sample — KILLED.** 47 trigger days collapse to ~10 episodes and,
-   because the hold resets on re-trigger, just **6 contiguous holding blocks**
-   (68% of bars in-market). The single 2020–21 COVID-rebound block is **118% of
-   the entire excess** over buy-and-hold. Episode-level inference on the
-   differential: 95% CI [−0.33, +0.33], P(≤0) = 0.32.
-2. **Regime — KILLED.** Drop the Mar–Aug 2020 triggers → DSR 0.948, fail.
-   **2000–2019: net +0.15 vs passive +0.30 — below buy-and-hold for two decades.**
-   Extended 2000–now: DSR 0.687, fail. The killing triggers are bull-trap rallies
-   in secular bears (Mar 2000 −25% fwd, Apr 2001 −13%, Oct 2001 −18%). The pass
-   exists only because the ~11y bench window contains exclusively V-recoveries.
-3. **Timing vs. exposure — WEAKENED (the honest counterweight).** The trigger
-   *does* beat exposure-matched random gating (P ≈ 0.001) — real regime-placement
-   information. But the article's headline **83% forward win rate is BELOW the
-   sample's 85.8% unconditional 12-month win rate**: the framing statistic carries
-   no information, and the de-tilted timing return alone (+0.68) does not beat
-   passive (+0.73).
-4. **Fragility & multiplicity — KILLED.** Not threshold-shopped (rank 5/45 in its
-   neighbor grid), but knife-edged: 0.027 DSR headroom, 0/30 neighbors pass at
-   ±25% hold horizon, and the pass dies at n_trials = 49 — while the same
-   publisher ran **≥44 "the market did X, here's what happens next" articles in
-   18 months.** At any honest family size, DSR 0.90–0.94, not tradable.
+An initial pass is a candidate under this harness's assumptions, not a final
+trading verdict. The two newly passing SMA rules in the shorter sample have
+not undergone the rolling-momentum survivor's exploratory review.
+The [source-directed batch](reproduction/evidence/audited_batch.json) is
+separate: it measures source outcomes and labeled sensitivities, rather than
+assigning all entries a Sharpe-gate verdict. Representative
+[independent calculations](reproduction/evidence/independent_verification.json)
+passed. Exact original source replications remain partial as documented.
 
-**Final verdict: NOT_TRADABLE.** The descriptive drift is real (15/18 wins,
-mean +14.7% since 2000 — the publisher's numbers replicate as *description*);
-what dies is the tradable-edge claim, and specifically its evidentiary basis: one
-regime, six blocks, one publisher's unlabeled search over a hundred-odd stats.
+## Reproduction status
 
-## Reproducing this
+The [replay package](reproduction/README.md) contains a standalone acquisition
+command, a strict offline reader, the recovered benchmark, seven adapted review
+scripts, recorded logs/results, hashes and small-vector verification tests.
+The library's statistical API is unchanged.
 
-The gate is [`gatecheck`](../../README.md) (this repo). The formalized claims are
-[`claims.json`](claims.json) in the posted-edge schema. Prices are public daily
-bars. The verdicts follow from costs + deflation + out-of-sample above the
-gate's certified detection floor (see
-[`../../docs/CALIBRATION_CERTIFICATES.md`](../../docs/CALIBRATION_CERTIFICATES.md)).
+The original undated SPY cache reproduced all 398 saved axis4 numbers exactly.
+Original QQQ/NVDA snapshots, original SPY timestamps and an eighth script
+mentioned in old notes remain missing. Consequently, the full original July
+run cannot be claimed as independently reproduced. Vendor files stay local;
+the package documents acquisition and input hashes for new reruns.

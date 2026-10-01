@@ -1,0 +1,74 @@
+prices: n=2775 bars, first=210.81, last=744.78
+
+[BASELINE reproduction of the survivor]
+  net Sharpe +1.186  b&h +0.730  DSR 0.977  OOS +1.321  verdict TRADABLE
+  w=19 thr=0.08 h=189: net +0.820 DSR 0.793 OOS +0.930 -> NOT_TRADABLE
+  w=19 thr=0.08 h=252: net +0.945 DSR 0.891 OOS +1.049 -> NOT_TRADABLE
+  w=19 thr=0.08 h=315: net +0.764 DSR 0.734 OOS +0.889 -> NOT_TRADABLE
+  w=19 thr=0.09 h=189: net +0.887 DSR 0.848 OOS +1.123 -> NOT_TRADABLE
+  w=19 thr=0.09 h=252: net +1.053 DSR 0.941 OOS +1.241 -> NOT_TRADABLE
+  w=19 thr=0.09 h=315: net +0.759 DSR 0.728 OOS +0.927 -> NOT_TRADABLE
+  w=19 thr=0.10 h=189: net +1.038 DSR 0.936 OOS +1.222 -> NOT_TRADABLE
+  w=19 thr=0.10 h=252: net +1.100 DSR 0.958 OOS +1.302 -> TRADABLE
+  w=19 thr=0.10 h=315: net +0.804 DSR 0.773 OOS +1.000 -> NOT_TRADABLE
+  w=19 thr=0.11 h=189: net +0.843 DSR 0.812 OOS +0.964 -> NOT_TRADABLE
+  w=19 thr=0.11 h=252: net +1.021 DSR 0.928 OOS +1.148 -> NOT_TRADABLE
+  w=19 thr=0.11 h=315: net +0.603 DSR 0.539 OOS +0.824 -> NOT_TRADABLE
+  w=19 thr=0.12 h=189: net +0.899 DSR 0.852 OOS +0.870 -> NOT_TRADABLE
+  w=19 thr=0.12 h=252: net +1.094 DSR 0.953 OOS +1.038 -> NOT_TRADABLE
+  w=19 thr=0.12 h=315: net +0.675 DSR 0.628 OOS +0.804 -> NOT_TRADABLE
+  w=21 thr=0.08 h=189: net +1.001 DSR 0.919 OOS +1.103 -> NOT_TRADABLE
+  w=21 thr=0.08 h=252: net +1.137 DSR 0.967 OOS +1.225 -> TRADABLE
+  w=21 thr=0.08 h=315: net +0.786 DSR 0.756 OOS +0.858 -> NOT_TRADABLE
+  w=21 thr=0.09 h=189: net +1.018 DSR 0.927 OOS +1.178 -> NOT_TRADABLE
+  w=21 thr=0.09 h=252: net +1.209 DSR 0.981 OOS +1.343 -> TRADABLE
+  w=21 thr=0.09 h=315: net +0.811 DSR 0.780 OOS +0.954 -> NOT_TRADABLE
+  w=21 thr=0.10 h=189: net +1.039 DSR 0.936 OOS +1.200 -> NOT_TRADABLE
+  w=21 thr=0.10 h=252: net +1.186 DSR 0.977 OOS +1.321 -> TRADABLE
+  w=21 thr=0.10 h=315: net +0.824 DSR 0.792 OOS +0.974 -> NOT_TRADABLE
+  w=21 thr=0.11 h=189: net +0.841 DSR 0.810 OOS +1.007 -> NOT_TRADABLE
+  w=21 thr=0.11 h=252: net +0.915 DSR 0.869 OOS +1.092 -> NOT_TRADABLE
+  w=21 thr=0.11 h=315: net +0.640 DSR 0.587 OOS +0.833 -> NOT_TRADABLE
+  w=21 thr=0.12 h=189: net +0.838 DSR 0.807 OOS +0.967 -> NOT_TRADABLE
+  w=21 thr=0.12 h=252: net +0.933 DSR 0.880 OOS +1.062 -> NOT_TRADABLE
+  w=21 thr=0.12 h=315: net +0.611 DSR 0.549 OOS +0.831 -> NOT_TRADABLE
+  w=23 thr=0.08 h=189: net +0.639 DSR 0.585 OOS +0.875 -> NOT_TRADABLE
+  w=23 thr=0.08 h=252: net +0.808 DSR 0.777 OOS +1.014 -> NOT_TRADABLE
+  w=23 thr=0.08 h=315: net +0.787 DSR 0.757 OOS +0.968 -> NOT_TRADABLE
+  w=23 thr=0.09 h=189: net +1.002 DSR 0.920 OOS +1.178 -> NOT_TRADABLE
+  w=23 thr=0.09 h=252: net +1.238 DSR 0.985 OOS +1.382 -> TRADABLE
+  w=23 thr=0.09 h=315: net +0.797 DSR 0.767 OOS +0.944 -> NOT_TRADABLE
+  w=23 thr=0.10 h=189: net +1.032 DSR 0.933 OOS +1.191 -> NOT_TRADABLE
+  w=23 thr=0.10 h=252: net +1.198 DSR 0.979 OOS +1.334 -> TRADABLE
+  w=23 thr=0.10 h=315: net +0.786 DSR 0.755 OOS +0.933 -> NOT_TRADABLE
+  w=23 thr=0.11 h=189: net +1.021 DSR 0.928 OOS +1.177 -> NOT_TRADABLE
+  w=23 thr=0.11 h=252: net +1.191 DSR 0.978 OOS +1.327 -> TRADABLE
+  w=23 thr=0.11 h=315: net +0.782 DSR 0.752 OOS +0.928 -> NOT_TRADABLE
+  w=23 thr=0.12 h=189: net +0.797 DSR 0.768 OOS +0.927 -> NOT_TRADABLE
+  w=23 thr=0.12 h=252: net +0.920 DSR 0.872 OOS +1.051 -> NOT_TRADABLE
+  w=23 thr=0.12 h=315: net +0.567 DSR 0.493 OOS +0.781 -> NOT_TRADABLE
+
+[GRID] 7/45 neighbors PASS the identical gate (15.6%)
+[GRID] survivor rank: 5/45 by net Sharpe, 5/45 by discounted Sharpe
+[GRID] net-Sharpe range across grid: [+0.567, +1.238]
+[GRID] failing-neighbor autopsy: 38 fail; of those 6 lose to b&h, 37 fail DSR<0.95, 0 OOS<=0
+
+[N_TRIALS sweep on the exact survivor config w=21 thr=0.10 h=252]
+  n_trials=    1: DSR 0.9999  passed=True
+  n_trials=    5: DSR 0.9965  passed=True
+  n_trials=   10: DSR 0.9899  passed=True
+  n_trials=   20: DSR 0.9773  passed=True
+  n_trials=   30: DSR 0.9665  passed=True
+  n_trials=   50: DSR 0.9487  passed=False
+  n_trials=   75: DSR 0.9310  passed=False
+  n_trials=  100: DSR 0.9165  passed=False
+  n_trials=  150: DSR 0.8934  passed=False
+  n_trials=  200: DSR 0.8751  passed=False
+  n_trials=  300: DSR 0.8469  passed=False
+  n_trials=  500: DSR 0.8075  passed=False
+  n_trials= 1000: DSR 0.7484  passed=False
+  n_trials= 2000: DSR 0.6846  passed=False
+  n_trials= 5000: DSR 0.5965  passed=False
+  -> DSR first drops below 0.95 at n_trials = 49 (last passing n_trials = 48)
+
+results written to axis4_results.json

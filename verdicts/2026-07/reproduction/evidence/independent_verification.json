@@ -1,0 +1,43 @@
+{
+  "independent_checks_passed": true,
+  "monthly_calendar": {
+    "events": 13,
+    "complete": 12,
+    "wins": 10,
+    "win_rate": 0.8333333333333334,
+    "mean_return": 0.16351871798048534,
+    "baseline_complete": 616,
+    "baseline_wins": 479,
+    "baseline_win_rate": 0.7775974025974026
+  },
+  "monthly_source_event_identities_match": true,
+  "paper_sign": {
+    "observations": 8403,
+    "lag1_acf": -0.08058797205208684,
+    "acf_z": -7.387328453185834,
+    "sign_z": -1.5928009908426761,
+    "sign_p": 0.11120484279591589
+  },
+  "selected_trading_metrics": [
+    {
+      "claim_id": "rd_boring_trend_spy",
+      "csv_sha256": "0692603401f6ae5871968abd3ba5ebcbe8e7c0d7c30193b2633a61e55f5c3538",
+      "total_return": 2.6987548442902214,
+      "maximum_drawdown": -0.239716789124498,
+      "matched": true
+    },
+    {
+      "claim_id": "tw_qqq_ma225_cross",
+      "csv_sha256": "c4a5fba4f810895691c6100d3178464a23a480b4b70fbe1450db0031b73b083e",
+      "total_return": 7.570821344698636,
+      "maximum_drawdown": -0.3646496815286625,
+      "matched": true
+    }
+  ],
+  "checks_scope": "Full monthly event identities and 12-month counts; paper lag-1/sign metrics; SPY200 and QQQ225 close/next-close return and drawdown; not every sensitivity",
+  "csv_sha256": {
+    "^GSPC": "cd18f96fbac06771c70bc2c614667116aea5f0de4e63fe4dfb454b03a58a2a02",
+    "SPY": "0692603401f6ae5871968abd3ba5ebcbe8e7c0d7c30193b2633a61e55f5c3538"
+  },
+  "batch_sha256": "c1a250f8d3912272a83c6cade9b53071001aaca3c021a0812e7fcf7e98c1e9e3"
+}

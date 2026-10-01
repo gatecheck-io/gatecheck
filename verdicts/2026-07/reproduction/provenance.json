@@ -1,0 +1,114 @@
+{
+  "recovered_on": "2026-10-01",
+  "historical_run": "2026-07-02",
+  "edge_source_sha256": "a30cdb4ddaf25d460c23a9a8af2b28f671bb961580daed3dd8eed97cdf658f70",
+  "posted_source_sha256": "824610e4080a4bddef816bdfc5eb184c5b53a851e75264db4f0994e0a24efa93",
+  "original_spy_npz_sha256": "1c71900164f71b64b289d9240aa098af3c1197ef0eafa62bba613c62fd9c21f8",
+  "original_spy_bars": 2775,
+  "original_spy_has_timestamps": false,
+  "located_probes": [
+    {
+      "file": "probes/axis1_episode_null.py",
+      "original_sha256": "6063c2f013fac78a2bafe9a14060a8d58f8d289ff71577c07ce1c30c11b2a538",
+      "adapted_sha256": "3d5bd78e2e855539b40d26e4b948b99bd70e2f2a92735ac3462ede9571bccd90"
+    },
+    {
+      "file": "probes/axis1_ess_overlap.py",
+      "original_sha256": "cba1363a0e125f05a4dfd41a6c9160f9a657d37713171020daa1ab51d1dd2d67",
+      "adapted_sha256": "d8f98994e7428245d117a4182908f7f3b45af940816b863b3cbc0adf0f2e5fe5"
+    },
+    {
+      "file": "probes/axis1_honest_ci.py",
+      "original_sha256": "64f0f162578b75c04c9d84b1687a4647614ce37cb6a4f0fe46574d2b80fa67a5",
+      "adapted_sha256": "06da77388e22143ace32fd8625cb8028ee987b758b6ded0d7834e78a39138cab"
+    },
+    {
+      "file": "probes/axis2_regime.py",
+      "original_sha256": "77421af05c7543f08e78207e1c070dbf82bd0091f9f81565950064f98237db61",
+      "adapted_sha256": "afb5084df3791e593369c6fe2e5209c48d05dc3e799a5add02271b69b4a5a171"
+    },
+    {
+      "file": "probes/axis3_loo_episodes.py",
+      "original_sha256": "cf3fadcb210d1c6c5cc157d147e13bf3d5dc385e8b103d603b01c433dd5d8ae8",
+      "adapted_sha256": "6b1084b24a3a559e4802c3bf351acb0b66648066ea33942a30d876823253f737"
+    },
+    {
+      "file": "probes/axis3_timing_vs_beta.py",
+      "original_sha256": "343b04aab5b4a6ac7956e105c1e9e5a945d3581b486066cf64522f8bae733071",
+      "adapted_sha256": "a3a43e6bbf6e31f97e01e4c138bc5fe478e15ee4a15b3059a6fad2053b56bcf8"
+    },
+    {
+      "file": "probes/axis4_fragility_multiplicity.py",
+      "original_sha256": "491561c23a9744617f0ea9717e4631f94c3f32fdebefa6723ceb458592e92c28",
+      "adapted_sha256": "76313a790587e182350cff4d8c8704c348dd5d023f91dba1086535f6212734db"
+    }
+  ],
+  "missing": [
+    "original QQQ/NVDA snapshots",
+    "original SPY timestamps",
+    "eighth script mentioned in old notes"
+  ],
+  "adaptation": [
+    "replace source-program imports with local replay engine and gatecheck",
+    "replace live-price source with explicit offline snapshot adapter",
+    "fix end clock to July 2, 2026; keep original numerical probe logic",
+    "write axis4 outputs/cache to chosen run directory"
+  ],
+  "gatecheck_base_commit": "ff8063b",
+  "original_receipts_sha256": "f9cf470215b27e47af59d924efd226723c7407f0ab8f3d39d89b26d109c6aac3",
+  "environment": {
+    "python": "3.12.6",
+    "numpy": "1.26.4",
+    "scipy": "1.14.1"
+  },
+  "validation": {
+    "tests_passed": 113,
+    "located_probes_completed": 7,
+    "frozen_axis4_numeric_values_matched": 398,
+    "frozen_max_absolute_difference": 0.0,
+    "source_audit_entries_accounted_for": 14,
+    "independent_checks": "Full monthly event identities and 12-month counts; paper lag-1/sign metrics; SPY200 and QQQ225 close/next-close return and drawdown; not every sensitivity",
+    "source_verification": "Partial; source availability and rule ambiguity retained per entry"
+  },
+  "final_portability_note": "Axis4 run-instruction docstring clarified after execution; numerical code unchanged.",
+  "evidence_sha256": {
+    "evidence/audited_batch.json": "c1a250f8d3912272a83c6cade9b53071001aaca3c021a0812e7fcf7e98c1e9e3",
+    "evidence/corrected_16_calendar_years.json": "c2a85f5c03ccb193eba5772fb7fb60ac8e090c5821a34228e92b4eaa2ae33674",
+    "evidence/corrected_close.json": "3b3e14ae59317c116ffd9d9a750aaaa1eaa1d9473acc48536280615756ffb5c3",
+    "evidence/frozen_axis4/axis4_results.json": "760ef16b4f38754e661c7619fc0d5ff3ab4dd953c8155330ecb8827966e50944",
+    "evidence/frozen_axis4/manifest.json": "429dbcf4d864660d0c3c7c6a784bf83dc16cd7828ea875d1e39a0f40cb501588",
+    "evidence/frozen_axis4/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/frozen_axis4/stdout.txt": "cefab7f277df826db7dccb6357306d295608a431b8ab1a5666804e879fa73d62",
+    "evidence/independent_verification.json": "6f5cfcffcbc2ed8758bebfb4b75c5506206b176d6e7917abff548c4ccfa0d845",
+    "evidence/legacy_close.json": "f0f24c0391c9c8f591104645961a65e3606f4281e381337ed53a1ad9f97a267a",
+    "evidence/probes/axis1_episode_null/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/probes/axis1_episode_null/stdout.txt": "621a85b8f407b6289b312f4b0bf1c76c18eab5628a647180a4773bf1e2a998ab",
+    "evidence/probes/axis1_ess_overlap/stderr.txt": "d99db1c514459cbee1d2872c0ce767381e6335db9dd017268dff1de766a219c5",
+    "evidence/probes/axis1_ess_overlap/stdout.txt": "493c1940687bdf10d826a5cfd18c596f33c96abd2223b13bb3bc1ada2551e81e",
+    "evidence/probes/axis1_honest_ci/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/probes/axis1_honest_ci/stdout.txt": "5340b169f2f2dbec8011cd334f7685b0e641084b126f1554dfeb1ad23ac2cd7a",
+    "evidence/probes/axis2_regime/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/probes/axis2_regime/stdout.txt": "abbf6836cfda72c1a0b26ffde9656e63b1c3d082cbdf40b719f653551211ced5",
+    "evidence/probes/axis3_loo_episodes/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/probes/axis3_loo_episodes/stdout.txt": "bbafdb7060f3825061100ba1b3f5a668cf3bac2355bb7d716d196ba032af90db",
+    "evidence/probes/axis3_timing_vs_beta/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/probes/axis3_timing_vs_beta/stdout.txt": "f250752a5d0aff438fa8ca90f20183fef05da0bfa9510ba67e2daa807bb7a10b",
+    "evidence/probes/axis4_fragility_multiplicity/axis4_results.json": "9fdb07932d5f75a97de187d7f362fe9eb4efee5555a26ee9677552df1e9d3104",
+    "evidence/probes/axis4_fragility_multiplicity/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/probes/axis4_fragility_multiplicity/stdout.txt": "139b63d6116e2f7b4d47e3b7ef816698baca84d50f0ccb23fe77eef8854cdb4d",
+    "evidence/probes/manifest.json": "baa882d9a3425e3643b1089dd7a8569ed134aaacedbbd5fd6bafed0c99ab508e",
+    "evidence/technical_corrections_common_window.json": "a3b2dc55db3322e3f202f19061502d1eae1a288a59500941531d3cfbd62429f0"
+  },
+  "public_log_redactions": [
+    "Local checkout prefix in warning logs replaced with <repository>; raw logs retained locally."
+  ],
+  "audit_code_sha256": {
+    "audit_registry.json": "f3dd426bbfc0644bedb5f587313348a8d789880a5744e179154baa11c6618935",
+    "audited_methods.py": "b12fdc179905722ff96e37c54ca16a656d15a3b9d2bde4b4b5356054a2c5f42b",
+    "audited_batch.py": "7cc674fe18ede3d72a23fe869b6eaab59f4b8e0d1da2a4ae194a6d79ac2b63ba",
+    "independent_verification.py": "ff8ecd5853d41dcbc91d6c6e6ec9b44a0f257727b1d682f8b5a52684289e55ff",
+    "replay.py": "346777356fc7f4a367ad02aeb8c5c449db4e6ea644e8684d378b09c4fb88837a",
+    "snapshot_source.py": "a305be268c5321b50414dd6d4373bfa7df28a6c5ca43c65c8bc8a03652a165c9",
+    "fetch_snapshot.py": "d101bf7bed65ebb43b7bdb404a9f657bf85d4fa7119cfaf50dbae2220303aecd"
+  }
+}

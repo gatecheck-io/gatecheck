@@ -1,0 +1,80 @@
+SPY full history: 6664 bars, 2000-01-03 .. 2026-07-02
+
+--- (0) BASELINE bench window (lookback bug ~11y) ---
+  bars=2774  window 2015-06-19..2026-07-02  raw-trigger-days=47
+  net Sharpe +1.186 | B&H +0.730 | timing +0.683 | DSR 0.977 | disc +1.159
+  OOS mean +1.321 CI [+0.302,+2.341] excl0=True | p=0.045
+  beats B&H=True  dsr_ok=True  PASSED=True
+
+Trigger episodes in the bench window (gap>42cal-days splits):
+  2015-10-28 .. 2015-10-28  (1 trigger days)  fwd-252b from first trigger: +2.0%
+  2016-03-14 .. 2016-03-14  (1 trigger days)  fwd-252b from first trigger: +17.0%
+  2019-01-25 .. 2019-02-04  (2 trigger days)  fwd-252b from first trigger: +21.7%
+  2020-04-13 .. 2020-06-08  (18 trigger days)  fwd-252b from first trigger: +49.8%
+  2020-11-27 .. 2020-12-02  (3 trigger days)  fwd-252b from first trigger: +27.8%
+  2022-08-10 .. 2022-08-16  (5 trigger days)  fwd-252b from first trigger: +6.1%
+  2022-11-10 .. 2022-11-14  (2 trigger days)  fwd-252b from first trigger: +11.5%
+  2023-11-27 .. 2023-11-28  (2 trigger days)  fwd-252b from first trigger: +32.2%
+  2025-05-06 .. 2025-05-21  (8 trigger days)  fwd-252b from first trigger: +30.9%
+  2026-04-27 .. 2026-05-06  (5 trigger days)  fwd-252b from first trigger: +4.1% (truncated fwd window)
+
+[dropped 18 trigger days in Mar..Aug-2020]
+
+--- (a) bench window MINUS Mar-Aug-2020 entries ---
+  bars=2774  window 2015-06-19..2026-07-02  raw-trigger-days=29
+  net Sharpe +1.067 | B&H +0.730 | timing +0.461 | DSR 0.948 | disc +1.012
+  OOS mean +1.236 CI [+0.335,+2.137] excl0=True | p=0.324
+  beats B&H=True  dsr_ok=False  PASSED=False
+  time-in-market: 62.0% (baseline 67.8%)
+
+--- (b1) bench-window start .. 2019-12-31 ---
+  bars=1140  window 2015-06-19..2019-12-30  raw-trigger-days=4
+  net Sharpe +0.825 | B&H +0.750 | timing +0.148 | DSR 0.443 | disc +0.366
+  OOS mean +1.084 CI [-0.118,+2.287] excl0=False | p=0.475
+  beats B&H=True  dsr_ok=False  PASSED=False
+
+--- (b2) 2000-01-01 .. 2019-12-31 ---
+  bars=5029  window 2000-01-03..2019-12-30  raw-trigger-days=63
+  net Sharpe +0.152 | B&H +0.304 | timing -0.067 | DSR 0.111 | disc +0.017
+  OOS mean +0.461 CI [-0.193,+1.115] excl0=False | p=0.580
+  beats B&H=False  dsr_ok=False  PASSED=False
+
+--- (c) 2022-01-01 .. now ---
+  bars=1127  window 2022-01-03..2026-07-02  raw-trigger-days=22
+  net Sharpe +1.162 | B&H +0.651 | timing +0.491 | DSR 0.711 | disc +0.827
+  OOS mean +1.744 CI [+0.107,+3.382] excl0=True | p=0.069
+  beats B&H=True  dsr_ok=False  PASSED=False
+
+--- (d) 2000-01-01 .. now (extended) ---
+  bars=6663  window 2000-01-03..2026-07-02  raw-trigger-days=106
+  net Sharpe +0.465 | B&H +0.416 | timing +0.273 | DSR 0.687 | disc +0.319
+  OOS mean +0.785 CI [-0.009,+1.578] excl0=False | p=0.281
+  beats B&H=True  dsr_ok=False  PASSED=False
+
+All trigger episodes 2000..now, fwd-252-bar return from first trigger day:
+  2000-03-21 .. 2000-03-29  (7d)  fwd: -24.8%
+  2001-04-19 .. 2001-05-08  (7d)  fwd: -12.9%
+  2001-10-22 .. 2001-10-22  (1d)  fwd: -18.2%
+  2002-08-19 .. 2002-08-26  (6d)  fwd: +5.7%
+  2002-11-04 .. 2002-11-08  (5d)  fwd: +16.1%
+  2008-12-22 .. 2008-12-22  (1d)  fwd: +28.3%
+  2009-03-31 .. 2009-05-08  (17d)  fwd: +47.1%
+  2009-08-03 .. 2009-08-12  (8d)  fwd: +11.7%
+  2011-10-24 .. 2011-11-03  (7d)  fwd: +12.7%
+  2015-10-28 .. 2015-10-28  (1d)  fwd: +2.0%
+  2016-03-14 .. 2016-03-14  (1d)  fwd: +17.0%
+  2019-01-25 .. 2019-02-04  (2d)  fwd: +21.7%
+  2020-04-13 .. 2020-06-08  (18d)  fwd: +49.8%
+  2020-11-27 .. 2020-12-02  (3d)  fwd: +27.8%
+  2022-08-10 .. 2022-08-16  (5d)  fwd: +6.1%
+  2022-11-10 .. 2022-11-14  (2d)  fwd: +11.5%
+  2023-11-27 .. 2023-11-28  (2d)  fwd: +32.2%
+  2025-05-06 .. 2025-05-21  (8d)  fwd: +30.9%
+  2026-04-27 .. 2026-05-06  (5d)  fwd: +4.1% (TRUNCATED)
+  full-window episodes: 18, win rate 15/18, mean fwd +14.7%, min -24.8%
+
+--- (d2) 2000-01-01 .. 2012-12-31 ---
+  bars=3267  window 2000-01-03..2012-12-28  raw-trigger-days=59
+  net Sharpe +0.032 | B&H +0.094 | timing -0.044 | DSR 0.037 | disc +0.001
+  OOS mean +0.389 CI [-0.024,+0.802] excl0=False | p=0.678
+  beats B&H=False  dsr_ok=False  PASSED=False

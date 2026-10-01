@@ -1,0 +1,33 @@
+fetching SPY exactly as the bench does (lookback_days=252*16)...
+n bars = 2775
+
+=== bench replication ===
+net Sharpe +1.186 | B&H +0.730 | DSR 0.977 | OOS +1.321 | verdict TRADABLE
+engine timing Sharpe (de-tilted) = +0.683
+circ-shift p = 0.045, IC = +0.0389
+
+exposure: 67.8% of 2774 bars in-market
+episodes: 6 blocks, lengths = [345, 258, 415, 319, 253, 290]
+raw trigger days (mom21 > 10%): 47
+probe-recomputed net Sharpe = +1.186 (should match bench)
+
+=== (a) exposure-matched null (episode-preserving, 1000 draws) ===
+null net Sharpe: mean +0.624, sd 0.149, 5-50-95 pct = +0.414 / +0.600 / +0.878
+strategy +1.186 sits at the 99.9% percentile; P(null >= strat) = 0.001
+variant (K=6 random 252-bar holds, overlaps merge): mean +0.526, sd 0.199, P(null >= strat) = 0.002
+
+=== (b) de-tilt / timing ===
+mean daily ret: in-hold +8.27 bp | out-of-hold -1.29 bp | all +5.19 bp
+annualized: in-hold +20.84% | out -3.25% | all +13.08%
+daily sd: in-hold 90.7 bp | out-of-hold 148.8 bp
+Sharpe of SPY restricted to in-hold bars   = +1.448
+Sharpe of SPY restricted to out-hold bars  = -0.138
+Sharpe of always-long SPY (all bars)       = +0.730
+P(exposure-matched null in-hold mean >= actual in-hold mean) = 0.004
+engine timing Sharpe (expanding de-tilt, net) = +0.683
+
+=== (c) framing check: 12-month forward returns on this sample ===
+UNCONDITIONAL: win rate 85.8%, avg +13.7%  (all 2523 rolling 252-bar windows)
+CONDITIONAL on trigger day (n=42 days): win 100.0%, avg +30.4%
+CONDITIONAL on episode start (n=6 events): win 100.0%, avg +23.8%
+Fool claim: 83% win, +16.3% avg (50y). Unconditional here: 86%, +13.7%

@@ -1,0 +1,88 @@
+{
+  "input_mode": "reacquired_dated_snapshot",
+  "clock": "2026-07-02T23:59:59Z",
+  "probes": [
+    {
+      "probe": "axis1_episode_null.py",
+      "sha256": "3d5bd78e2e855539b40d26e4b948b99bd70e2f2a92735ac3462ede9571bccd90",
+      "returncode": 0
+    },
+    {
+      "probe": "axis1_ess_overlap.py",
+      "sha256": "d8f98994e7428245d117a4182908f7f3b45af940816b863b3cbc0adf0f2e5fe5",
+      "returncode": 0
+    },
+    {
+      "probe": "axis1_honest_ci.py",
+      "sha256": "06da77388e22143ace32fd8625cb8028ee987b758b6ded0d7834e78a39138cab",
+      "returncode": 0
+    },
+    {
+      "probe": "axis2_regime.py",
+      "sha256": "afb5084df3791e593369c6fe2e5209c48d05dc3e799a5add02271b69b4a5a171",
+      "returncode": 0
+    },
+    {
+      "probe": "axis3_loo_episodes.py",
+      "sha256": "6b1084b24a3a559e4802c3bf351acb0b66648066ea33942a30d876823253f737",
+      "returncode": 0
+    },
+    {
+      "probe": "axis3_timing_vs_beta.py",
+      "sha256": "a3a43e6bbf6e31f97e01e4c138bc5fe478e15ee4a15b3059a6fad2053b56bcf8",
+      "returncode": 0
+    },
+    {
+      "probe": "axis4_fragility_multiplicity.py",
+      "sha256": "f4b9648628620af36a6be600d9ad3c0ba81210e63444d8aed4abe86464baa168",
+      "returncode": 0
+    }
+  ],
+  "snapshots": {
+    "NVDA.metadata": {
+      "asset": "NVDA",
+      "provider": "Yahoo Finance chart endpoint",
+      "requested_url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?period1=946684800&period2=1783036800&interval=1d&events=div%2Csplits",
+      "acquired_utc": "2026-10-01T11:09:22.961534+00:00",
+      "requested_start": "2000-01-01",
+      "requested_end_inclusive": "2026-07-02",
+      "first_date": "2000-01-03",
+      "last_date": "2026-07-02",
+      "rows": 6664,
+      "csv_sha256": "13a8feb18e100085a8c94dc6eda53d2b4e657ac43888a63ae7e52930dc54b9fc",
+      "response_sha256": "ae13ef656eb0137d7e9230311fc85a5f20130d31cc67dfe6527e3426bce005c1",
+      "provenance": "New acquisition of historical bars; not the original July download",
+      "fields": "Quote close and vendor adjusted close kept separately"
+    },
+    "QQQ.metadata": {
+      "asset": "QQQ",
+      "provider": "Yahoo Finance chart endpoint",
+      "requested_url": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?period1=946684800&period2=1783036800&interval=1d&events=div%2Csplits",
+      "acquired_utc": "2026-10-01T11:09:22.624503+00:00",
+      "requested_start": "2000-01-01",
+      "requested_end_inclusive": "2026-07-02",
+      "first_date": "2000-01-03",
+      "last_date": "2026-07-02",
+      "rows": 6664,
+      "csv_sha256": "05ca10c5725cdf3807c4ce20e2f748e91258a2230d04048d10e6066fc6ac1321",
+      "response_sha256": "f7e5a0e55ab47ce0a9abc70d16c8fff799d9d2461e75a48089cb0802a2402d55",
+      "provenance": "New acquisition of historical bars; not the original July download",
+      "fields": "Quote close and vendor adjusted close kept separately"
+    },
+    "SPY.metadata": {
+      "asset": "SPY",
+      "provider": "Yahoo Finance chart endpoint",
+      "requested_url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?period1=946684800&period2=1783036800&interval=1d&events=div%2Csplits",
+      "acquired_utc": "2026-10-01T11:09:22.241511+00:00",
+      "requested_start": "2000-01-01",
+      "requested_end_inclusive": "2026-07-02",
+      "first_date": "2000-01-03",
+      "last_date": "2026-07-02",
+      "rows": 6664,
+      "csv_sha256": "cc0a431d8498cc9554ce96a445e6669738f3fe494ca11b68db6b9a5a5120049c",
+      "response_sha256": "f0d6cb8f474fe87de27fdf07095fc1dbb4051b29dff420757a851f2a8217bb30",
+      "provenance": "New acquisition of historical bars; not the original July download",
+      "fields": "Quote close and vendor adjusted close kept separately"
+    }
+  }
+}
