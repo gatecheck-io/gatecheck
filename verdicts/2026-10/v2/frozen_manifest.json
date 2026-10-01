@@ -1,0 +1,11 @@
+{
+  "created_utc": "2026-10-01T12:47:18.655394+00:00",
+  "files": {
+    "METHOD.md": "5bb866e03bcd7be9ceab9b5f92fc9ca0c7d2af4f0f354b349bf868c10daf2fcf",
+    "calibration_plan.json": "20c774bc2ed1b5e52dc0d12de27571e131bbf2275aa04f8d03ecca89fa5c7475",
+    "sign_randomization.py": "0412a67351395a70d02b08fdf9cab460f9de740ff5e02556deb6ef9d60f53c0d",
+    "market_evaluation.py": "c37fa94ea1a1a7e5b6f3650590e093d7f4835eb1f83fa452b38c8573b9d591a5",
+    "requirements.txt": "0b3c348b3f0a3786974ec92a77449114d9f02366b4e5991a016f6be327d9c609",
+    "../monthly_calibration.py": "0c9204ad8fa890af0445a65af250707cd802aba584de5122800b5bf4fec039fe"
+  }
+}
