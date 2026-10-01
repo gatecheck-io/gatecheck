@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "method_id": "monthly-rate-stationary-pairs-v1",
+  "frozen_date": "2026-10-01",
+  "monthly_observations": 628,
+  "forward_months": 12,
+  "trigger_simple_return": 0.1,
+  "alpha": 0.05,
+  "mean_block_months": 24,
+  "bootstrap_draws": 999,
+  "minimum_events": 10,
+  "minimum_each_event_outcome": 2,
+  "maximum_empty_bootstrap_fraction": 0.01,
+  "replicates_per_world": 1000,
+  "burn_in_months": 2048,
+  "oracle_months": 250000,
+  "maximum_null_ci_upper": 0.075,
+  "confidence_level": 0.95,
+  "seed_namespace": 20261001,
+  "worlds": [
+    {"id": "iid_zero", "kind": "null", "model": "normal", "mu": 0.0, "sigma": 0.045},
+    {"id": "iid_drift", "kind": "null", "model": "normal", "mu": 0.006, "sigma": 0.045},
+    {"id": "iid_high_drift", "kind": "null", "model": "normal", "mu": 0.01, "sigma": 0.045},
+    {"id": "iid_heavy_tail", "kind": "null", "model": "student", "mu": 0.006, "sigma": 0.045, "df": 5},
+    {"id": "serial_vol_90", "kind": "null", "model": "log_vol", "mu": 0.0, "sigma": 0.045, "phi": 0.9, "log_vol_sd": 0.5},
+    {"id": "serial_vol_98", "kind": "null", "model": "log_vol", "mu": 0.0, "sigma": 0.045, "phi": 0.98, "log_vol_sd": 0.5},
+    {"id": "plant_002", "kind": "alternative", "model": "plant", "mu": 0.006, "sigma": 0.045, "monthly_added_log_drift": 0.002},
+    {"id": "plant_005", "kind": "alternative", "model": "plant", "mu": 0.006, "sigma": 0.045, "monthly_added_log_drift": 0.005},
+    {"id": "plant_010", "kind": "alternative", "model": "plant", "mu": 0.006, "sigma": 0.045, "monthly_added_log_drift": 0.01},
+    {"id": "changing_drift", "kind": "sensitivity", "model": "regime", "mu": 0.006, "sigma": 0.045, "drift_amplitude": 0.006, "regime_months": 120}
+  ]
+}

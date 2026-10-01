@@ -4,6 +4,10 @@ Protocol fixed October 1, 2026, after the July source audit. This follows an
 exploratory result we have already seen; it is not a blind preregistration.
 No new inferential result is reported here.
 
+The first candidate is fixed in [METHOD.md](METHOD.md) and
+[calibration_plan.json](calibration_plan.json). Its calibration must pass before
+any market p-value is evaluated. Failed candidates remain part of the record.
+
 ## Question and source
 
 Does a calendar-month S&P 500 gain of at least 10% provide evidence of a higher

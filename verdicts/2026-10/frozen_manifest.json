@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-01T12:29:31.179970+00:00",
+  "files": {
+    "PROTOCOL.md": "ad9039e848260bde2860844028017a06857e54595016d3d3219f8242ea41e572",
+    "METHOD.md": "257b0d9d1234d8ede6d8fff4d8b6106fc4bc9b8a81c0fdd7474e665943405fad",
+    "calibration_plan.json": "9a1cc90964ba17bc298728de964ef783466180f579f6b3861d93dedfa1957127",
+    "monthly_calibration.py": "0c9204ad8fa890af0445a65af250707cd802aba584de5122800b5bf4fec039fe",
+    "requirements.txt": "0b3c348b3f0a3786974ec92a77449114d9f02366b4e5991a016f6be327d9c609"
+  }
+}
