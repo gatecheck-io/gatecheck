@@ -14,8 +14,11 @@ calendar/index definition, with a matched baseline of 77.8% rather than 85.8%.
 The [original receipts](reproduction/archive/original_receipts.md) and
 [original numeric results](reproduction/archive/axis4_results.json) are retained
 as historical evidence. Their preservation does not endorse their conclusions.
-The [dated correction text](reproduction/REVIEW.md) explains these errors and
-links this research record. The historical publication date should be preserved.
+The [dated Substack correction](https://gatecheck.substack.com/p/we-benched-14-trading-strategies)
+is live with the original July 7 date preserved. The
+[follow-up](https://gatecheck.substack.com/p/gatechecks-july-benchmark-needed)
+explains what reproduced and what remains uncertain. See the
+[publication record](reproduction/PUBLICATION.md) for links and delivery details.
 
 ## The recorded claim set
 

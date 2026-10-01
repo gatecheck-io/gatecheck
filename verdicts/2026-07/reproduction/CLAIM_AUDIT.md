@@ -111,14 +111,15 @@ See [run instructions](README.md) and [provenance](provenance.json).
 The scoped [validation record](VALIDATION.md) distinguishes complete batch
 coverage from partial exact-source and independent numerical verification.
 
-## Required editorial action
+## Editorial correction
 
-The historical July article needs a dated correction of the “13 of 14 fail”
+The dated July correction withdraws the “13 of 14 fail”
 headline, the monthly baseline comparison, and the 118% attribution. Its 118%
 calculation concerns avoided returns during a 2020 cash interval, not gains
 from a 2020–21 long holding block. Preserve the historical record and link the
-corrected methods. Exact source gaps should remain visible. A proposed note
-is saved in [the correction review](REVIEW.md); it has not been published.
+corrected methods. Exact source gaps remain visible. The note
+is saved in [the correction review](REVIEW.md), with live links in the
+[publication record](PUBLICATION.md).
 
 The next worked example can use the fully inspectable calendar-month table,
 with the question, comparator and dependence treatment fixed before inference.

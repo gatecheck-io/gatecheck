@@ -1,6 +1,6 @@
 # Final local validation
 
-**Share the local research record with caveats; the July article needs revision.**
+**Share the research record with caveats; July's original verdict is withdrawn.**
 Coverage of the fourteen-entry ledger and batch is complete. Verification of
 exact original sources and independent recomputation of every sensitivity is
 partial. This validation covers the research record and linked evidence.
@@ -37,7 +37,8 @@ all N items received complete independent verification. Categories overlap.
    common trading gate failed to evaluate several stated objectives.
    **Fixed locally:** isolate the corrected threshold and RSI seed, account
    for each source question, and remove the aggregate source-failure count.
-   **Proposed publication fix:** use the dated correction in [REVIEW.md](REVIEW.md).
+   **Published correction:** the dated note in [REVIEW.md](REVIEW.md) is live,
+   with links in [PUBLICATION.md](PUBLICATION.md).
 2. **Monthly comparison and 118% attribution (P1).** The earlier baseline used
    a different instrument, period and event convention; the attribution named
    a different episode. **Fixed locally:** the calendar/index result is 10/12

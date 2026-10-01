@@ -35,6 +35,14 @@ it does not assume the article proposed a trading strategy.
 
 ## Method gate before inference
 
+The primary inferential threshold is one-sided alpha .05 for a positive
+conditional-rate increment. A market significance claim requires a previously
+frozen method whose null calibration has a 95% upper false-positive-rate
+bound no higher than .075 in each declared no-predictability world. Report
+power and uncertainty at the declared planted effects; state the detectable
+effect range rather than treating an undetected effect as absent. These are
+chosen study criteria, not measured calibration results.
+
 The twelve-month outcomes share returns. A binomial test or independent-row
 bootstrap is therefore not an accepted default. Before evaluating a market
 p-value, freeze a proposed dependence-aware resampling method and demonstrate
